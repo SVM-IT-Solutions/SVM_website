@@ -278,10 +278,13 @@ export default function PortfolioPage() {
                       </div>
 
                       <div className="flex gap-4">
-                        <Button className="flex-1 bg-blue-600 hover:bg-blue-700">
-                          <ExternalLink className="mr-2 h-4 w-4" />
-                          Live Demo
-                        </Button>
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          <Button className="flex-1 bg-blue-600 hover:bg-blue-700">
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            Live Demo
+                          </Button>
+                          </a>
+                      
                         <Button variant="outline" className="flex-1 bg-transparent">
                           <Github className="mr-2 h-4 w-4" />
                           View Code
@@ -383,10 +386,12 @@ export default function PortfolioPage() {
                         </div>
 
                         <div className="flex gap-2">
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                           <Button size="sm" className="flex-1 bg-blue-600 hover:bg-blue-700">
                             <ExternalLink className="mr-1 h-3 w-3" />
                             View
                           </Button>
+                          </a>
                           <Button size="sm" variant="outline" className="flex-1 bg-transparent">
                             <Github className="mr-1 h-3 w-3" />
                             Code
