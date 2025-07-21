@@ -41,7 +41,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white lg:p-10">
       {/* Newsletter Section */}
       <div className="border-b border-gray-800">
         <div className="container mx-auto px-4 py-12">
@@ -88,10 +88,12 @@ export default function Footer() {
             className="lg:col-span-2"
           >
             <div className="flex items-center space-x-2 mb-6">
-              <div className="bg-blue-600 p-2 rounded-lg">
-                <Code2 className="h-6 w-6 text-white" />
+              <div className="bg-white  rounded-lg">
+                {/* <Code2 className="h-6 w-6 text-white" /> */}
+                <img src="./logo.png" alt="SVM IT Solutions Logo" className="h-20 w-20" />
+
               </div>
-              <span className="text-xl font-bold">SVM IT SOLUTIONS</span>
+              <span className="text-xl font-bold">SVM IT SOLUTION</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
               We are a leading software development and SEO company dedicated to helping businesses grow through

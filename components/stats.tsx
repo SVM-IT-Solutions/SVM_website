@@ -4,9 +4,9 @@ import { motion } from "framer-motion"
 import { Users, Award, CheckCircle, Clock } from "lucide-react"
 
 const stats = [
-  { icon: Users, number: "500+", label: "Happy Clients", description: "Satisfied customers worldwide" },
-  { icon: Award, number: "50+", label: "Awards Won", description: "Industry recognition" },
-  { icon: CheckCircle, number: "1000+", label: "Projects Completed", description: "Successful deliveries" },
+  { icon: Users, number: "100+", label: "Happy Clients", description: "Satisfied customers worldwide" },
+  { icon: Award, number: "10+", label: "Awards Won", description: "Industry recognition" },
+  { icon: CheckCircle, number: "100+", label: "Projects Completed", description: "Successful deliveries" },
   { icon: Clock, number: "5+", label: "Years Experience", description: "In the industry" },
 ]
 

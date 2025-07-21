@@ -62,7 +62,7 @@ export default function HomePage() {
     subtitle: "Modern, Responsive & Conversion-Focused",
     description:
       "We craft engaging websites that look great on all devices and turn visitors into customers.",
-    image: "/home/website.jpeg?height=600&width=800&text=Website+Development",
+    image: "/home/web1.jpeg?height=600&width=800&text=Website+Development",
   },
   {
     title: "SEO Optimization Services",

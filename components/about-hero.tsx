@@ -26,7 +26,7 @@ export default function AboutHero() {
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                <span className="text-gray-700">Served 500+ clients across various industries</span>
+                <span className="text-gray-700">Served 100+ clients across various industries</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-blue-600 rounded-full"></div>

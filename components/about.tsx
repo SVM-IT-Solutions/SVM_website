@@ -7,9 +7,9 @@ import Image from "next/image"
 
 export default function About() {
   const achievements = [
-    { icon: Users, number: "500+", label: "Happy Clients" },
-    { icon: Award, number: "50+", label: "Awards Won" },
-    { icon: CheckCircle, number: "1000+", label: "Projects Completed" },
+    { icon: Users, number: "100+", label: "Happy Clients" },
+    { icon: Award, number: "10+", label: "Awards Won" },
+    { icon: CheckCircle, number: "100+", label: "Projects Completed" },
     { icon: Clock, number: "5+", label: "Years Experience" },
   ]
 

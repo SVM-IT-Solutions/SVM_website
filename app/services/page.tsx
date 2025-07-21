@@ -188,7 +188,7 @@ const services = [
     {
       icon: <TrendingUp className="h-8 w-8" />,
       title: "Proven Results",
-      description: "Our track record speaks for itself with 500+ successful projects.",
+      description: "Our track record speaks for itself with 100+ successful projects.",
     },
     {
       icon: <Users className="h-8 w-8" />,

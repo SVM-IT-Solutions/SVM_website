@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "SVM IT SOLUTIONS - Leading Web Development & SEO Company",
   description:
-    "Transform your digital presence with our expert web development, mobile app development, SEO optimization, and digital marketing services. 500+ successful projects delivered.",
+    "Transform your digital presence with our expert web development, mobile app development, SEO optimization, and digital marketing services. 100+ successful projects delivered.",
   keywords: [
     "web development",
     "mobile app development",

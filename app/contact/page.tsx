@@ -70,13 +70,13 @@ export default function ContactPage() {
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us",
-      details: ["+91 1234567890", ""],
+      details: ["+1 709 506 1935 ", ""],
       description: "Mon-Fri from 10am to 7pm",
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Visit Us",
-      details: ["Noida", "India"],
+      details: ["Sector-63 Noida", "India"],
       description: "Come say hello at our office",
     },
     {

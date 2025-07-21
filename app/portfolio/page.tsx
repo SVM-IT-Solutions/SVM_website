@@ -109,7 +109,7 @@ export default function PortfolioPage() {
       technologies: ["Next.js", "Shopify", "Tailwind CSS", "Stripe"],
       liveUrl: "#",
       githubUrl: "#",
-      results: ["$2M+ in sales", "150% conversion increase", "500+ vendors"],
+      results: ["$2M+ in sales", "150% conversion increase", "100+ vendors"],
       featured: false,
     },
     {
