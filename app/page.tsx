@@ -414,6 +414,31 @@ const portfolio = [
         </div>
       </section>
 
+       <section className="py-10 bg-gradient-to-br from-blue-50 to-indigo-100">
+              <div className="container mx-auto px-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="text-center mb-16"
+                >
+                  <Badge className="mb-4 bg-blue-100 text-blue-800">Our Process</Badge>
+                  <h2 className="text-4xl font-bold text-gray-900 mb-6">How We Deliver Excellence</h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our proven process ensures that every project is delivered on time, within budget, and exceeds
+                    expectations.
+                  </p>
+                </motion.div>
+      
+                <div className="max-w-4xl mx-auto">
+                <Image src="./service/workflow1.png" alt="Process" width={400} height={400} className="hidden md:block mx-auto w-full max-w-6xl" />
+                <Image src="./service/workflow2.png" alt="Process Mobile" width={400} height={400} className="md:hidden mx-auto w-full max-w-md p-4" />
+                  
+                </div>
+              </div>
+            </section>
+
       {/* Testimonials Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">

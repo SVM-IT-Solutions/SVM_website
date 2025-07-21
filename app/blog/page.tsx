@@ -54,13 +54,14 @@ export default function BlogPage() {
 
     {
       id: 3,
-      title: "Mobile-First Design: Why It Matters More Than Ever",
-      excerpt: "Discover why mobile-first design is crucial for user experience and how to implement it effectively.",
-      image: "/placeholder.svg?height=300&width=400&text=Mobile+First+Design",
-      author: "Emily Davis",
-      date: "December 10, 2023",
+      title: "Building Voice Applications with Vapi",
+      excerpt: "Voice AI is transforming how businesses interact with customers, automate workflows, and enhance user experiences.",
+      image: "/blog/vapi.png?height=300&width=400&text=Mobile+First+Design",
+      author: "Shubham Singh",
+      date: "July 21, 2025",
       readTime: "4 min read",
-      category: "Design",
+      category: "development",
+      link: "https://getting-started-with-docker.hashnode.dev/building-voice-applications-with-vapi",
       featured: false,
     },
     {

@@ -307,13 +307,14 @@ const services = [
             <Badge className="mb-4 bg-blue-100 text-blue-800">Our Process</Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">How We Deliver Excellence</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our proven 4-step process ensures that every project is delivered on time, within budget, and exceeds
+              Our proven process ensures that every project is delivered on time, within budget, and exceeds
               expectations.
             </p>
           </motion.div>
 
           <div className="max-w-4xl mx-auto">
-            {processSteps.map((step, index) => (
+
+            {/* {processSteps.map((step, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
@@ -339,7 +340,10 @@ const services = [
                 </div>
                 <div className="w-1/2" />
               </motion.div>
-            ))}
+            ))} */}
+          <Image src="./service/workflow1.png" alt="Process" width={400} height={400} className="hidden md:block mx-auto w-full max-w-6xl" />
+          <Image src="./service/workflow2.png" alt="Process Mobile" width={400} height={400} className="md:hidden mx-auto w-full max-w-md p-4" />
+            
           </div>
         </div>
       </section>

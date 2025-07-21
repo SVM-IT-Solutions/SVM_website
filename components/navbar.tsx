@@ -46,16 +46,17 @@ export default function Navbar() {
             <motion.div
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.5 }}
-              className="bg-blue-600 p-2 rounded-lg"
+              className="bg-white rounded-xl"
             >
-              <Code2 className="h-6 w-6 text-white" />
+              {/* <Code2 className="h-6 w-6 text-white" /> */}
+              <img src="/logo.png" alt="Logo" className="h-16 w-16" />
             </motion.div>
             <span
               className={`text-xl font-bold transition-colors duration-300 ${
                 scrolled ? "text-black" : "text-white"
               }`}
             >
-              SVM IT SOLUTIONS
+              SVM IT SOLUTION
             </span>
           </Link>
 
@@ -100,7 +101,7 @@ export default function Navbar() {
                   <div className="bg-blue-600 p-2 rounded-lg">
                     <Code2 className="h-6 w-6 text-white" />
                   </div>
-                  <span className="text-xl font-bold">SVM IT SOLUTIONS</span>
+                  <span className="text-xl font-bold">SVM IT SOLUTION</span>
                 </div>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                   <X className="h-6 w-6" />
