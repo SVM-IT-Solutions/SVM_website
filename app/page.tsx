@@ -117,35 +117,38 @@ export default function HomePage() {
     { number: "96%", label: "Client Satisfaction", icon: <Star className="h-6 w-6" /> },
   ]
 
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      company: "TechStart Inc.",
-      role: "CEO",
-      content:
-        "Their web development team delivered an exceptional e-commerce platform that increased our sales by 150%. The SEO optimization brought us to the first page of Google.",
-      rating: 5,
-      image: "/placeholder.svg?height=80&width=80&text=SJ",
-    },
-    {
-      name: "Michael Chen",
-      company: "GrowthCorp",
-      role: "Marketing Director",
-      content:
-        "Outstanding mobile app development and digital marketing services. Our app has over 50K downloads and our organic traffic grew by 300%.",
-      rating: 5,
-      image: "/placeholder.svg?height=80&width=80&text=MC",
-    },
-    {
-      name: "Emily Rodriguez",
-      company: "InnovateLab",
-      role: "Founder",
-      content:
-        "Professional, reliable, and results-driven. They transformed our outdated website into a modern, high-converting platform.",
-      rating: 5,
-      image: "/placeholder.svg?height=80&width=80&text=ER",
-    },
-  ]
+const testimonials = [
+  {
+    name: "Ava Mitchell",
+    company: "BrightPixel Agency",
+    role: "Product Manager",
+    content:
+      "Working with this team was a game-changer. They delivered our website ahead of schedule, and the UX/UI design is stunning. We've seen a 40% increase in engagement.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
+  },
+  {
+    name: "Liam Johnson",
+    company: "NovaTech Solutions",
+    role: "CTO",
+    content:
+      "Their backend architecture and API development helped us scale without a hitch. Performance improved drastically, and our dev team loves working with their clean codebase.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/men/33.jpg",
+  },
+  {
+    name: "Isabella Gomez",
+    company: "MarketMuse",
+    role: "Head of Marketing",
+    content:
+      "They handled our digital marketing campaign with precision. Our leads doubled within a month and the ROI was well beyond expectations.",
+    rating: 4,
+    image: "https://randomuser.me/api/portraits/women/55.jpg",
+  },
+
+];
+
+
 
 const portfolio = [ 
   {

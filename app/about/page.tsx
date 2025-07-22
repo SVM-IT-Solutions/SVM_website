@@ -137,11 +137,11 @@ export default function AboutPage() {
               className="relative"
             >
               <Image
-                src="/placeholder.svg?height=500&width=600&text=Our+Team+Working"
+                src="/about/soft.png?height=500&width=600&text=Our+Team+Working"
                 alt="Our team"
                 width={600}
                 height={500}
-                className="rounded-2xl shadow-2xl"
+                className=""
               />
             </motion.div>
           </div>
@@ -240,105 +240,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <Badge className="mb-4 bg-purple-100 text-purple-800">Our Team</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Meet the Experts Behind Your Success</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our diverse team of talented professionals brings together years of experience and expertise to deliver
-              exceptional results.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            {team.map((member, index) => (
-              <motion.div key={index} variants={fadeInUp}>
-                <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-                  <CardContent className="p-6">
-                    <div className="relative mb-6">
-                      <Image
-                        src={member.image || "/placeholder.svg"}
-                        alt={member.name}
-                        width={300}
-                        height={300}
-                        className="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                    <p className="text-blue-600 font-medium mb-4">{member.role}</p>
-                    <p className="text-gray-600 text-sm mb-4">{member.bio}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {member.skills.map((skill, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <Badge className="mb-4 bg-green-100 text-green-800">Our Journey</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Milestones That Define Us</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From humble beginnings to industry recognition, here's our journey of growth and success.
-            </p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`flex items-center mb-12 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
-              >
-                <div className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8"}`}>
-                  <Card className="hover:shadow-lg transition-shadow">
-                    <CardContent className="p-6">
-                      <div className="text-2xl font-bold text-blue-600 mb-2">{milestone.year}</div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{milestone.title}</h3>
-                      <p className="text-gray-600">{milestone.description}</p>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className="w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10" />
-                <div className="w-1/2" />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
