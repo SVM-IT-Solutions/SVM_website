@@ -1,7 +1,7 @@
 // components/AutoModal.tsx
 "use client";
 
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -50,6 +50,18 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -60,10 +72,7 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
     setIsSubmitting(true);
     
     try {
-      // Replace with your actual submission logic
       console.log("Form submitted:", formData);
-      
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
       
       setSubmitSuccess(true);
@@ -90,23 +99,23 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-start justify-center z-50 p-4 overflow-y-auto">
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.2 }}
-        className="w-full max-w-2xl"
+        className="w-full max-w-2xl my-8"
       >
-        <Card className="shadow-xl relative">
+        <Card className="shadow-xl relative max-h-[80vh] md:max-h-[90vh] flex flex-col">
           <button 
             onClick={onClose}
-            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-10"
+            className="absolute top-4 right-4 text-red-500  hover:text-gray-400 z-10 bg-white rounded-full p-1 shadow-lg"
             aria-label="Close modal"
           >
             ✕
           </button>
           
-          <CardContent className="p-6 md:p-8">
+          <CardContent className="p-4 md:p-6 overflow-y-auto flex-grow">
             {submitSuccess ? (
               <div className="text-center py-8">
                 <h2 className="text-2xl font-bold text-green-600 mb-2">Thank You!</h2>
@@ -114,12 +123,14 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
               </div>
             ) : (
               <>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Tell Us About Your Project</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">
+                  Tell Us About Your Project
+                </h2>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                  <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-1 md:mb-2">
                         Full Name *
                       </label>
                       <Input
@@ -129,11 +140,11 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                         onChange={handleChange}
                         required
                         placeholder="John Doe"
-                        className="w-full"
+                        className="w-full text-base h-12 md:h-10"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-1 md:mb-2">
                         Email Address *
                       </label>
                       <Input
@@ -143,14 +154,14 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                         onChange={handleChange}
                         required
                         placeholder="john@example.com"
-                        className="w-full"
+                        className="w-full text-base h-12 md:h-10"
                       />
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-1 md:mb-2">
                         Phone Number
                       </label>
                       <Input
@@ -159,11 +170,11 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+1 (555) 123-4567"
-                        className="w-full"
+                        className="w-full text-base h-12 md:h-10"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-1 md:mb-2">
                         Company Name
                       </label>
                       <Input
@@ -172,14 +183,14 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="Your Company"
-                        className="w-full"
+                        className="w-full text-base h-12 md:h-10"
                       />
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-1 md:mb-2">
                         Service Needed *
                       </label>
                       <select
@@ -187,7 +198,7 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                         value={formData.service}
                         onChange={handleChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-3 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
                       >
                         <option value="">Select a service</option>
                         {services.map((service) => (
@@ -198,14 +209,14 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-1 md:mb-2">
                         Budget Range
                       </label>
                       <select
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-3 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
                       >
                         <option value="">Select budget range</option>
                         {budgetRanges.map((range) => (
@@ -218,7 +229,7 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-1 md:mb-2">
                       Project Details *
                     </label>
                     <Textarea
@@ -226,16 +237,16 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      rows={5}
+                      rows={4}
                       placeholder="Tell us about your project requirements, goals, and timeline..."
-                      className="w-full"
+                      className="w-full text-base min-h-[120px]"
                     />
                   </div>
 
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-blue-600 hover:bg-blue-700 py-3 transition-colors"
+                    className="w-full bg-blue-600 hover:bg-blue-700 py-3 md:py-2 transition-colors text-base"
                   >
                     {isSubmitting ? (
                       <>
