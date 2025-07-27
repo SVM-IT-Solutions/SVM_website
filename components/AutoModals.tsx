@@ -8,7 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
-import emailjs from "emailjs-com";
+import emailjs from '@emailjs/browser';
+
 
 const services = [
   "Web Development",

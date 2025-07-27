@@ -13,7 +13,8 @@ import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageSquare, Calendar,
 import Image from "next/image"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import emailjs from "emailjs-com"
+import emailjs from '@emailjs/browser';
+
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
