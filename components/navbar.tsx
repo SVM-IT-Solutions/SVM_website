@@ -61,7 +61,9 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className={`hidden lg:flex items-center space-x-8  ${
+                scrolled ? "" : "bg-black/20 backdrop-blur-md rounded-md p-2 px-4"
+              }`}>
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -98,14 +100,14 @@ export default function Navbar() {
             <SheetContent side="right" className="w-80">
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center space-x-2">
-                  <div className="bg-blue-600 p-2 rounded-lg">
-                    <Code2 className="h-6 w-6 text-white" />
+                  <div className="bg-blue-100 p-2 rounded-lg">
+                    <img src="/logo.png" alt="Logo" className="h-10 w-10" />
                   </div>
                   <span className="text-xl font-bold">SVM IT SOLUTION</span>
                 </div>
-                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
+                {/* <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                   <X className="h-6 w-6" />
-                </Button>
+                </Button> */}
               </div>
 
               <nav className="flex flex-col space-y-4">

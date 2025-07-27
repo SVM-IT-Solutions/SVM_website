@@ -217,6 +217,9 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
+              <div className="rounded-md shadow-lg overflow-hidden">
+                <Image src="/contactus.jpg" alt="Contact Us" layout="responsive" width={700} height={475} />
+              </div>
               <Card className="shadow-xl">
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">Tell Us About Your Project</h2>

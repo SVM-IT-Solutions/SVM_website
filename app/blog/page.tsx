@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Calendar, User, ArrowRight, Clock } from "lucide-react"
-import Image from "next/image"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Calendar, User, ArrowRight, Clock } from "lucide-react";
+import Image from "next/image";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6 },
-}
+};
 
 const staggerContainer = {
   animate: {
@@ -21,41 +21,46 @@ const staggerContainer = {
       staggerChildren: 0.1,
     },
   },
-}
+};
 
 export default function BlogPage() {
   const blogPosts = [
-{
-  id: 1,
-  title: "Getting Started with Docker: Simplifying Containerization for Modern Development",
-  excerpt:
-    "Learn the fundamentals of Docker and how containerization can streamline your development workflow by making applications portable, scalable, and easy to deploy.",
-  image: "/blog/docker.jpg?height=300&width=400&text=Web+Development+Trends+2024",
-  author: "Shubham Singh",
-  date: "December 06, 2025",
-  readTime: "3 min read",
-  category: "Devops",
-  link: "https://getting-started-with-docker.hashnode.dev/getting-started-with-docker-simplifying-containerization-for-modern-development?ref=peerlist",
-  featured: true,
-},
+    {
+      id: 1,
+      title:
+        "Getting Started with Docker: Simplifying Containerization for Modern Development",
+      excerpt:
+        "Learn the fundamentals of Docker and how containerization can streamline your development workflow by making applications portable, scalable, and easy to deploy.",
+      image:
+        "/blog/docker.jpg?height=300&width=400&text=Web+Development+Trends+2024",
+      author: "Shubham Singh",
+      date: "December 06, 2025",
+      readTime: "3 min read",
+      category: "Devops",
+      link: "https://getting-started-with-docker.hashnode.dev/getting-started-with-docker-simplifying-containerization-for-modern-development?ref=peerlist",
+      featured: true,
+    },
 
-   {
-  id: 2,
-  title: "Why Developers Are Moving to Bun.js: A Faster JavaScript Runtime for the Modern Web",
-  excerpt: "Discover why Bun.js is gaining traction among developers as a blazing-fast alternative to Node.js and how it’s reshaping the future of JavaScript runtime performance.",
-  image: "/blog/bun.webp?height=300&width=400&text=SEO+Best+Practices",
-  author: "Shubham Singh",
-  date: "June 05, 2025",
-  readTime: "2 min read",
-  category: "JavaScript",
-  link: "https://shubh1515.medium.com/why-developers-are-moving-to-bun-js-a-faster-javascript-runtime-for-the-modern-web-a71c51ddeaaf",
-  featured: true,
-},
+    {
+      id: 4,
+      title:
+        "Why Developers Are Moving to Bun.js: A Faster JavaScript Runtime for the Modern Web",
+      excerpt:
+        "Discover why Bun.js is gaining traction among developers as a blazing-fast alternative to Node.js and how it’s reshaping the future of JavaScript runtime performance.",
+      image: "/blog/bun.webp?height=300&width=400&text=SEO+Best+Practices",
+      author: "Shubham Singh",
+      date: "June 05, 2025",
+      readTime: "2 min read",
+      category: "JavaScript",
+      link: "https://shubh1515.medium.com/why-developers-are-moving-to-bun-js-a-faster-javascript-runtime-for-the-modern-web-a71c51ddeaaf",
+      featured: false,
+    },
 
     {
       id: 3,
       title: "Building Voice Applications with Vapi",
-      excerpt: "Voice AI is transforming how businesses interact with customers, automate workflows, and enhance user experiences.",
+      excerpt:
+        "Voice AI is transforming how businesses interact with customers, automate workflows, and enhance user experiences.",
       image: "/blog/vapi.png?height=300&width=400&text=Mobile+First+Design",
       author: "Shubham Singh",
       date: "July 21, 2025",
@@ -64,21 +69,25 @@ export default function BlogPage() {
       link: "https://getting-started-with-docker.hashnode.dev/building-voice-applications-with-vapi",
       featured: false,
     },
-    {
-      id: 4,
-      title: "Building Scalable React Applications",
-      excerpt: "Best practices for creating React applications that can grow with your business needs.",
-      image: "/placeholder.svg?height=300&width=400&text=Scalable+React+Apps",
-      author: "Sarah Chen",
-      date: "December 8, 2023",
-      readTime: "8 min read",
-      category: "Development",
-      featured: false,
-    },
+   {
+  id: 2,
+  title: "PM2: The Ultimate Process Manager for Node.js Applications",
+  excerpt:
+    "Learn how PM2 simplifies Node.js application management with process monitoring, automatic restarts, and load balancing.",
+  image: "/blog/pm2.jpg?height=300&width=400&text=PM2+for+Node.js",
+  author: "Shubham Singh",
+  date: "July 25, 2025",
+  readTime: "6 min read",
+  category: "Devops",
+  link: "https://getting-started-with-docker.hashnode.dev/pm2-the-ultimate-process-manager-for-nodejs-applications",
+  featured: true,
+}
+,
     {
       id: 5,
       title: "The Complete Guide to E-commerce SEO",
-      excerpt: "Optimize your online store for search engines and drive more organic traffic to your products.",
+      excerpt:
+        "Optimize your online store for search engines and drive more organic traffic to your products.",
       image: "/placeholder.svg?height=300&width=400&text=E-commerce+SEO+Guide",
       author: "Michael Rodriguez",
       date: "December 5, 2023",
@@ -89,18 +98,20 @@ export default function BlogPage() {
     {
       id: 6,
       title: "UI/UX Design Principles for Better Conversions",
-      excerpt: "Learn how to design user interfaces that not only look great but also convert visitors into customers.",
-      image: "/placeholder.svg?height=300&width=400&text=UI+UX+Design+Principles",
+      excerpt:
+        "Learn how to design user interfaces that not only look great but also convert visitors into customers.",
+      image:
+        "/placeholder.svg?height=300&width=400&text=UI+UX+Design+Principles",
       author: "Emily Davis",
       date: "December 3, 2023",
       readTime: "6 min read",
       category: "Design",
       featured: false,
     },
-  ]
+  ];
 
-  const categories = ["All", "Web Development", "SEO", "Design", "Development"]
-  const featuredPosts = blogPosts.filter((post) => post.featured)
+  const categories = ["All", "Web Development", "SEO", "Design", "Development"];
+  const featuredPosts = blogPosts.filter((post) => post.featured);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
@@ -115,13 +126,15 @@ export default function BlogPage() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <Badge className="mb-4 bg-white/20 text-white hover:bg-white/30">Our Blog</Badge>
+            <Badge className="mb-4 bg-white/20 text-white hover:bg-white/30">
+              Our Blog
+            </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Insights & Expertise in Digital Innovation
             </h1>
             <p className="text-xl mb-8 opacity-90">
-              Stay updated with the latest trends, tips, and insights from our team of experts in web development, SEO,
-              and digital marketing.
+              Stay updated with the latest trends, tips, and insights from our
+              team of experts in web development, SEO, and digital marketing.
             </p>
           </motion.div>
         </div>
@@ -137,10 +150,15 @@ export default function BlogPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <Badge className="mb-4 bg-blue-100 text-blue-800">Featured Articles</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Latest Insights</h2>
+            <Badge className="mb-4 bg-blue-100 text-blue-800">
+              Featured Articles
+            </Badge>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Latest Insights
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our most popular and recent articles covering the latest in technology and digital marketing.
+              Our most popular and recent articles covering the latest in
+              technology and digital marketing.
             </p>
           </motion.div>
 
@@ -164,10 +182,14 @@ export default function BlogPage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <div className="absolute top-4 right-4">
-                        <Badge className="bg-yellow-500 text-white">Featured</Badge>
+                        <Badge className="bg-yellow-500 text-white">
+                          Featured
+                        </Badge>
                       </div>
                       <div className="absolute bottom-4 left-4 right-4">
-                        <Badge className="bg-blue-600 text-white mb-2">{post.category}</Badge>
+                        <Badge className="bg-blue-600 text-white mb-2">
+                          {post.category}
+                        </Badge>
                       </div>
                     </div>
 
@@ -193,10 +215,14 @@ export default function BlogPage() {
                           {post.readTime}
                         </div>
                       </div>
-                     <a href={post.link} target="_blank" rel="noopener noreferrer">
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                        Read More <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
+                      <a
+                        href={post.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                          Read More <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
                       </a>
                     </div>
                   </CardContent>
@@ -217,10 +243,15 @@ export default function BlogPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <Badge className="mb-4 bg-purple-100 text-purple-800">All Articles</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Explore Our Knowledge Base</h2>
+            <Badge className="mb-4 bg-purple-100 text-purple-800">
+              All Articles
+            </Badge>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Explore Our Knowledge Base
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Browse through our complete collection of articles, tutorials, and insights.
+              Browse through our complete collection of articles, tutorials, and
+              insights.
             </p>
           </motion.div>
 
@@ -244,7 +275,9 @@ export default function BlogPage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <div className="absolute top-4 right-4">
-                        <Badge className="bg-blue-600 text-white">{post.category}</Badge>
+                        <Badge className="bg-blue-600 text-white">
+                          {post.category}
+                        </Badge>
                       </div>
                     </div>
 
@@ -252,7 +285,9 @@ export default function BlogPage() {
                       <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
                         {post.title}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                        {post.excerpt}
+                      </p>
 
                       <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
                         <div className="flex items-center">
@@ -266,11 +301,20 @@ export default function BlogPage() {
                       </div>
 
                       <div className="flex items-center justify-between">
-                        <span className="text-xs text-gray-500">{post.date}</span>
-                        <a href={post.link} target="_blank" rel="noopener noreferrer">
-                        <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-                          Read More
-                        </Button>
+                        <span className="text-xs text-gray-500">
+                          {post.date}
+                        </span>
+                        <a
+                          href={post.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Button
+                            size="sm"
+                            className="bg-blue-600 hover:bg-blue-700"
+                          >
+                            Read More
+                          </Button>
                         </a>
                       </div>
                     </div>
@@ -291,10 +335,12 @@ export default function BlogPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl font-bold mb-6">Stay Updated with Our Latest Insights</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Stay Updated with Our Latest Insights
+            </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              Subscribe to our newsletter and get the latest articles, tips, and industry insights delivered to your
-              inbox.
+              Subscribe to our newsletter and get the latest articles, tips, and
+              industry insights delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input
@@ -302,7 +348,10 @@ export default function BlogPage() {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
               />
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8">
+              <Button
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-gray-100 px-8"
+              >
                 Subscribe
               </Button>
             </div>
@@ -312,5 +361,5 @@ export default function BlogPage() {
 
       <Footer />
     </div>
-  )
+  );
 }
