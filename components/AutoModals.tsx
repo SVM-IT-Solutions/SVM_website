@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
+import emailjs from "emailjs-com";
 
 const services = [
   "Web Development",
@@ -69,33 +70,48 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
   };
 
   const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      console.log("Form submitted:", formData);
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      setSubmitSuccess(true);
-      setTimeout(() => {
-        onClose();
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          service: "",
-          budget: "",
-          message: ""
-        });
-        setSubmitSuccess(false);
-      }, 2000);
-    } catch (error) {
-      console.error("Submission error:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const result = await emailjs.send(
+      'service_4mllidh',     // e.g. 'service_xxxxx'
+      'template_jt5e1yd',    // e.g. 'template_abcd123'
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        service: formData.service,
+        budget: formData.budget,
+        message: formData.message,
+      },
+      't8KkbygttOWHkTyld'       // e.g. 'ABC123xyz456'
+    );
+
+    console.log("Email sent successfully:", result.text);
+
+    setSubmitSuccess(true);
+    setTimeout(() => {
+      onClose();
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "",
+        budget: "",
+        message: ""
+      });
+      setSubmitSuccess(false);
+    }, 2000);
+  } catch (error) {
+    console.error("EmailJS error:", error);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   if (!isOpen) return null;
 

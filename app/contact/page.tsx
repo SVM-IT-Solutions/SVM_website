@@ -13,6 +13,7 @@ import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageSquare, Calendar,
 import Image from "next/image"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import emailjs from "emailjs-com"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -49,16 +50,44 @@ export default function ContactPage() {
     })
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+  try {
+    const result = await emailjs.send(
+     'service_4mllidh',     // e.g. 'service_xxxxx'
+      'template_jt5e1yd',    // e.g. 'template_abcd123'
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        service: formData.service,
+        budget: formData.budget,
+        message: formData.message,
+      },
+      't8KkbygttOWHkTyld'       // e.g. 'ABC123xyz456'
+    );
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    console.log("Email successfully sent!", result.text);
+    setIsSubmitted(true);
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      service: "",
+      budget: "",
+      message: "",
+    });
+  } catch (error) {
+    console.error("Failed to send email:", error);
+  } finally {
+    setIsSubmitting(false);
   }
+};
+
 
   const contactInfo = [
     {
@@ -217,9 +246,6 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="rounded-md shadow-lg overflow-hidden">
-                <Image src="/contactus.jpg" alt="Contact Us" layout="responsive" width={700} height={475} />
-              </div>
               <Card className="shadow-xl">
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">Tell Us About Your Project</h2>
