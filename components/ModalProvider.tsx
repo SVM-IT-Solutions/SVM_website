@@ -9,7 +9,7 @@ export default function ModalProvider({
 }: {
   children: React.ReactNode
 }) {
-  const { isOpen, closeModal } = useAutoModal(10);
+  const { isOpen, closeModal } = useAutoModal(20); // Adjust the delay as needed
   return (
     <>
       {children}

@@ -94,7 +94,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email Us",
-      details: ["info@svmitsolutions.com", "support@svmitsolutions.com"],
+      details: ["info@svmitsolution.com", "support@svmitsolution.com"],
       description: "Send us an email anytime",
     },
     {
@@ -247,6 +247,14 @@ const handleSubmit = async (e: React.FormEvent) => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
+              <Image
+                src="/contactus.jpg"
+                alt="Contact Us"
+                layout="responsive"
+                width={700}
+                height={475}
+                className="rounded-lg shadow-lg"
+              />
               <Card className="shadow-xl">
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">Tell Us About Your Project</h2>
