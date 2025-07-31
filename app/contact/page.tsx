@@ -101,7 +101,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us",
       details: ["+1 709 506 1935 ", ""],
-      description: "Mon-Fri from 10am to 7pm",
+      description: "Mon-Sat from 7pm to 3pm",
     },
     {
       icon: <MapPin className="h-6 w-6" />,
@@ -112,7 +112,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     {
       icon: <Clock className="h-6 w-6" />,
       title: "Working Hours",
-      details: ["Mon - Fri: 10:00 AM - 7:00 PM"],
+      details: ["Mon - Fri : 7:00 PM - 3:00 AM"],
       description: "We're here when you need us",
     },
   ]

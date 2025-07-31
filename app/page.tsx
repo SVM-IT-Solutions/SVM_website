@@ -1,9 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, ChangeEvent, FormEvent } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import emailjs from '@emailjs/browser';
+
 import { Badge } from "@/components/ui/badge"
 import {
   ArrowRight,
@@ -17,11 +19,13 @@ import {
   CheckCircle,
   Star,
   Play,
+  Send,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import { EmailJSResponseStatus } from "@emailjs/browser"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -37,10 +41,97 @@ const staggerContainer = {
   },
 }
 
+const formservices = [
+  "Web Development",
+  "Mobile App Development",
+  "UI/UX Design",
+  "Digital Marketing",
+  "SEO Services",
+  "Other"
+] as const;
+
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  service: string;
+  budget: string;
+  message: string;
+};
+const budgetRanges = [
+  "under - $1,000",
+  "$1000 - $2000",
+  "$2000 - $4000",
+  "$4000 - $8000",
+  "$8000+",
+  "Not sure yet"
+] as const;
+
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
+
+   const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    budget: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+   const handleSubmit = async (e: FormEvent) => {
+   e.preventDefault();
+   setIsSubmitting(true);
+ 
+   try {
+     const result = await emailjs.send(
+       'service_4mllidh',     // e.g. 'service_xxxxx'
+       'template_jt5e1yd',    // e.g. 'template_abcd123'
+       {
+         from_name: formData.name,
+         from_email: formData.email,
+         phone: formData.phone,
+         company: formData.company,
+         service: formData.service,
+         budget: formData.budget,
+         message: formData.message,
+       },
+       't8KkbygttOWHkTyld'       // e.g. 'ABC123xyz456'
+     );
+ 
+     console.log("Email sent successfully:", result.text);
+ 
+     setSubmitSuccess(true);
+     setTimeout(() => {
+    
+       setFormData({
+         name: "",
+         email: "",
+         phone: "",
+         company: "",
+         service: "",
+         budget: "",
+         message: ""
+       });
+       setSubmitSuccess(false);
+     }, 2000);
+   } catch (error) {
+     console.error("EmailJS error:", error);
+   } finally {
+     setIsSubmitting(false);
+   }
+ };
 
  const heroSlides = [
   {
@@ -181,100 +272,245 @@ const portfolio = [
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <motion.div className="absolute inset-0 z-0" style={{ y }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20" />
-          <Image
-            src={heroSlides[currentSlide].image || "/placeholder.svg"}
-            alt="Hero background"
-            fill
-            className="object-cover"
-            priority
-          />
-        </motion.div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-purple-900/70" />
+        <div 
+          className="absolute inset-0 bg-cover bg-center transition-all duration-1000"
+          style={{
+            backgroundImage: `url(${heroSlides[currentSlide].image})`
+          }}
+        />
+      </div>
 
-        <div className="container mx-auto px-10 z-10 relative p-10 ">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 z-10 relative py-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left Side - Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
+          >
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center lg:text-left"
+              key={currentSlide}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">
-                  {heroSlides[currentSlide].subtitle}
-                </Badge>
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                  {heroSlides[currentSlide].title}
-                </h1>
-                <p className="text-xl text-gray-300 mb-8 max-w-2xl">{heroSlides[currentSlide].description}</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-              >
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-                  <Link href="/contact">Get Started</Link>
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="px-8 py-3 bg-white">
-                  <Play className="mr-2 h-5 w-5" />
-                  <Link href="/portfolio">View Our Work</Link>
-                </Button>
-              </motion.div>
+              <div className="inline-flex items-center px-3 py-1 mb-4 text-sm font-medium text-blue-800 bg-blue-100 rounded-full">
+                {heroSlides[currentSlide].subtitle}
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                {heroSlides[currentSlide].title}
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl">
+                {heroSlides[currentSlide].description}
+              </p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              {/* <div className="relative z-10">
-                <Image
-                  src="/home/hero1.jpg?height=500&width=600&text=Development+Workspace"
-                  alt="Development workspace"
-                  width={600}
-                  height={500}
-                  className="rounded-2xl shadow-2xl"
-                />
+              <button className="inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+                Get Started
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
+              <button className="inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-lg transition-colors">
+                <Play className="mr-2 h-5 w-5" />
+                View Our Work
+              </button>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Side - Transparent Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="w-full max-w-md mx-auto lg:max-w-none"
+          >
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl rounded-lg p-6 m-[3rem]">
+              {submitSuccess ? (
                 <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-                  className="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-center py-8"
                 >
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-sm font-medium">Live Project</span>
+                  <div className="mb-4">
+                    <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
                   </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
+                  <p className="text-gray-200">Your message has been sent successfully. We'll get back to you soon!</p>
                 </motion.div>
-              </div> */}
-            </motion.div>
-          </div>
-        </div>
+              ) : (
+                <>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-6 text-center">
+                    Transform Your Vision Into Reality
+                  </h3>
+                  
+                  <div className="space-y-4">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-200 mb-2">
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          placeholder="John Doe"
+                          className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white/20"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-200 mb-2">
+                          Email *
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          placeholder="john@example.com"
+                          className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white/20"
+                        />
+                      </div>
+                    </div>
 
-        {/* Slide indicators */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-          {heroSlides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                index === currentSlide ? "bg-blue-600 w-8" : "bg-white/50"
-              }`}
-            />
-          ))}
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-200 mb-2">
+                          Phone
+                        </label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="+1 (555) 123-4567"
+                          className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white/20"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-200 mb-2">
+                          Company
+                        </label>
+                        <input
+                          type="text"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleChange}
+                          placeholder="Your Company"
+                          className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white/20"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-200 mb-2">
+                          Service *
+                        </label>
+                        <select
+                          name="service"
+                          value={formData.service}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white/20"
+                        >
+                          <option value="" className="text-gray-900">Select a service</option>
+                          {formservices.map((service) => (
+                            <option key={service} value={service} className="text-gray-900">
+                              {service}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-200 mb-2">
+                          Budget
+                        </label>
+                        <select
+                          name="budget"
+                          value={formData.budget}
+                          onChange={handleChange}
+                          className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white/20"
+                        >
+                          <option value="" className="text-gray-900">Select budget</option>
+                          {budgetRanges.map((range) => (
+                            <option key={range} value={range} className="text-gray-900">
+                              {range}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-200 mb-2">
+                        Project Details *
+                      </label>
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows={3}
+                        placeholder="Tell us about your project..."
+                        className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white/20 resize-none"
+                      />
+                    </div>
+
+                    <button
+                      onClick={handleSubmit}
+                      disabled={isSubmitting}
+                      className="w-full bg-blue-600 hover:bg-blue-700 py-3 px-4 text-white rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Message
+                          <Send className="ml-2 h-4 w-4" />
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </>
+              )}
+            </div>
+          </motion.div>
         </div>
-      </section>
+      </div>
+
+      {/* Slide indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+        {heroSlides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide ? "bg-blue-600 w-8" : "bg-white/50 hover:bg-white/70"
+            }`}
+          />
+        ))}
+      </div>
+    </section>
 
       {/* Stats Section */}
       <section className="py-16 bg-white">
