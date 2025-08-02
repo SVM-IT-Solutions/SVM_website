@@ -291,7 +291,7 @@ const portfolio = [
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left lg:ml-10"
           >
             <motion.div
               key={currentSlide}
@@ -334,7 +334,7 @@ const portfolio = [
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-full max-w-md mx-auto lg:max-w-none"
           >
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl rounded-lg p-6 m-[3rem]">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl rounded-lg p-6 lg:m-[3rem]">
               {submitSuccess ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
