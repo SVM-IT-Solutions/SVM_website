@@ -1,26 +1,35 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageSquare, Calendar, Users } from "lucide-react"
-import Image from "next/image"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
-import emailjs from '@emailjs/browser';
-
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle,
+  MessageSquare,
+  Calendar,
+  Users,
+} from "lucide-react";
+import Image from "next/image";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import emailjs from "@emailjs/browser";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6 },
-}
+};
 
 const staggerContainer = {
   animate: {
@@ -28,7 +37,7 @@ const staggerContainer = {
       staggerChildren: 0.1,
     },
   },
-}
+};
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -39,83 +48,86 @@ export default function ContactPage() {
     service: "",
     budget: "",
     message: "",
-  })
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
-
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-
-  try {
-    const result = await emailjs.send(
-     'service_4mllidh',     // e.g. 'service_xxxxx'
-      'template_jt5e1yd',    // e.g. 'template_abcd123'
-      {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        company: formData.company,
-        service: formData.service,
-        budget: formData.budget,
-        message: formData.message,
-      },
-      't8KkbygttOWHkTyld'       // e.g. 'ABC123xyz456'
-    );
-
-    console.log("Email successfully sent!", result.text);
-    setIsSubmitted(true);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      service: "",
-      budget: "",
-      message: "",
     });
-  } catch (error) {
-    console.error("Failed to send email:", error);
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const result = await emailjs.send(
+        "service_4mllidh", // e.g. 'service_xxxxx'
+        "template_jt5e1yd", // e.g. 'template_abcd123'
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          service: formData.service,
+          budget: formData.budget,
+          message: formData.message,
+        },
+        "t8KkbygttOWHkTyld" // e.g. 'ABC123xyz456'
+      );
+
+      console.log("Email successfully sent!", result.text);
+      setIsSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "",
+        budget: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Failed to send email:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const contactInfo = [
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email Us",
-      details: ["info@svmitsolution.com", "support@svmitsolution.com"],
-      description: "Send us an email anytime",
+      details: ["info@svmitsolution.com"],
+      // description: "Send us an email anytime",
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us",
       details: ["+1 709 506 1935 ", ""],
-      description: "Mon-Sat from 7pm to 3pm",
+      // description: "Mon-Sat from 7pm to 3pm",
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Visit Us",
-      details: ["Sector-63 Noida", "India"],
-      description: "Come say hello at our office",
+      details: ["Sector-63 Noida, India"],
+      // description: "Come say hello at our office",
     },
     {
       icon: <Clock className="h-6 w-6" />,
       title: "Working Hours",
       details: ["Mon - Fri : 7:00 PM - 3:00 AM"],
-      description: "We're here when you need us",
+      // description: "We're here when you need us",
     },
-  ]
+  ];
 
   const services = [
     "Web Development",
@@ -125,7 +137,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     "E-commerce Solutions",
     "UI/UX Design",
     "Other",
-  ]
+  ];
 
   const budgetRanges = [
     "Under $1,000",
@@ -134,13 +146,14 @@ const handleSubmit = async (e: React.FormEvent) => {
     "$4000 - $8000",
     "$8000+",
     "Let's discuss",
-  ]
+  ];
 
   const processSteps = [
     {
       icon: <MessageSquare className="h-8 w-8" />,
       title: "Initial Consultation",
-      description: "We'll discuss your project requirements and goals in detail.",
+      description:
+        "We'll discuss your project requirements and goals in detail.",
     },
     {
       icon: <Users className="h-8 w-8" />,
@@ -157,7 +170,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       title: "Development & Delivery",
       description: "We'll build your solution and deliver exceptional results.",
     },
-  ]
+  ];
 
   if (isSubmitted) {
     return (
@@ -176,15 +189,17 @@ const handleSubmit = async (e: React.FormEvent) => {
                   <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="h-10 w-10 text-green-600" />
                   </div>
-                  <h1 className="text-3xl font-bold text-gray-900 mb-4">Thank You for Your Message!</h1>
+                  <h1 className="text-3xl font-bold text-gray-900 mb-4">
+                    Thank You for Your Message!
+                  </h1>
                   <p className="text-lg text-gray-600 mb-8">
-                    We've received your inquiry and will get back to you within 24 hours. Our team is excited to discuss
-                    your project!
+                    We've received your inquiry and will get back to you within
+                    24 hours. Our team is excited to discuss your project!
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button
                       onClick={() => {
-                        setIsSubmitted(false)
+                        setIsSubmitted(false);
                         setFormData({
                           name: "",
                           email: "",
@@ -193,7 +208,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                           service: "",
                           budget: "",
                           message: "",
-                        })
+                        });
                       }}
                       className="bg-blue-600 hover:bg-blue-700"
                     >
@@ -208,7 +223,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         </div>
         <Footer />
       </div>
-    )
+    );
   }
 
   return (
@@ -224,13 +239,15 @@ const handleSubmit = async (e: React.FormEvent) => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <Badge className="mb-4 bg-white/20 text-white hover:bg-white/30">Get In Touch</Badge>
+            <Badge className="mb-4 bg-white/20 text-white hover:bg-white/30">
+              Get In Touch
+            </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Let's Build Something Amazing Together
             </h1>
             <p className="text-xl mb-8 opacity-90">
-              Ready to transform your business with cutting-edge digital solutions? We're here to help you every step of
-              the way.
+              Ready to transform your business with cutting-edge digital
+              solutions? We're here to help you every step of the way.
             </p>
           </motion.div>
         </div>
@@ -257,12 +274,16 @@ const handleSubmit = async (e: React.FormEvent) => {
               />
               <Card className="shadow-xl">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Tell Us About Your Project</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                    Tell Us About Your Project
+                  </h2>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Full Name *
+                        </label>
                         <Input
                           type="text"
                           name="name"
@@ -274,7 +295,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Email Address *
+                        </label>
                         <Input
                           type="email"
                           name="email"
@@ -289,7 +312,9 @@ const handleSubmit = async (e: React.FormEvent) => {
 
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Phone Number
+                        </label>
                         <Input
                           type="tel"
                           name="phone"
@@ -300,7 +325,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Company Name
+                        </label>
                         <Input
                           type="text"
                           name="company"
@@ -314,7 +341,9 @@ const handleSubmit = async (e: React.FormEvent) => {
 
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Service Needed *</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Service Needed *
+                        </label>
                         <select
                           name="service"
                           value={formData.service}
@@ -331,7 +360,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Budget Range</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Budget Range
+                        </label>
                         <select
                           name="budget"
                           value={formData.budget}
@@ -349,7 +380,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Project Details *</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Project Details *
+                      </label>
                       <Textarea
                         name="message"
                         value={formData.message}
@@ -361,7 +394,11 @@ const handleSubmit = async (e: React.FormEvent) => {
                       />
                     </div>
 
-                    <Button type="submit" disabled={isSubmitting} className="w-full bg-blue-600 hover:bg-blue-700 py-3">
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-blue-600 hover:bg-blue-700 py-3"
+                    >
                       {isSubmitting ? (
                         <>
                           <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
@@ -388,10 +425,12 @@ const handleSubmit = async (e: React.FormEvent) => {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                  Get In Touch
+                </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  We're here to help you succeed. Reach out to us through any of these channels, and we'll get back to
-                  you promptly.
+                  We're here to help you succeed. Reach out to us through any of
+                  these channels, and we'll get back to you promptly.
                 </p>
               </div>
 
@@ -406,11 +445,13 @@ const handleSubmit = async (e: React.FormEvent) => {
                     transition={{ delay: index * 0.1 }}
                   >
                     <Card className="hover:shadow-lg transition-shadow">
-                      <CardContent className="p-6">
+                      <CardContent className="p-4">
                         <div className="flex items-start space-x-4">
                           <div className="text-blue-600 mt-1">{info.icon}</div>
                           <div>
-                            <h3 className="font-semibold text-gray-900 mb-1">{info.title}</h3>
+                            <h3 className="font-semibold text-gray-900 mb-1">
+                              {info.title}
+                            </h3>
                             <div className="space-y-1">
                               {info.details.map((detail, idx) => (
                                 <p key={idx} className="text-gray-700">
@@ -418,13 +459,32 @@ const handleSubmit = async (e: React.FormEvent) => {
                                 </p>
                               ))}
                             </div>
-                            <p className="text-sm text-gray-500 mt-2">{info.description}</p>
+                            {/* <p className="text-sm text-gray-500 mt-2">{info.description}</p> */}
                           </div>
                         </div>
                       </CardContent>
                     </Card>
                   </motion.div>
                 ))}
+                <motion.div
+                  variants={fadeInUp}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                  transition={{ delay: contactInfo.length * 0.1 }}
+                >
+                  <Card className="overflow-hidden">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14008.677922226045!2d77.39072144999999!3d28.6246822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa041b72a3a0ff871%3A0x687c7f8ec1f6e4c5!2sSVM%20IT%20Solution!5e0!3m2!1sen!2sin!4v1754588636483!5m2!1sen!2sin"
+                      width="100%"
+                      height="300"
+                      style={{ border: 0 }}
+                      // allowFullScreen="h"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </Card>
+                </motion.div>
               </div>
 
               {/* <div className="mt-8">
@@ -451,8 +511,12 @@ const handleSubmit = async (e: React.FormEvent) => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <Badge className="mb-4 bg-blue-100 text-blue-800">Our Process</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">What Happens Next?</h2>
+            <Badge className="mb-4 bg-blue-100 text-blue-800">
+              Our Process
+            </Badge>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              What Happens Next?
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Here's what you can expect after you reach out to us.
             </p>
@@ -472,8 +536,12 @@ const handleSubmit = async (e: React.FormEvent) => {
                     <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                       <div className="text-blue-600">{step.icon}</div>
                     </div>
-                    <div className="text-sm font-bold text-blue-600 mb-2">STEP {index + 1}</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                    <div className="text-sm font-bold text-blue-600 mb-2">
+                      STEP {index + 1}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">
+                      {step.title}
+                    </h3>
                     <p className="text-gray-600">{step.description}</p>
                   </CardContent>
                 </Card>
@@ -485,5 +553,5 @@ const handleSubmit = async (e: React.FormEvent) => {
 
       <Footer />
     </div>
-  )
+  );
 }

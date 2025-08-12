@@ -43,7 +43,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white lg:p-10">
       {/* Newsletter Section */}
-      <div className="border-b border-gray-800">
+      {/* <div className="border-b border-gray-800">
         <div className="container mx-auto px-4 py-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <motion.div
@@ -74,7 +74,7 @@ export default function Footer() {
             </motion.div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
@@ -104,7 +104,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-400">
                 <Mail className="h-5 w-5 text-blue-600" />
-                <span>info@svmitsolutions.com</span>
+                <span>info@svmitsolution.com</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Phone className="h-5 w-5 text-blue-600" />
