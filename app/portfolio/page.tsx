@@ -41,7 +41,7 @@ export default function PortfolioPage() {
     {
       id: 1,
       title: "BuildingPlanner",
-      category: "Architectural & Design Services",
+      category: "Web Development",
       description:
         "A Bangalore-based platform offering custom house plans, floor plans, 3D elevations, and ready-to-build home designs using WordPress.",
       image:
@@ -56,7 +56,7 @@ export default function PortfolioPage() {
     {
       id: 2,
       title: "Job Application Portal",
-      category: "Web Application",
+      category: "Web Development",
       description:
         "A scalable job app allowing users to apply for jobs, upload resumes, and receive notifications.",
       image: "/home/job.avif?height=400&width=600&text=Job+Application+Portal",
@@ -73,7 +73,7 @@ export default function PortfolioPage() {
     {
       id: 3,
       title: "Chai Cloud India Website",
-      category: "Company Website",
+      category: "Web Development",
       description:
         "A responsive website for Chai Cloud India, showcasing services, locations, and contact options.",
       image:
@@ -110,7 +110,7 @@ export default function PortfolioPage() {
     {
       id: 5,
       title: "Airways International Pvt. Ltd.",
-      category: "Logistics & Courier Services",
+      category: "Web Development",
       description:
         "A logistics and courier provider offering door-to-door deliveries, air cargo, and parcel tracking services with a WordPress-powered website.",
       image:
@@ -128,7 +128,7 @@ export default function PortfolioPage() {
     {
       id: 6,
       title: "The Pink Weave",
-      category: "Ethical Fashion & Handmade Accessories",
+      category: "E-commerce",
       description:
         "An artisan-led e-commerce brand offering handcrafted accessories such as hairbands, earrings, purses, and bridal pieces, built on Shopify.",
       image: "/home/pinkwave.png?height=400&width=600&text=The+Pink+Weave",
@@ -145,11 +145,11 @@ export default function PortfolioPage() {
     {
       id: 7,
       title: "Albylis Stone",
-      category: "Quartz & Stone Worktop Supplier",
+      category: "Web Development",
       description:
         "A family-run UK business offering high-quality quartz, marble, granite, Silestone, and Dekton worktops—plus supply and fitting services—with precision and integrity via a Shopify storefront.",
       image: "/home/albylis.png?height=400&width=600&text=Albylis+Stone",
-      technologies: ["Shopify", "Liquid", "JavaScript", "HTML", "CSS"],
+      technologies: ["Wordpress", "Elementor", "JavaScript", "HTML", "CSS"],
       liveUrl: "https://albylisstone.co.uk/",
       githubUrl: "",
       results: [
@@ -157,7 +157,7 @@ export default function PortfolioPage() {
         "Design consultation to installation workflow",
         "Lifetime warranty and integrity-based pricing",
       ],
-      featured: true,
+      featured: false,
     },
 
     {
