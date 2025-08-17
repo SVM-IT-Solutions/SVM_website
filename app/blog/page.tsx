@@ -69,20 +69,19 @@ export default function BlogPage() {
       link: "https://getting-started-with-docker.hashnode.dev/building-voice-applications-with-vapi",
       featured: false,
     },
-   {
-  id: 2,
-  title: "PM2: The Ultimate Process Manager for Node.js Applications",
-  excerpt:
-    "Learn how PM2 simplifies Node.js application management with process monitoring, automatic restarts, and load balancing.",
-  image: "/blog/pm2.jpg?height=300&width=400&text=PM2+for+Node.js",
-  author: "Shubham Singh",
-  date: "July 25, 2025",
-  readTime: "6 min read",
-  category: "Devops",
-  link: "https://getting-started-with-docker.hashnode.dev/pm2-the-ultimate-process-manager-for-nodejs-applications",
-  featured: true,
-}
-,
+    {
+      id: 2,
+      title: "PM2: The Ultimate Process Manager for Node.js Applications",
+      excerpt:
+        "Learn how PM2 simplifies Node.js application management with process monitoring, automatic restarts, and load balancing.",
+      image: "/blog/pm2.jpg?height=300&width=400&text=PM2+for+Node.js",
+      author: "Shubham Singh",
+      date: "July 25, 2025",
+      readTime: "6 min read",
+      category: "Devops",
+      link: "https://getting-started-with-docker.hashnode.dev/pm2-the-ultimate-process-manager-for-nodejs-applications",
+      featured: true,
+    },
     {
       id: 5,
       title: "The Complete Guide to E-commerce SEO",

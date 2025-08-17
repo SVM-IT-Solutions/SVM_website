@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github, ArrowRight, Filter } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github, ArrowRight, Filter } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6 },
-}
+};
 
 const staggerContainer = {
   animate: {
@@ -23,71 +23,145 @@ const staggerContainer = {
       staggerChildren: 0.1,
     },
   },
-}
+};
 
 export default function PortfolioPage() {
-  const [activeFilter, setActiveFilter] = useState("All")
+  const [activeFilter, setActiveFilter] = useState("All");
 
-  const filters = ["All", "Web Development", "Mobile Apps", "E-commerce", "SEO", "UI/UX Design"]
+  const filters = [
+    "All",
+    "Web Development",
+    "Mobile Apps",
+    "E-commerce",
+    "SEO",
+    "UI/UX Design",
+  ];
 
   const projects = [
-     {
-    id: 1,
-    title: "Blogging Platform",
-    category: "Full-Stack Web Development",
-    description: "A feature-rich blogging website with user authentication, post creation, editing, and comment functionality.",
-    image: "/home/blog.jpg?height=400&width=600&text=Blogging+Platform",
-    technologies: ["React", "Node.js", "Express", "MongoDB"],
-    liveUrl: "https://mern-blog-o6qn.onrender.com/",
-    githubUrl: "https://github.com/shubhsingh1515/mern-blog",
-    results: ["Multi-user support", "SEO-optimized blogs", "Secure authentication"],
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Job Application Portal",
-    category: "Web Application",
-    description: "A scalable job app allowing users to apply for jobs, upload resumes, and receive notifications.",
-    image: "/home/job.avif?height=400&width=600&text=Job+Application+Portal",
-    technologies: ["React Native", "Tailwind CSS", "MongoDB", "Firebase"],
-    liveUrl: "#",
-    githubUrl: "#",
-    results: ["Real-time notifications", "Resume upload", "Mobile responsive"],
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Chai Cloud India Website",
-    category: "Company Website",
-    description: "A responsive website for Chai Cloud India, showcasing services, locations, and contact options.",
-    image: "/home/chai.png?height=400&width=600&text=Chai+Cloud+India+Website",
-    technologies: ["React", "Tailwind", "JavaScript", "Vite"],
-    liveUrl: "https://www.chaicloudindia.com/",
-    githubUrl: "#",
-    results: ["Improved local visibility", "Fast load times", "Modern responsive design"],
-    featured: true,
-  },
-    
- {
-  id: 4,
-  title: "Disha Convent School Website",
-  category: "Web Development",
-  description:
-    "A responsive school website featuring admission information, faculty profiles, event updates, and contact details, built with HTML, CSS, JavaScript, and Bootstrap.",
-  image: "/portfolio/disha.png?height=400&width=600&text=School+Website",
-  technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-  liveUrl: "https://www.dishaconventschool.com/",
-  githubUrl: "#",
-  results: [
-    "Enhanced parent-school communication",
-    "30% increase in online admissions",
-    "Fully mobile responsive design"
-  ],
-  featured: true,
-},
+    {
+      id: 1,
+      title: "BuildingPlanner",
+      category: "Architectural & Design Services",
+      description:
+        "A Bangalore-based platform offering custom house plans, floor plans, 3D elevations, and ready-to-build home designs using WordPress.",
+      image:
+        "/home/buildingplanner.png?height=400&width=600&text=Building+Planner",
+      technologies: ["WordPress", "Elementor", "WooCommerce"],
+      liveUrl: "https://www.buildingplanner.in/",
+      githubUrl: "",
+      results: ["Custom house plans", "3D elevations", "WordPress-powered CMS"],
+      featured: true,
+    },
+
+    {
+      id: 2,
+      title: "Job Application Portal",
+      category: "Web Application",
+      description:
+        "A scalable job app allowing users to apply for jobs, upload resumes, and receive notifications.",
+      image: "/home/job.avif?height=400&width=600&text=Job+Application+Portal",
+      technologies: ["React Native", "Tailwind CSS", "MongoDB", "Firebase"],
+      liveUrl: "#",
+      githubUrl: "#",
+      results: [
+        "Real-time notifications",
+        "Resume upload",
+        "Mobile responsive",
+      ],
+      featured: true,
+    },
+    {
+      id: 3,
+      title: "Chai Cloud India Website",
+      category: "Company Website",
+      description:
+        "A responsive website for Chai Cloud India, showcasing services, locations, and contact options.",
+      image:
+        "/home/chai.png?height=400&width=600&text=Chai+Cloud+India+Website",
+      technologies: ["React", "Tailwind", "JavaScript", "Vite"],
+      liveUrl: "https://www.chaicloudindia.com/",
+      githubUrl: "#",
+      results: [
+        "Improved local visibility",
+        "Fast load times",
+        "Modern responsive design",
+      ],
+      featured: true,
+    },
+
+    {
+      id: 4,
+      title: "Disha Convent School Website",
+      category: "Web Development",
+      description:
+        "A responsive school website featuring admission information, faculty profiles, event updates, and contact details, built with HTML, CSS, JavaScript, and Bootstrap.",
+      image: "/portfolio/disha.png?height=400&width=600&text=School+Website",
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      liveUrl: "https://www.dishaconventschool.com/",
+      githubUrl: "#",
+      results: [
+        "Enhanced parent-school communication",
+        "30% increase in online admissions",
+        "Fully mobile responsive design",
+      ],
+      featured: true,
+    },
 
     {
       id: 5,
+      title: "Airways International Pvt. Ltd.",
+      category: "Logistics & Courier Services",
+      description:
+        "A logistics and courier provider offering door-to-door deliveries, air cargo, and parcel tracking services with a WordPress-powered website.",
+      image:
+        "/home/airwaysindia.png?height=400&width=600&text=Airways+International",
+      technologies: ["WordPress", "PHP", "MySQL", "Elementor"],
+      liveUrl: "https://airwaysinternational.in/",
+      githubUrl: "",
+      results: [
+        "Door-to-door deliveries",
+        "Air cargo services",
+        "Shipment tracking",
+      ],
+      featured: false,
+    },
+    {
+      id: 6,
+      title: "The Pink Weave",
+      category: "Ethical Fashion & Handmade Accessories",
+      description:
+        "An artisan-led e-commerce brand offering handcrafted accessories such as hairbands, earrings, purses, and bridal pieces, built on Shopify.",
+      image: "/home/pinkwave.png?height=400&width=600&text=The+Pink+Weave",
+      technologies: ["Shopify", "JavaScript", "HTML", "CSS"],
+      liveUrl: "https://thepinkweave.com/",
+      githubUrl: "",
+      results: [
+        "Handcrafted products",
+        "Women-led brand",
+        "Seamless e-commerce experience",
+      ],
+      featured: false,
+    },
+    {
+      id: 7,
+      title: "Albylis Stone",
+      category: "Quartz & Stone Worktop Supplier",
+      description:
+        "A family-run UK business offering high-quality quartz, marble, granite, Silestone, and Dekton worktops—plus supply and fitting services—with precision and integrity via a Shopify storefront.",
+      image: "/home/albylis.png?height=400&width=600&text=Albylis+Stone",
+      technologies: ["Shopify", "Liquid", "JavaScript", "HTML", "CSS"],
+      liveUrl: "https://albylisstone.co.uk/",
+      githubUrl: "",
+      results: [
+        "Premium stone worktops supply & fitting",
+        "Design consultation to installation workflow",
+        "Lifetime warranty and integrity-based pricing",
+      ],
+      featured: true,
+    },
+
+    {
+      id: 8,
       title: "FitTracker Mobile App",
       category: "Mobile Apps",
       description:
@@ -100,84 +174,87 @@ export default function PortfolioPage() {
       featured: false,
     },
     {
-      id: 6,
+      id: 9,
       title: "GreenMarket E-commerce",
       category: "E-commerce",
       description:
         "Sustainable products marketplace with advanced filtering, payment integration, and vendor management.",
-      image: "/placeholder.svg?height=400&width=600&text=GreenMarket+E-commerce",
+      image:
+        "/placeholder.svg?height=400&width=600&text=GreenMarket+E-commerce",
       technologies: ["Next.js", "Shopify", "Tailwind CSS", "Stripe"],
       liveUrl: "#",
       githubUrl: "#",
       results: ["$2M+ in sales", "150% conversion increase", "100+ vendors"],
       featured: false,
     },
-    {
-      id: 7,
-      title: "LegalFirm SEO Campaign",
-      category: "SEO",
-      description: "Complete SEO overhaul for a law firm resulting in first-page rankings for competitive keywords.",
-      image: "/placeholder.svg?height=400&width=600&text=LegalFirm+SEO+Campaign",
-      technologies: ["SEO", "Content Marketing", "Google Analytics", "SEMrush"],
-      liveUrl: "#",
-      githubUrl: "#",
-      results: ["400% organic traffic increase", "Top 3 rankings", "250% lead generation"],
-      featured: false,
-    },
-    {
-      id: 8,
-      title: "FinanceApp Dashboard",
-      category: "UI/UX Design",
-      description: "Modern financial dashboard design with intuitive data visualization and user-friendly interface.",
-      image: "/placeholder.svg?height=400&width=600&text=FinanceApp+Dashboard",
-      technologies: ["Figma", "Adobe XD", "Principle", "InVision"],
-      liveUrl: "#",
-      githubUrl: "#",
-      results: ["40% better user engagement", "25% task completion increase", "95% user satisfaction"],
-      featured: false,
-    },
-    {
-      id: 9,
-      title: "RestaurantPOS System",
-      category: "Web Development",
-      description: "Complete point-of-sale system for restaurants with inventory management and analytics.",
-      image: "/placeholder.svg?height=400&width=600&text=RestaurantPOS+System",
-      technologies: ["Vue.js", "Express.js", "MongoDB", "Socket.io"],
-      liveUrl: "#",
-      githubUrl: "#",
-      results: ["60% faster order processing", "30% cost reduction", "200+ restaurants"],
-      featured: false,
-    },
-    {
-      id: 10,
-      title: "TravelBuddy Mobile App",
-      category: "Mobile Apps",
-      description: "Travel planning and booking app with AI recommendations and social sharing features.",
-      image: "/placeholder.svg?height=400&width=600&text=TravelBuddy+Mobile+App",
-      technologies: ["Flutter", "Firebase", "Google Maps API", "AI/ML"],
-      liveUrl: "#",
-      githubUrl: "#",
-      results: ["100K+ downloads", "4.7 star rating", "70% booking conversion"],
-      featured: false,
-    },
-    {
-      id: 11,
-      title: "FashionBrand E-store",
-      category: "E-commerce",
-      description: "Luxury fashion e-commerce platform with AR try-on features and personalized recommendations.",
-      image: "/placeholder.svg?height=400&width=600&text=FashionBrand+E-store",
-      technologies: ["Shopify Plus", "AR.js", "React", "Klaviyo"],
-      liveUrl: "#",
-      githubUrl: "#",
-      results: ["300% sales increase", "45% cart abandonment reduction", "Premium brand positioning"],
-      featured: false,
-    },
-  ]
+    // {
+    //   id: 7,
+    //   title: "LegalFirm SEO Campaign",
+    //   category: "SEO",
+    //   description: "Complete SEO overhaul for a law firm resulting in first-page rankings for competitive keywords.",
+    //   image: "/placeholder.svg?height=400&width=600&text=LegalFirm+SEO+Campaign",
+    //   technologies: ["SEO", "Content Marketing", "Google Analytics", "SEMrush"],
+    //   liveUrl: "#",
+    //   githubUrl: "#",
+    //   results: ["400% organic traffic increase", "Top 3 rankings", "250% lead generation"],
+    //   featured: false,
+    // },
+    // {
+    //   id: 8,
+    //   title: "FinanceApp Dashboard",
+    //   category: "UI/UX Design",
+    //   description: "Modern financial dashboard design with intuitive data visualization and user-friendly interface.",
+    //   image: "/placeholder.svg?height=400&width=600&text=FinanceApp+Dashboard",
+    //   technologies: ["Figma", "Adobe XD", "Principle", "InVision"],
+    //   liveUrl: "#",
+    //   githubUrl: "#",
+    //   results: ["40% better user engagement", "25% task completion increase", "95% user satisfaction"],
+    //   featured: false,
+    // },
+    // {
+    //   id: 9,
+    //   title: "RestaurantPOS System",
+    //   category: "Web Development",
+    //   description: "Complete point-of-sale system for restaurants with inventory management and analytics.",
+    //   image: "/placeholder.svg?height=400&width=600&text=RestaurantPOS+System",
+    //   technologies: ["Vue.js", "Express.js", "MongoDB", "Socket.io"],
+    //   liveUrl: "#",
+    //   githubUrl: "#",
+    //   results: ["60% faster order processing", "30% cost reduction", "200+ restaurants"],
+    //   featured: false,
+    // },
+    // {
+    //   id: 10,
+    //   title: "TravelBuddy Mobile App",
+    //   category: "Mobile Apps",
+    //   description: "Travel planning and booking app with AI recommendations and social sharing features.",
+    //   image: "/placeholder.svg?height=400&width=600&text=TravelBuddy+Mobile+App",
+    //   technologies: ["Flutter", "Firebase", "Google Maps API", "AI/ML"],
+    //   liveUrl: "#",
+    //   githubUrl: "#",
+    //   results: ["100K+ downloads", "4.7 star rating", "70% booking conversion"],
+    //   featured: false,
+    // },
+    // {
+    //   id: 11,
+    //   title: "FashionBrand E-store",
+    //   category: "E-commerce",
+    //   description: "Luxury fashion e-commerce platform with AR try-on features and personalized recommendations.",
+    //   image: "/placeholder.svg?height=400&width=600&text=FashionBrand+E-store",
+    //   technologies: ["Shopify Plus", "AR.js", "React", "Klaviyo"],
+    //   liveUrl: "#",
+    //   githubUrl: "#",
+    //   results: ["300% sales increase", "45% cart abandonment reduction", "Premium brand positioning"],
+    //   featured: false,
+    // },
+  ];
 
   const filteredProjects =
-    activeFilter === "All" ? projects : projects.filter((project) => project.category === activeFilter)
+    activeFilter === "All"
+      ? projects
+      : projects.filter((project) => project.category === activeFilter);
 
-  const featuredProjects = projects.filter((project) => project.featured)
+  const featuredProjects = projects.filter((project) => project.featured);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
@@ -192,13 +269,21 @@ export default function PortfolioPage() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <Badge className="mb-4 bg-white/20 text-white hover:bg-white/30">Our Portfolio</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">Showcasing Our Best Work</h1>
+            <Badge className="mb-4 bg-white/20 text-white hover:bg-white/30">
+              Our Portfolio
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Showcasing Our Best Work
+            </h1>
             <p className="text-xl mb-8 opacity-90">
-              Explore our portfolio of successful projects that have helped businesses achieve their digital
-              transformation goals and drive measurable results.
+              Explore our portfolio of successful projects that have helped
+              businesses achieve their digital transformation goals and drive
+              measurable results.
             </p>
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+            <Button
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100"
+            >
               <Link href="/contact">Start Your Project</Link>
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -216,10 +301,15 @@ export default function PortfolioPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <Badge className="mb-4 bg-blue-100 text-blue-800">Featured Work</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Most Impactful Projects</h2>
+            <Badge className="mb-4 bg-blue-100 text-blue-800">
+              Featured Work
+            </Badge>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Our Most Impactful Projects
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              These standout projects demonstrate our ability to deliver exceptional results and drive business growth.
+              These standout projects demonstrate our ability to deliver
+              exceptional results and drive business growth.
             </p>
           </motion.div>
 
@@ -243,22 +333,35 @@ export default function PortfolioPage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                       <div className="absolute top-4 right-4">
-                        <Badge className="bg-yellow-500 text-white">Featured</Badge>
+                        <Badge className="bg-yellow-500 text-white">
+                          Featured
+                        </Badge>
                       </div>
                       <div className="absolute bottom-4 left-4 right-4">
-                        <Badge className="bg-blue-600 text-white mb-2">{project.category}</Badge>
-                        <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                        <Badge className="bg-blue-600 text-white mb-2">
+                          {project.category}
+                        </Badge>
+                        <h3 className="text-xl font-bold text-white">
+                          {project.title}
+                        </h3>
                       </div>
                     </div>
 
                     <div className="p-8">
-                      <p className="text-gray-600 mb-6">{project.description}</p>
+                      <p className="text-gray-600 mb-6">
+                        {project.description}
+                      </p>
 
                       <div className="mb-6">
-                        <h4 className="font-semibold text-gray-900 mb-3">Key Results:</h4>
+                        <h4 className="font-semibold text-gray-900 mb-3">
+                          Key Results:
+                        </h4>
                         <ul className="space-y-2">
                           {project.results.map((result, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li
+                              key={idx}
+                              className="flex items-center text-sm text-gray-600"
+                            >
                               <div className="w-2 h-2 bg-green-500 rounded-full mr-3" />
                               {result}
                             </li>
@@ -267,10 +370,16 @@ export default function PortfolioPage() {
                       </div>
 
                       <div className="mb-6">
-                        <h4 className="font-semibold text-gray-900 mb-3">Technologies:</h4>
+                        <h4 className="font-semibold text-gray-900 mb-3">
+                          Technologies:
+                        </h4>
                         <div className="flex flex-wrap gap-2">
                           {project.technologies.map((tech, idx) => (
-                            <Badge key={idx} variant="secondary" className="text-xs">
+                            <Badge
+                              key={idx}
+                              variant="secondary"
+                              className="text-xs"
+                            >
                               {tech}
                             </Badge>
                           ))}
@@ -278,14 +387,21 @@ export default function PortfolioPage() {
                       </div>
 
                       <div className="flex gap-4">
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <Button className="flex-1 bg-blue-600 hover:bg-blue-700">
                             <ExternalLink className="mr-2 h-4 w-4" />
                             Live Demo
                           </Button>
-                          </a>
-                      
-                        <Button variant="outline" className="flex-1 bg-transparent">
+                        </a>
+
+                        <Button
+                          variant="outline"
+                          className="flex-1 bg-transparent"
+                        >
                           <Github className="mr-2 h-4 w-4" />
                           View Code
                         </Button>
@@ -309,10 +425,15 @@ export default function PortfolioPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <Badge className="mb-4 bg-purple-100 text-purple-800">Complete Portfolio</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">All Our Projects</h2>
+            <Badge className="mb-4 bg-purple-100 text-purple-800">
+              Complete Portfolio
+            </Badge>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              All Our Projects
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Browse through our complete portfolio of successful projects across different industries and technologies.
+              Browse through our complete portfolio of successful projects
+              across different industries and technologies.
             </p>
           </motion.div>
 
@@ -330,7 +451,9 @@ export default function PortfolioPage() {
                 onClick={() => setActiveFilter(filter)}
                 variant={activeFilter === filter ? "default" : "outline"}
                 className={`${
-                  activeFilter === filter ? "bg-blue-600 hover:bg-blue-700 text-white" : "hover:bg-blue-50"
+                  activeFilter === filter
+                    ? "bg-blue-600 hover:bg-blue-700 text-white"
+                    : "hover:bg-blue-50"
                 }`}
               >
                 <Filter className="mr-2 h-4 w-4" />
@@ -362,21 +485,33 @@ export default function PortfolioPage() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                         <div className="absolute top-4 right-4">
-                          <Badge className="bg-blue-600 text-white">{project.category}</Badge>
+                          <Badge className="bg-blue-600 text-white">
+                            {project.category}
+                          </Badge>
                         </div>
                       </div>
 
                       <div className="p-6">
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
-                        <p className="text-gray-600 text-sm mb-4 line-clamp-2">{project.description}</p>
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">
+                          {project.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                          {project.description}
+                        </p>
 
                         <div className="mb-4">
                           <div className="flex flex-wrap gap-1">
-                            {project.technologies.slice(0, 3).map((tech, idx) => (
-                              <Badge key={idx} variant="secondary" className="text-xs">
-                                {tech}
-                              </Badge>
-                            ))}
+                            {project.technologies
+                              .slice(0, 3)
+                              .map((tech, idx) => (
+                                <Badge
+                                  key={idx}
+                                  variant="secondary"
+                                  className="text-xs"
+                                >
+                                  {tech}
+                                </Badge>
+                              ))}
                             {project.technologies.length > 3 && (
                               <Badge variant="secondary" className="text-xs">
                                 +{project.technologies.length - 3}
@@ -386,13 +521,24 @@ export default function PortfolioPage() {
                         </div>
 
                         <div className="flex gap-2">
-                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                          <Button size="sm" className="flex-1 bg-blue-600 hover:bg-blue-700">
-                            <ExternalLink className="mr-1 h-3 w-3" />
-                            View
-                          </Button>
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Button
+                              size="sm"
+                              className="flex-1 bg-blue-600 hover:bg-blue-700"
+                            >
+                              <ExternalLink className="mr-1 h-3 w-3" />
+                              View
+                            </Button>
                           </a>
-                          <Button size="sm" variant="outline" className="flex-1 bg-transparent">
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="flex-1 bg-transparent"
+                          >
                             <Github className="mr-1 h-3 w-3" />
                             Code
                           </Button>
@@ -416,12 +562,18 @@ export default function PortfolioPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl font-bold mb-6">Ready to Create Something Amazing?</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Ready to Create Something Amazing?
+            </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              Let's discuss your project and create a solution that drives real results for your business.
+              Let's discuss your project and create a solution that drives real
+              results for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3">
+              <Button
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3"
+              >
                 <Link href="/contact">Start Your Project</Link>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -439,5 +591,5 @@ export default function PortfolioPage() {
 
       <Footer />
     </div>
-  )
+  );
 }
