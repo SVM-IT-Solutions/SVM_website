@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import TechStack from "@/components/TechStack";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -588,6 +589,8 @@ export default function PortfolioPage() {
           </motion.div>
         </div>
       </section>
+
+      <TechStack />
 
       <Footer />
     </div>

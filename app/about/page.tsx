@@ -17,6 +17,7 @@ import Link from "next/link";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Head from "next/head";
+import TechStack from "@/components/TechStack";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -215,13 +216,15 @@ export default function AboutPage() {
                   digital age through innovative solutions and exceptional
                   service.
                 </p>
-                <Button
-                  size="lg"
-                  className="bg-white text-blue-600 hover:bg-gray-100"
-                >
-                  <Link href="/contact">Work With Us</Link>
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    className="bg-white text-blue-600 hover:bg-gray-100"
+                  >
+                    Work With Us
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
               </motion.div>
 
               <motion.div
@@ -430,6 +433,8 @@ export default function AboutPage() {
             </motion.div>
           </div>
         </section>
+
+        <TechStack />
 
         <Footer />
       </div>

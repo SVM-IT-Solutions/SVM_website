@@ -26,6 +26,8 @@ import Image from "next/image";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { EmailJSResponseStatus } from "@emailjs/browser";
+import Ratings from "@/components/Ratings";
+import TechStack from "@/components/TechStack";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -60,11 +62,11 @@ type FormData = {
   message: string;
 };
 const budgetRanges = [
-  "under - $1,000",
-  "$1000 - $2000",
-  "$2000 - $4000",
-  "$4000 - $8000",
-  "$8000+",
+  "under - $200",
+  "$200 - $500",
+  "$500 - $800",
+  "$800 - $1000",
+  "$1000+",
   "Not sure yet",
 ] as const;
 
@@ -389,14 +391,18 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
-                <button className="inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </button>
-                <button className="inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-lg transition-colors">
-                  <Play className="mr-2 h-5 w-5" />
-                  View Our Work
-                </button>
+                <Link href="/contact">
+                  <button className="inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+                    Get Started
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </button>
+                </Link>
+                <Link href="/portfolio">
+                  <button className="inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-lg transition-colors">
+                    <Play className="mr-2 h-5 w-5" />
+                    View Our Work
+                  </button>
+                </Link>
               </motion.div>
             </motion.div>
 
@@ -647,6 +653,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <Ratings />
+
       {/* Services Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4">
@@ -779,9 +787,9 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <Button size="lg">
-              <Link href="/portfolio">View All Projects</Link>
-            </Button>
+            <Link href="/portfolio">
+              <Button size="lg">View All Projects</Button>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -912,24 +920,30 @@ export default function HomePage() {
               Get a free consultation today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3"
-              >
-                <Link href="/contact">Start Your Project</Link>
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 bg-transparent"
-              >
-                <Link href="/contact">Contact Us</Link>
-              </Button>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3"
+                >
+                  Start Your Project
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 bg-transparent"
+                >
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
       </section>
+
+      <TechStack />
 
       <Footer />
     </div>

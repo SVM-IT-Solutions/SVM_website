@@ -24,6 +24,7 @@ import Image from "next/image";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import emailjs from "@emailjs/browser";
+import TechStack from "@/components/TechStack";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -140,11 +141,11 @@ export default function ContactPage() {
   ];
 
   const budgetRanges = [
-    "Under $1,000",
-    "$1000 - $2000",
-    "$2000 - $4000",
-    "$4000 - $8000",
-    "$8000+",
+    "Under $200",
+    "$200 - $500",
+    "$500 - $800",
+    "$800 - $1000",
+    "$1000+",
     "Let's discuss",
   ];
 
@@ -550,6 +551,8 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </section>
+
+      <TechStack /> 
 
       <Footer />
     </div>

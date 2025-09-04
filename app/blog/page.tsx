@@ -8,6 +8,7 @@ import { Calendar, User, ArrowRight, Clock } from "lucide-react";
 import Image from "next/image";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import TechStack from "@/components/TechStack";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -84,14 +85,15 @@ export default function BlogPage() {
     },
     {
       id: 5,
-      title: "The Complete Guide to E-commerce SEO",
+      title: "Building a Smart AI Calling Agent",
       excerpt:
-        "Optimize your online store for search engines and drive more organic traffic to your products.",
-      image: "/placeholder.svg?height=300&width=400&text=E-commerce+SEO+Guide",
-      author: "Michael Rodriguez",
-      date: "December 5, 2023",
-      readTime: "10 min read",
-      category: "SEO",
+        "Learn how to create an intelligent AI calling agent by integrating Vapi, Twilio, and n8n to automate customer interactions.",
+      image: "/blog/aicalling.jpg?height=300&width=400&text=AI+Calling+Agent",
+      author: "Shubham Singh",
+      date: "August 31, 2025",
+      readTime: "8 min read",
+      category: "AI/Automation",
+      link: "https://medium.com/@shubh1515/building-a-smart-ai-calling-agent-with-vapi-twilio-and-n8n-ded9d5f27c4b",
       featured: false,
     },
     {
@@ -357,6 +359,8 @@ export default function BlogPage() {
           </motion.div>
         </div>
       </section>
+
+      <TechStack />
 
       <Footer />
     </div>

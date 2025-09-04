@@ -35,9 +35,9 @@ export default function Footer() {
 
   const socialLinks = [
     { icon: <Facebook className="h-5 w-5" />, href: "#", name: "Facebook" },
-    { icon: <Twitter className="h-5 w-5" />, href: "#", name: "Twitter" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "#", name: "LinkedIn" },
-    { icon: <Instagram className="h-5 w-5" />, href: "#", name: "Instagram" },
+    { icon: <Twitter className="h-5 w-5" />, href: "https://x.com/svmitsolution", name: "Twitter" },
+    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/svm-it-solution/", name: "LinkedIn" },
+    { icon: <Instagram className="h-5 w-5" />, href: "https://www.instagram.com/svmitsolution/", name: "Instagram" },
   ]
 
   return (

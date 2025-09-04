@@ -1,25 +1,25 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, X, Code2, Phone } from "lucide-react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, X, Code2, Phone } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -28,7 +28,7 @@ export default function Navbar() {
     { name: "Portfolio", href: "/portfolio" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
-  ]
+  ];
 
   return (
     <motion.header
@@ -61,22 +61,27 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className={`hidden lg:flex items-center space-x-8  ${
-                scrolled ? "" : "bg-black/20 backdrop-blur-md rounded-md p-2 px-4"
-              }`}>
+          <nav
+            className={`hidden lg:flex items-center space-x-8  ${
+              scrolled ? "" : "bg-black/20 backdrop-blur-md rounded-md p-2 px-4"
+            }`}
+          >
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={`relative text-xl font-medium transition-colors ${
-                scrolled ? "text-black" : "text-white"
-              }   hover:text-blue-600 ${
+                  scrolled ? "text-black" : "text-white"
+                }   hover:text-blue-600 ${
                   pathname === item.href ? "text-blue-600" : "text-gray-700"
-                }`} 
+                }`}
               >
                 {item.name}
                 {pathname === item.href && (
-                  <motion.div layoutId="activeTab" className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-600" />
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-600"
+                  />
                 )}
               </Link>
             ))}
@@ -133,5 +138,5 @@ export default function Navbar() {
         </div>
       </div>
     </motion.header>
-  )
+  );
 }
