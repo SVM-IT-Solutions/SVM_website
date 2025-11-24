@@ -1,38 +1,36 @@
 import HomePage from "../components/home";
 // ✅ SEO metadata (works on server)
 export const metadata = {
-  title: "Home | Vishal Patel | Full Stack Developer",
+  title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
   description:
-    "Welcome to Vishal Patel' portfolio — a full stack developer specializing in React, Node.js, and Next.js. I create fast, scalable, and user-friendly web applications that help businesses grow online.",
+    "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
   keywords: [
-    "Vishal Patel",
-    "Full Stack Developer",
-    "Next.js Developer",
-    "React Developer",
-    "Node.js Developer",
-    "Web Development",
+    "No.1 Freelance SEO Specialist in India",
+    "Freelance SEO Specialist in India",
+    "Professional SEO Expert India",
+    "Best SEO Freelancer India",
   ],
-  authors: [{ name: "Vishal Patel", url: "https://www.vishalpatek.com" }],
+  authors: [{ name: "svm it solution", url: "" }],
   openGraph: {
-    title: "Vishal Patel | Full Stack Developer",
+    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
     description:
-      "Explore modern web projects built by Vishal Patel using React, Node.js, and Next.js.",
-    url: "https://www.vishalpatek.com",
+      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
+    url: "",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "https://svmitsolution.com/logo.png",
         width: 1200,
         height: 630,
-        alt: "Vishal Patel Portfolio",
+        alt: "SVM It Solution",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vishal Patel | Full Stack Developer",
+    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
     description:
-      "Explore modern web projects built by Vishal Patel using React, Node.js, and Next.js.",
-    images: ["/images/twitter-card.jpg"],
+      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
+    images: ["https://svmitsolution.com/logo.png"],
   },
 };
 

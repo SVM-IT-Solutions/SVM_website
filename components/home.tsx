@@ -370,19 +370,19 @@ export default function HomePage() {
 
 const testimonials = [
   {
-    name: "Ava Mitchell",
+    name: "Mahesh Kumar",
     role: "SEO Expert",
-    availability: "Available Part Time",
-    location: "Mohali",
+    availability: "Available Full Time",
+    location: "India",
     rate: "₹250/hr",
     rating: 5,
-    image: "https://randomuser.me/api/portraits/women/55.jpg",
+    image: "maheshkumar.png",
   },
   {
     name: "Liam Johnson",
     role: "SEO Specialist",
     availability: "Available Full Time",
-    location: "Bangalore",
+    location: "India",
     rate: "₹300/hr",
     rating: 4,
     image: "https://randomuser.me/api/portraits/men/33.jpg",
