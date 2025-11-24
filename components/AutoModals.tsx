@@ -12,12 +12,13 @@ import emailjs from '@emailjs/browser';
 
 
 const services = [
+   "SEO Services",
   "Web Development",
   "Mobile App Development",
   "UI/UX Design",
   "Digital Marketing",
-  "SEO Services",
-  "Other"
+  "WordPress Development"
+
 ] as const;
 
 const budgetRanges = [
@@ -28,6 +29,16 @@ const budgetRanges = [
   "$1000+",
   "Not sure yet"
 ] as const;
+
+const serviceBudgets = {
+  "SEO Services": ["$260", "$320", "$280", "$500", "$800", "$1000"],
+  "Web Development": ["$160", "$520", "$5600", "$5800", "$800", "$990"],
+  "Mobile App Development": ["$1000", "$2000", "$3000", "$4000", "$5000", "$6000"],
+  "UI/UX Design": ["$300", "$400", "$500", "$600", "$700", "$800"],
+  "Digital Marketing": ["$200", "$300", "$400", "$500", "$600", "$700"],
+  "WordPress Development": ["$150", "$250", "$350", "$450", "$550", "$650"]
+};
+
 
 type FormData = {
   name: string;
@@ -67,7 +78,25 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    if (name === 'service') {
+      // When service changes, reset budget and update service
+      setFormData(prev => ({ 
+        ...prev, 
+        service: value,
+        budget: "" // Reset budget when service changes
+      }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+  };
+
+    // Get budget ranges based on selected service
+  const getBudgetRanges = () => {
+    if (!formData.service) {
+      return []; // Return empty array if no service selected
+    }
+    return serviceBudgets[formData.service as keyof typeof serviceBudgets] || [];
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -237,7 +266,7 @@ export default function AutoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                         className="w-full px-3 py-3 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
                       >
                         <option value="">Select budget range</option>
-                        {budgetRanges.map((range) => (
+                        {getBudgetRanges().map((range) => (
                           <option key={range} value={range}>
                             {range}
                           </option>
