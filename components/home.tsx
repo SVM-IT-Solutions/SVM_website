@@ -20,6 +20,18 @@ import {
   Star,
   Play,
   Send,
+    BarChart2,
+  FileText,
+  Share2,
+  Cpu,
+  Clipboard,
+  Link as LinkIcon,
+  Briefcase,
+  Clock,
+  SearchCheck,
+  ShieldCheck,
+  Workflow,
+  Medal,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -28,6 +40,8 @@ import Footer from "@/components/footer";
 import { EmailJSResponseStatus } from "@emailjs/browser";
 import Ratings from "@/components/Ratings";
 import TechStack from "@/components/TechStack";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -137,35 +151,13 @@ export default function HomePage() {
   };
 
   const heroSlides = [
-    {
-      title: "Custom Software Development",
-      subtitle: "Tailored Solutions That Fit Your Business",
-      description:
-        "We build secure, scalable, and high-performance software customized to solve your unique business challenges.",
-      image:
-        "/home/software.jpg?height=600&width=800&text=Custom+Software+Development",
-    },
-    {
-      title: "Mobile App Development",
-      subtitle: "Seamless Experiences on Android & iOS",
-      description:
-        "From design to deployment, we develop intuitive and feature-rich mobile applications for all platforms.",
-      image:
-        "/home/mobile.jpeg?height=600&width=800&text=Mobile+App+Development",
-    },
-    {
-      title: "Website Development",
-      subtitle: "Modern, Responsive & Conversion-Focused",
-      description:
-        "We craft engaging websites that look great on all devices and turn visitors into customers.",
-      image: "/home/web1.jpeg?height=600&width=800&text=Website+Development",
-    },
+   
     {
       title: "SEO Optimization Services",
       subtitle: "Boost Visibility. Increase Traffic. Grow Revenue.",
       description:
         "Our data-driven SEO strategies help you dominate search rankings and achieve long-term online growth.",
-      image: "/home/seo.jpg?height=600&width=800&text=SEO+Optimization",
+       image: "/home/web1.jpeg?height=600&width=800&text=Website+Development",
     },
   ];
 
@@ -178,10 +170,10 @@ export default function HomePage() {
 
   const services = [
     {
-      icon: <Code className="h-8 w-8" />,
-      title: "Web Development",
+      icon: <BarChart2 className="h-8 w-8" />,
+      title: "Competitor Analysis",
       description:
-        "Custom websites and web applications built with modern technologies like React, Next.js, and Node.js.",
+        "We analyze competitors to find growth and improvement areas.",
       features: [
         "Responsive Design",
         "Fast Loading",
@@ -190,10 +182,10 @@ export default function HomePage() {
       ],
     },
     {
-      icon: <Smartphone className="h-8 w-8" />,
-      title: "Mobile App Development",
+      icon: <Search className="h-8 w-8" />,
+      title: "Keyword Research",
       description:
-        "Native and cross-platform mobile applications for iOS and Android with exceptional user experience.",
+        "We use targeted keywords in headings and titles for better SEO.",
       features: [
         "Native iOS/Android",
         "React Native",
@@ -202,10 +194,10 @@ export default function HomePage() {
       ],
     },
     {
-      icon: <Search className="h-8 w-8" />,
-      title: "SEO Optimization",
+      icon: <FileText className="h-8 w-8" />,
+      title: "On-Page Optimization",
       description:
-        "Comprehensive SEO strategies to improve your search rankings and drive organic traffic growth.",
+        "We optimize keywords, header tags, meta titles, and descriptions.",
       features: [
         "Keyword Research",
         "On-Page SEO",
@@ -214,10 +206,46 @@ export default function HomePage() {
       ],
     },
     {
-      icon: <Globe className="h-8 w-8" />,
-      title: "Digital Marketing",
+      icon: <Share2 className="h-8 w-8" />,
+      title: "Off-Page SEO",
       description:
-        "Complete digital marketing solutions including social media, PPC, and content marketing.",
+        "We offer link building, guest blogging, and social media marketing.",
+      features: [
+        "Social Media Marketing",
+        "Google Ads",
+        "Content Marketing",
+        "Analytics & Reporting",
+      ],
+    },
+    {
+      icon: <Cpu className="h-8 w-8" />,
+      title: "Technical SEO",
+      description:
+        "We optimize backend performance for faster and better rankings.",
+      features: [
+        "Social Media Marketing",
+        "Google Ads",
+        "Content Marketing",
+        "Analytics & Reporting",
+      ],
+    },
+    {
+      icon: <Clipboard className="h-8 w-8" />,
+      title: "SEO Audits",
+      description:
+        "We analyze and improve site elements for better search results.",
+      features: [
+        "Social Media Marketing",
+        "Google Ads",
+        "Content Marketing",
+        "Analytics & Reporting",
+      ],
+    },
+    {
+      icon: <LinkIcon className="h-8 w-8" />,
+      title: "Link Building",
+      description:
+        "We build high-quality backlinks to boost search rankings.",
       features: [
         "Social Media Marketing",
         "Google Ads",
@@ -226,6 +254,27 @@ export default function HomePage() {
       ],
     },
   ];
+
+  const hiringModels = [
+  {
+    icon: <Briefcase className="h-10 w-10" />,
+    title: "Project Basis",
+    description:
+      "SEO specialists are assigned well-defined projects with a fixed scope, deadline, and predetermined pricing.",
+  },
+  {
+    icon: <Globe className="h-10 w-10" />,
+    title: "Remote Basis",
+    description:
+      "Businesses hire SEO experts remotely under flexible working conditions while ensuring high-quality performance.",
+  },
+  {
+    icon: <Clock className="h-10 w-10" />,
+    title: "Hourly Basis",
+    description:
+      "SEO experts work and bill based on hourly engagement, offering flexibility and transparent cost control.",
+  },
+]
 
   const stats = [
     {
@@ -250,35 +299,79 @@ export default function HomePage() {
     },
   ];
 
-  const testimonials = [
-    {
-      name: "Ava Mitchell",
-      company: "BrightPixel Agency",
-      role: "Product Manager",
-      content:
-        "Working with this team was a game-changer. They delivered our website ahead of schedule, and the UX/UI design is stunning. We've seen a 40% increase in engagement.",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
-    },
-    {
-      name: "Liam Johnson",
-      company: "NovaTech Solutions",
-      role: "CTO",
-      content:
-        "Their backend architecture and API development helped us scale without a hitch. Performance improved drastically, and our dev team loves working with their clean codebase.",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/men/33.jpg",
-    },
-    {
-      name: "Isabella Gomez",
-      company: "MarketMuse",
-      role: "Head of Marketing",
-      content:
-        "They handled our digital marketing campaign with precision. Our leads doubled within a month and the ROI was well beyond expectations.",
-      rating: 4,
-      image: "https://randomuser.me/api/portraits/women/55.jpg",
-    },
+  const seoBenefits = [
+  {
+    icon: <SearchCheck className="h-10 w-10" />,
+    title: "SEO Expert",
+    description:
+      "Boost your rankings with skilled SEO freelancers experienced in WordPress, Shopify, React, and custom websites.",
+  },
+  {
+    icon: <ShieldCheck className="h-10 w-10" />,
+    title: "Secure and Flexible",
+    description:
+      "We focus on scalability, fast loading performance, and secure payment workflows for a seamless working experience.",
+  },
+  {
+    icon: <Workflow className="h-10 w-10" />,
+    title: "End-to-End Support",
+    description:
+      "SEO freelancers manage the complete process—from strategy and planning to execution and reporting.",
+  },
+  {
+    icon: <Medal className="h-10 w-10" />,
+    title: "Proven Experience",
+    description:
+      "Hire diverse SEO experts with years of experience and a strong track record of delivering measurable results.",
+  },
   ];
+  
+    const hireSteps = [
+    "Create an account to access our SEO freelancing.",
+    "Detail your SEO freelancing needs and requirements.",
+    "Evaluate proposals from skilled SEO freelancers.",
+    "Select the best SEO freelancer for your project.",
+    "Process payment securely through our platform.",
+  ];
+
+  const jobSteps = [
+    "Register to showcase your SEO skills.",
+    "Highlight your expertise and past work.",
+    "Find and apply for relevant SEO projects.",
+    "Secure contracts with clients seeking your services.",
+    "Get paid for your work through our secure system.",
+  ];
+
+const testimonials = [
+  {
+    name: "Mahesh Kumar",
+    role: "SEO Expert",
+    availability: "Available Full Time",
+    location: "India",
+    rate: "₹250/hr",
+    rating: 5,
+    image: "maheshkumar.png",
+  },
+  {
+    name: "Liam Johnson",
+    role: "SEO Specialist",
+    availability: "Available Full Time",
+    location: "India",
+    rate: "₹300/hr",
+    rating: 4,
+    image: "https://randomuser.me/api/portraits/men/33.jpg",
+  },
+  {
+    name: "Isabella Gomez",
+    role: "Senior SEO Analyst",
+    availability: "Available Part Time",
+    location: "Pune",
+    rate: "₹350/hr",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/women/55.jpg",
+  },
+];
+
 
   const portfolio = [
     // {
@@ -669,11 +762,10 @@ export default function HomePage() {
               Our Services
             </Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Comprehensive Digital Solutions
+              Freelance SEO Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From custom software development to strategic SEO optimization, we
-              provide end-to-end digital solutions that drive business growth.
+              Enhance Your Website's Visibility with Expert SEO Freelancers
             </p>
           </motion.div>
 
@@ -688,24 +780,18 @@ export default function HomePage() {
               <motion.div key={index} variants={fadeInUp}>
                 <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                   <CardContent className="p-8">
-                    <div className="text-blue-600 mb-6 group-hover:scale-110 transition-transform">
-                      {service.icon}
+                    <div className="mx-auto mb-6 flex items-center justify-center 
+                        h-20 w-20 rounded-full bg-blue-100 text-blue-600 
+                        group-hover:bg-blue-200 transition-all duration-300">
+                      <div className="group-hover:scale-110 transition-transform">
+                        {service.icon}
+                      </div>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    <h3 className="text-xl text-center font-bold text-gray-900 mb-4">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 mb-6">{service.description}</p>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-center text-sm text-gray-600"
-                        >
-                          <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="text-gray-600 mb-6 text-center">{service.description}</p>
+                    
                   </CardContent>
                 </Card>
               </motion.div>
@@ -714,8 +800,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section className="py-20 bg-white">
+      {/* Hire Freelance section */}
+      <section className="py-20 bg-white from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -724,15 +810,68 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <Badge className="mb-4 bg-purple-100 text-purple-800">
-              Our Work
-            </Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Featured Projects
+             Hire Freelance SEO Expert in three ways
+            </h2>
+          </motion.div>
+
+          <motion.div
+  variants={staggerContainer}
+  initial="initial"
+  whileInView="animate"
+  viewport={{ once: true }}
+  className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
+>
+  {hiringModels.map((model, index) => (
+    <motion.div key={index} variants={fadeInUp}>
+      <Card 
+        className="h-full transition-all duration-300 hover:-translate-y-2 
+        hover:bg-blue-50 hover:shadow-xl group"
+      >
+        <CardContent className="p-8">
+
+          {/* Icon Circle */}
+          <div className="mx-auto mb-6 flex items-center justify-center 
+              h-20 w-20 rounded-full bg-blue-100 text-blue-600 
+              group-hover:bg-blue-200 transition-all duration-300">
+            <div className="group-hover:scale-110 transition-transform">
+              {model.icon}
+            </div>
+          </div>
+
+          <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">
+            {model.title}
+          </h3>
+
+          <p className="text-gray-600 text-center">
+            {model.description}
+          </p>
+
+        </CardContent>
+      </Card>
+    </motion.div>
+  ))}
+</motion.div>
+
+        </div>
+      </section>
+
+
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+             Get Best SEO Experts At Your Fingertips
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore some of our recent projects that showcase our expertise
-              and commitment to excellence.
+              We let you concentrate on your strengths while our freelance SEO specialists make sure you succeed online!
             </p>
           </motion.div>
 
@@ -741,101 +880,27 @@ export default function HomePage() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
-            {portfolio.map((project, index) => (
+            {seoBenefits.map((service, index) => (
               <motion.div key={index} variants={fadeInUp}>
-                <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      width={400}
-                      height={300}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <Badge className="bg-blue-600 text-white">
-                        {project.category}
-                      </Badge>
-                    </div>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
-                      {project.title}
+                <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                  <CardContent className="p-8">
+                    <h3 className="text-xl text-primary text-center pt-18 font-bold text-gray-900 mb-4">
+                      {service.title}
                     </h3>
-                    <p className="text-gray-600 mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                    <p className="text-gray-600 mb-6 text-center">{service.description}</p>
+                    
                   </CardContent>
                 </Card>
               </motion.div>
             ))}
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Link href="/portfolio">
-              <Button size="lg">View All Projects</Button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-10 bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <Badge className="mb-4 bg-blue-100 text-blue-800">
-              Our Process
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              How We Deliver Excellence
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our proven process ensures that every project is delivered on
-              time, within budget, and exceeds expectations.
-            </p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto">
-            <Image
-              src="./service/workflow1.png"
-              alt="Process"
-              width={400}
-              height={400}
-              className="hidden md:block mx-auto w-full max-w-6xl"
-            />
-            <Image
-              src="./service/workflow2.png"
-              alt="Process Mobile"
-              width={400}
-              height={400}
-              className="md:hidden mx-auto w-full max-w-md p-4"
-            />
-          </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -844,15 +909,12 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <Badge className="mb-4 bg-green-100 text-green-800">
-              Testimonials
-            </Badge>
+            
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              What Our Clients Say
+              Hire Freelance SEO Experts
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what our satisfied clients
-              have to say about our services.
+              Find and hire top freelance SEO experts with ease and transparency.
             </p>
           </motion.div>
 
@@ -864,45 +926,220 @@ export default function HomePage() {
             className="grid md:grid-cols-3 gap-8"
           >
             {testimonials.map((testimonial, index) => (
-              <motion.div key={index} variants={fadeInUp}>
-                <Card className="h-full hover:shadow-lg transition-shadow">
-                  <CardContent className="p-8">
-                    <div className="flex mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="h-5 w-5 text-yellow-400 fill-current"
-                        />
-                      ))}
-                    </div>
-                    <p className="text-gray-600 mb-6 italic">
-                      "{testimonial.content}"
-                    </p>
-                    <div className="flex items-center">
-                      <Image
-                        src={testimonial.image || "/placeholder.svg"}
-                        alt={testimonial.name}
-                        width={50}
-                        height={50}
-                        className="rounded-full mr-4"
-                      />
-                      <div>
-                        <div className="font-semibold text-gray-900">
-                          {testimonial.name}
-                        </div>
-                        <div className="text-sm text-gray-600">
-                          {testimonial.role}, {testimonial.company}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+          <motion.div key={index} variants={fadeInUp}>
+            <Card className="relative h-full rounded-2xl hover:shadow-xl transition-all p-6 text-center">
+
+              {/* Top Right Price Badge */}
+              <div className="absolute top-4 right-4 bg-primary text-white text-sm px-3 py-1 rounded-full">
+                {testimonial.rate}
+              </div>
+
+              {/* Profile Image */}
+              <div className="flex justify-center mb-4">
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  width={100}
+                  height={100}
+                  className="rounded-full border"
+                />
+              </div>
+
+              {/* Name */}
+              <h3 className="text-xl font-semibold text-gray-900">{testimonial.name}</h3>
+
+              {/* Role */}
+              <p className="text-gray-600 mb-1">{testimonial.role}</p>
+
+              {/* Availability */}
+              <p className="text-primary font-medium mb-2">{testimonial.availability}</p>
+
+              {/* Location */}
+              <div className="flex justify-center items-center gap-1 text-gray-500 mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 11a3 3 0 100-6 3 3 0 000 6zm0 0c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z"
+                  />
+                </svg>
+                {testimonial.location}
+              </div>
+
+              {/* Rating */}
+              <div className="flex justify-center mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 text-orange-500 fill-current" />
+                ))}
+              </div>
+
+              {/* Buttons */}
+              <div className="flex justify-center gap-4 mt-4">
+                <button className="px-5 py-2 bg-primary text-white rounded-full hover:bg-orange-700 transition">
+                  View Profile
+                </button>
+                <button className="px-5 py-2 bg-primary text-white rounded-full hover:bg-orange-700 transition">
+                  Hire Me
+                </button>
+              </div>
+
+            </Card>
+          </motion.div>
+          ))}
           </motion.div>
         </div>
       </section>
 
+
+
+      <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-10">
+
+          {/* LEFT BOX */}
+          <Card className="rounded-3xl shadow-sm">
+            <CardContent className="p-10">
+              <h2 className="text-2xl font-bold text-primary mb-6">
+                Hire SEO Freelancer For Your Projects
+              </h2>
+
+              <div className="space-y-6">
+                {hireSteps.map((step, index) => (
+                  <div key={index} className="flex gap-4 items-start">
+                    <span className="text-primary font-semibold text-xl">
+                      {index + 1}.
+                    </span>
+                    <p className="text-gray-700 text-lg">{step}</p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* RIGHT BOX */}
+          <Card className="rounded-3xl shadow-sm">
+            <CardContent className="p-10">
+              <h2 className="text-2xl font-bold text-primary  mb-6">
+                Find Freelance SEO Jobs
+              </h2>
+
+              <div className="space-y-6">
+                {jobSteps.map((step, index) => (
+                  <div key={index} className="flex gap-4 items-start">
+                    <span className="text-primary font-semibold text-xl">
+                      {index + 1}.
+                    </span>
+                    <p className="text-gray-700 text-lg">{step}</p>
+                  </div>
+                ))}
+              </div>
+
+            </CardContent>
+          </Card>
+
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-gradient-to-br py-20">
+      <div className="container mx-auto px-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+          Frequently Asked Question
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+
+          {/* Left SEO Illustration */}
+          <div className="flex justify-center">
+            <Image
+              src="https://www.freelancerforseo.in/assets/images/home/footerhomeIndia.webp" // replace with your image
+              width={600}
+              height={450}
+              alt="SEO FAQ"
+              className="rounded-xl"
+            />
+          </div>
+
+          {/* Right Accordion */}
+          <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
+
+            <Accordion type="single" collapsible className="w-full">
+
+              <AccordionItem value="item-1" className="border-b">
+                <AccordionTrigger className=" data-[state=open]:text-primary font-semibold text-lg">
+                  How does this platform help us connect with top SEO freelancers?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 leading-relaxed">
+                  Freelancerforseo connects you with top SEO experts who help improve
+                  organic traffic and online visibility through link-building,
+                  on-page SEO, content strategy, keyword research, and more.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="border-b">
+                <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
+                  How can I hire a freelance SEO expert?
+                </AccordionTrigger>
+                <AccordionContent className=" data-[state=open]:text-primary text-gray-600">
+                  You can register, create project requirements, receive proposals,
+                  compare experts and select the best SEO freelancer for your needs.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="border-b">
+                <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
+                  Will the freelancer provide SEO progress reports?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600">
+                  Yes, freelancers provide regular reports including ranking,
+                  optimization updates, and performance metrics.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="border-b">
+                <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
+                  Can a hired SEO freelancer increase my brand visibility?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600">
+                  Absolutely, they use content optimization, keyword planning and
+                  link-building strategies to improve brand reach.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="border-b">
+                <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
+                  What results can I expect after hiring a freelancer?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600">
+                  Results vary, but you will see improvements in ranking, traffic
+                  and SEO health depending on your niche and competition.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6">
+                <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
+                  After hiring an SEO freelancer, how long until I see results?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600">
+                  SEO is long-term. You may notice improvements in 4–12 weeks
+                  depending on website condition and competition.
+                </AccordionContent>
+              </AccordionItem>
+
+            </Accordion>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="container mx-auto px-4 text-center">
