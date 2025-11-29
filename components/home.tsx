@@ -153,10 +153,10 @@ export default function HomePage() {
   const heroSlides = [
    
     {
-      title: "SEO Optimization Services",
+      title: "No.1 Freelance SEO Specialist in India",
       subtitle: "Boost Visibility. Increase Traffic. Grow Revenue.",
       description:
-        "Our data-driven SEO strategies help you dominate search rankings and achieve long-term online growth.",
+        "Boost your website traffic, rankings, and business growth with a top-rated Freelance SEO Specialist in India. Get tailored SEO strategies designed to deliver measurable results.",
        image: "/home/web1.jpeg?height=600&width=800&text=Website+Development",
     },
   ];
@@ -762,10 +762,10 @@ const testimonials = [
               Our Services
             </Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Freelance SEO Services
+              Professional Freelance SEO Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Enhance Your Website's Visibility with Expert SEO Freelancers
+              Boost your website’s rankings, traffic, and brand visibility with Professional Freelance SEO Services. Our expert SEO freelancers perform in-depth analysis and create tailored strategies to help your site achieve top Google positions, improved engagement, and higher conversions for long-term business growth. 
             </p>
           </motion.div>
 
@@ -871,7 +871,7 @@ const testimonials = [
              Get Best SEO Experts At Your Fingertips
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We let you concentrate on your strengths while our freelance SEO specialists make sure you succeed online!
+              Get the best SEO experts at your fingertips and focus on what you do best. Our freelance SEO specialists handle everything—from strategy to execution—ensuring your website grows, ranks higher, and succeeds online with measurable results.
             </p>
           </motion.div>
 
@@ -914,7 +914,7 @@ const testimonials = [
               Hire Freelance SEO Experts
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find and hire top freelance SEO experts with ease and transparency.
+              Hire Freelance SEO Experts effortlessly and with complete transparency. Find top-rated SEO professionals who deliver strategic, result-driven solutions to boost your rankings, traffic, and overall online growth.
             </p>
           </motion.div>
 

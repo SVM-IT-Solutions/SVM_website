@@ -10,12 +10,16 @@ export const metadata = {
     "Professional SEO Expert India",
     "Best SEO Freelancer India",
   ],
-  authors: [{ name: "svm it solution", url: "" }],
+  authors: [{ name: "svm it solution", url: "https://svmitsolution.com" }],
+  // ✅ Canonical Tag Added
+  alternates: {
+    canonical: "https://svmitsolution.com/",
+  },
   openGraph: {
     title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
     description:
       "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
-    url: "",
+    url: "https://svmitsolution.com/",
     images: [
       {
         url: "https://svmitsolution.com/logo.png",
