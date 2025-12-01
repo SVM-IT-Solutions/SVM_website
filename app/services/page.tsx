@@ -23,6 +23,8 @@ import Link from "next/link";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import TechStack from "@/components/TechStack";
+import { useRouter } from 'next/navigation';
+
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -39,6 +41,8 @@ const staggerContainer = {
 };
 
 export default function ServicesPage() {
+  const router = useRouter();
+
   const services = [
     {
       icon: <Code className="h-12 w-12" />,
@@ -60,6 +64,7 @@ export default function ServicesPage() {
         "TypeScript",
         "Tailwind CSS",
       ],
+      link:"/webdevelopment",
       startingPrice: "$799",
       image: "/service/website1.jpg",
     },
@@ -208,6 +213,7 @@ export default function ServicesPage() {
     },
   ];
 
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <Navbar />
@@ -318,9 +324,12 @@ export default function ServicesPage() {
                         </div>
                       </div>
 
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
+                     <Button 
+                      onClick={() => router.push(`${service.link}`)}
+                      className="w-full bg-blue-600 hover:bg-blue-700"
+                    >
+                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
                     </div>
                   </CardContent>
                 </Card>

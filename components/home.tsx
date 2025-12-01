@@ -58,13 +58,23 @@ const staggerContainer = {
 };
 
 const formservices = [
+   "SEO Services",
   "Web Development",
   "Mobile App Development",
   "UI/UX Design",
   "Digital Marketing",
-  "SEO Services",
-  "Other",
+  "WordPress Development"
 ] as const;
+
+// Create a mapping of services to their budget ranges
+const serviceBudgets = {
+  "SEO Services": ["$260", "$320", "$280", "$500", "$800", "$1000"],
+  "Web Development": ["$160", "$520", "$5600", "$5800", "$800", "$990"],
+  "Mobile App Development": ["$1000", "$2000", "$3000", "$4000", "$5000", "$6000"],
+  "UI/UX Design": ["$300", "$400", "$500", "$600", "$700", "$800"],
+  "Digital Marketing": ["$200", "$300", "$400", "$500", "$600", "$700"],
+  "WordPress Development": ["$150", "$250", "$350", "$450", "$550", "$650"]
+};
 
 type FormData = {
   name: string;
@@ -101,11 +111,27 @@ export default function HomePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    
+    if (name === 'service') {
+      // When service changes, reset budget and update service
+      setFormData(prev => ({ 
+        ...prev, 
+        service: value,
+        budget: "" // Reset budget when service changes
+      }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+  };
+
+    // Get budget ranges based on selected service
+  const getBudgetRanges = () => {
+    if (!formData.service) {
+      return []; // Return empty array if no service selected
+    }
+    return serviceBudgets[formData.service as keyof typeof serviceBudgets] || [];
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -644,15 +670,11 @@ const testimonials = [
                             <option value="" className="text-gray-900">
                               Select budget
                             </option>
-                            {budgetRanges.map((range) => (
-                              <option
-                                key={range}
-                                value={range}
-                                className="text-gray-900"
-                              >
-                                {range}
-                              </option>
-                            ))}
+                        {getBudgetRanges().map((range) => (
+                          <option className="text-gray-900" key={range} value={range}>
+                            {range}
+                          </option>
+                        ))}
                           </select>
                         </div>
                       </div>
