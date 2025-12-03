@@ -11,25 +11,25 @@ export default function Footer() {
 
   const footerLinks = {
     services: [
-      { name: "Web Development", href: "/services/web-development" },
-      { name: "Mobile Apps", href: "/services/mobile-apps" },
-      { name: "SEO Services", href: "/services/seo" },
-      { name: "Digital Marketing", href: "/services/digital-marketing" },
-      { name: "E-commerce", href: "/services/ecommerce" },
+      { name: "Web Development", href: "/webdevelopment" },
+      { name: "Mobile Apps", href: "/appdevelopment" },
+      { name: "SEO Services", href: "/" },
+      { name: "Digital Marketing", href: "/digital-marketing" },
+      { name: "E-commerce", href: "/ecommerce-solutions" },
     ],
     company: [
       { name: "About Us", href: "/about" },
-      { name: "Our Team", href: "/team" },
-      { name: "Careers", href: "/careers" },
+      { name: "Our Team", href: "#" },
+      { name: "Careers", href: "/#" },
       { name: "Blog", href: "/blog" },
       { name: "Contact", href: "/contact" },
     ],
     resources: [
-      { name: "Case Studies", href: "/case-studies" },
+      { name: "Case Studies", href: "#" },
       { name: "Portfolio", href: "/portfolio" },
-      { name: "Testimonials", href: "/testimonials" },
-      { name: "FAQ", href: "/faq" },
-      { name: "Support", href: "/support" },
+      { name: "Testimonials", href: "#" },
+      { name: "FAQ", href: "#" },
+      { name: "Support", href: "#" },
     ],
   }
 

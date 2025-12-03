@@ -5,6 +5,8 @@ import { CheckCircle, ArrowRight, ShoppingCart, CreditCard, Truck, Shield, BarCh
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'framer-motion';
+import Navbar from '@/components/navbar';
+import Footer from '@/components/footer';
 
 export default function EcommerceSolutionsPage() {
   const services = [
@@ -119,6 +121,7 @@ export default function EcommerceSolutionsPage() {
 
   return (
     <div className="min-h-screen bg-gray-900">
+      <Navbar/>
       {/* Hero Section with Background Image */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden text-white">
         {/* Background Image with Overlays */}
@@ -427,6 +430,7 @@ export default function EcommerceSolutionsPage() {
           </motion.div>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 }

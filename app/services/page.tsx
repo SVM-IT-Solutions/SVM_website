@@ -154,6 +154,7 @@ export default function ServicesPage() {
         "Brand Identity",
       ],
       technologies: ["Figma", "Adobe XD", "Sketch", "InVision", "Principle"],
+      link:"/uxuidesign",
       startingPrice: "$599",
       image: "/service/uiux1.jpg",
     },
