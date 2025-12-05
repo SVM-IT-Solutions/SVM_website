@@ -15,6 +15,12 @@ export const metadata = {
   alternates: {
     canonical: "https://svmitsolution.com/",
   },
+  
+  // ✅ Google Search Console Verification Added
+    other: {
+      "google-site-verification": "IRrlp0CHw9VeX4Hm-gEgs19Ho75fSJaT4L4Cu4dGM0U",
+    },
+
   openGraph: {
     title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
     description:
