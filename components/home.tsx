@@ -177,15 +177,26 @@ export default function HomePage() {
   };
 
   const heroSlides = [
-   
-    {
-      title: "No.1 Freelance SEO Specialist in India",
-      subtitle: "Boost Visibility. Increase Traffic. Grow Revenue.",
-      description:
-        "Boost your website traffic, rankings, and business growth with a top-rated Freelance SEO Specialist in India. Get tailored SEO strategies designed to deliver measurable results.",
-       image: "/home/web1.jpeg?height=600&width=800&text=Website+Development",
-    },
-  ];
+  {
+    title: "No.1 Freelance SEO Specialist in India",
+    subtitle: "Boost Visibility. Increase Traffic. Grow Revenue.",
+    description: (
+      <>
+        Boost your website traffic, rankings, and business growth with a top-rated{" "}
+        
+        <a
+          href="https://mahesh.svmitsolution.com/"
+          className="font-bold text-white relative underline-animation"
+        >
+          Freelance SEO Specialist in India
+        </a>
+
+        . Get tailored SEO strategies designed to deliver measurable results.
+      </>
+    ),
+    image: "/home/web1.jpeg?height=600&width=800&text=Website+Development",
+  },
+];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -374,27 +385,33 @@ const testimonials = [
     role: "SEO Expert",
     availability: "Available Full Time",
     location: "India",
-    rate: "₹250/hr",
+    rate: "$8/hr",
+    portfolio: "https://mahesh.svmitsolution.com/",
     rating: 5,
     image: "maheshkumar.png",
+    linkedin: "https://www.linkedin.com/in/maheshkumar63/",
   },
   {
-    name: "Liam Johnson",
-    role: "SEO Specialist",
-    availability: "Available Full Time",
-    location: "India",
-    rate: "₹300/hr",
-    rating: 4,
-    image: "https://randomuser.me/api/portraits/men/33.jpg",
-  },
-  {
-    name: "Isabella Gomez",
-    role: "Senior SEO Analyst",
+    name: "Shubham Singh",
+    role: "Software Developer",
     availability: "Available Part Time",
-    location: "Pune",
-    rate: "₹350/hr",
+    location: "Noida, India",
+    rate: "$10/hr",
     rating: 5,
-    image: "https://randomuser.me/api/portraits/women/55.jpg",
+    portfolio: "https://shubhtech.vercel.app/",
+    image: "/portfolio/photo.jpeg",
+    linkedin: "https://www.linkedin.com/in/shubhsingh1515/",
+  },
+  {
+    name: "Vishal Patel",
+    role: "Full Stack Developer",
+    availability: "Available Part Time",
+    location: "Delhi, India",
+    rate: "$10/hr",
+    portfolio: "https://vishaltech.vercel.app/",
+    rating: 5,
+    image: "https://vishaltech.vercel.app/office1.jpg",
+    linkedin: "https://www.linkedin.com/in/vishal-patel05/",
   },
 ];
 
@@ -963,7 +980,7 @@ const testimonials = [
                   alt={testimonial.name}
                   width={100}
                   height={100}
-                  className="rounded-full border"
+                   className="w-24 h-24 rounded-full object-cover border"
                 />
               </div>
 
@@ -1004,12 +1021,12 @@ const testimonials = [
 
               {/* Buttons */}
               <div className="flex justify-center gap-4 mt-4">
-                <button className="px-5 py-2 bg-primary text-white rounded-full hover:bg-orange-700 transition">
+                <a href={testimonial.portfolio} target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-primary text-white rounded-full hover:bg-orange-700 transition">
                   View Profile
-                </button>
-                <button className="px-5 py-2 bg-primary text-white rounded-full hover:bg-orange-700 transition">
+                </a>
+                <a href={testimonial.linkedin} target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-primary text-white rounded-full hover:bg-orange-700 transition">
                   Hire Me
-                </button>
+                </a>
               </div>
 
             </Card>
@@ -1081,7 +1098,7 @@ const testimonials = [
           {/* Left SEO Illustration */}
           <div className="flex justify-center">
             <Image
-              src="https://www.freelancerforseo.in/assets/images/home/footerhomeIndia.webp" // replace with your image
+              src="frequently-asked-question.png" // replace with your image
               width={600}
               height={450}
               alt="SEO FAQ"

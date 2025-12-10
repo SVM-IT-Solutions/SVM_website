@@ -39,6 +39,59 @@ export default function PortfolioPage() {
   ];
 
   const projects = [
+     {
+    id: 1,
+    title: "Branding GSAP Website",
+    category: "Web Development",
+    description:
+      "A smooth and interactive GSAP-powered branding website featuring scroll animations, section transitions, and a modern UI built with React and Tailwind.",
+    image: "/portfolio/branding.png?height=400&width=600&text=Branding+GSAP",
+    technologies: ["Next.js", "TypeScript", "GSAP", "Tailwind CSS"],
+    liveUrl: "https://branding-gsap.vercel.app/",
+    githubUrl: "",
+    results: [
+      "Smooth GSAP scroll animations",
+      "High-performance UI",
+      "Responsive & modern layout",
+    ],
+    featured: true,
+  },
+
+  {
+    id: 2,
+    title: "Dreelio Website",
+    category: "Web Development",
+    description:
+      "A creative and responsive multi-section website built with modern animations, optimized loading, and a clean professional layout.",
+    image: "/portfolio/dreelio.png?height=400&width=600&text=Dreelio",
+    technologies: ["Next.js", "GSAP", "Tailwind CSS"," Framer Motion"],
+    liveUrl: "https://dreelio-gamma.vercel.app/",
+    githubUrl: "",
+    results: [
+      "Responsive multi-section design",
+      "Professional UI/UX animations",
+      "Optimized for performance",
+    ],
+    featured: true,
+  },
+
+  {
+    id: 3,
+    title: "Ardent Leap Website",
+    category: "Web Development",
+    description:
+      "A visually appealing and minimalistic website built with React, featuring smooth transitions, responsive design, and clean branding elements.",
+    image: "/portfolio/ardent.png?height=400&width=600&text=Ardent+Leap",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "GSAP", "Framer Motion"],
+    liveUrl: "https://ardent-leap.vercel.app/",
+    githubUrl: "",
+    results: [
+      "Clean and minimalistic UI",
+      "Smooth GSAP animations",
+      "Fully responsive across all screens",
+    ],
+    featured: true,
+  },  
     {
       id: 1,
       title: "BuildingPlanner",
@@ -293,7 +346,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -399,13 +452,7 @@ export default function PortfolioPage() {
                           </Button>
                         </a>
 
-                        <Button
-                          variant="outline"
-                          className="flex-1 bg-transparent"
-                        >
-                          <Github className="mr-2 h-4 w-4" />
-                          View Code
-                        </Button>
+                     
                       </div>
                     </div>
                   </CardContent>
@@ -414,7 +461,7 @@ export default function PortfolioPage() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* All Projects */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -535,14 +582,14 @@ export default function PortfolioPage() {
                               View
                             </Button>
                           </a>
-                          <Button
+                          {/* <Button
                             size="sm"
                             variant="outline"
                             className="flex-1 bg-transparent"
                           >
                             <Github className="mr-1 h-3 w-3" />
                             Code
-                          </Button>
+                          </Button> */}
                         </div>
                       </div>
                     </CardContent>

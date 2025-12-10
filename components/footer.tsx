@@ -187,7 +187,7 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
               className="text-gray-400 text-sm mb-4 md:mb-0"
             >
-              © {currentYear} SVM IT Solutions. All rights reserved.
+              © {currentYear}  <a href="/">SVM IT Solutions.</a> All rights reserved.
             </motion.p>
 
             <motion.div

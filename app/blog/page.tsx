@@ -39,7 +39,7 @@ export default function BlogPage() {
       readTime: "3 min read",
       category: "Devops",
       link: "https://getting-started-with-docker.hashnode.dev/getting-started-with-docker-simplifying-containerization-for-modern-development?ref=peerlist",
-      featured: true,
+      featured: false,
     },
 
     {
@@ -94,26 +94,28 @@ export default function BlogPage() {
       readTime: "8 min read",
       category: "AI/Automation",
       link: "https://medium.com/@shubh1515/building-a-smart-ai-calling-agent-with-vapi-twilio-and-n8n-ded9d5f27c4b",
-      featured: false,
+      featured: true,
     },
     {
       id: 6,
-      title: "UI/UX Design Principles for Better Conversions",
+      title: "JSON vs TOON: The New Battle of Data Formats in the AI Era",
       excerpt:
-        "Learn how to design user interfaces that not only look great but also convert visitors into customers.",
+        "Explore the emerging competition between JSON and TOON data formats, and how TOON is optimized for AI applications with enhanced efficiency and performance.",
       image:
-        "/placeholder.svg?height=300&width=400&text=UI+UX+Design+Principles",
-      author: "Emily Davis",
-      date: "December 3, 2023",
-      readTime: "6 min read",
-      category: "Design",
+        "/blog/toon.png?height=300&width=400&text=UI+UX+Design+Principles",
+      author: "Shubham Singh",
+      date: "November 16, 2025",
+      readTime: "4 min read",
+      category: "Development",
+      link:"https://shubh1515.medium.com/json-vs-toon-the-new-battle-of-data-formats-in-the-ai-era-bf072655adfe",
       featured: false,
     },
   ];
 
+   blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
   const categories = ["All", "Web Development", "SEO", "Design", "Development"];
   const featuredPosts = blogPosts.filter((post) => post.featured);
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <Navbar />
