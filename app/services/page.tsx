@@ -118,7 +118,7 @@ export default function ServicesPage() {
         "Analytics & Reporting",
       ],
       technologies: ["Google Ads", "Facebook Ads", "Mailchimp", "HubSpot"],
-      link:"digital-marketing",
+      link:"/digital-marketing",
       startingPrice: "$499/month",
       image: "/service/dm1.jpg",
     },

@@ -140,8 +140,8 @@ export default function HomePage() {
 
     try {
       const result = await emailjs.send(
-        "service_4mllidh", // e.g. 'service_xxxxx'
-        "template_jt5e1yd", // e.g. 'template_abcd123'
+        "service_cpimxvx", // e.g. 'service_xxxxx'
+        "template_1jx7d4f", // e.g. 'template_abcd123'
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -151,7 +151,7 @@ export default function HomePage() {
           budget: formData.budget,
           message: formData.message,
         },
-        "t8KkbygttOWHkTyld" // e.g. 'ABC123xyz456'
+        "p9vpnTJbkTsiHCJi5" // e.g. 'ABC123xyz456'
       );
 
       console.log("Email sent successfully:", result.text);
