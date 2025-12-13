@@ -1,32 +1,28 @@
 import DigitalMarketingPage from "@/components/digital-marketing";
+
 // ✅ SEO metadata (works on server)
 export const metadata = {
-  title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+  title: "Best Digital Marketing Freelancer in India | Svmitsolution",
   description:
-    "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
+    "Hire the best digital marketing freelancer in India to grow your business. Expert in SEO, social media, PPC & content marketing for fast, measurable results.",
   keywords: [
-    "No.1 Freelance SEO Specialist in India",
-    "Freelance SEO Specialist in India",
-    "Professional SEO Expert India",
-    "Best SEO Freelancer India",
+    "Digital Marketing Freelancer Hyderabad",
+    "Best SEO Freelancer Hyderabad",
+    "Freelance Digital Marketer Hyderabad",
+    "Top Marketing Expert Hyderabad",
   ],
   authors: [{ name: "svm it solution", url: "https://svmitsolution.com" }],
 
   // ✅ Canonical Tag
   alternates: {
-    canonical: "https://svmitsolution.com/",
-  },
-
-  // ✅ Google Search Console Verification
-  other: {
-    "google-site-verification": "IRrlp0CHw9VeX4Hm-gEgs19Ho75fSJaT4L4Cu4dGM0U",
+    canonical: "https://svmitsolution.com/digital-marketing",
   },
 
   openGraph: {
-    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+    title: "Top Digital Marketing Freelancer in India | Svmitsolution",
     description:
-      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
-    url: "https://svmitsolution.com/",
+      "Hire the best digital marketing freelancer in Hyderabad for SEO, social media, PPC & content marketing to grow your business fast.",
+    url: "https://svmitsolution.com/digital-marketing",
     images: [
       {
         url: "https://svmitsolution.com/logo.png",
@@ -39,13 +35,37 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+    title: "Top Digital Marketing Freelancer in Hyderabad | Svmitsolution",
     description:
-      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
+      "Hire the best digital marketing freelancer in Hyderabad for SEO, social media, PPC & content marketing to grow your business fast.",
     images: ["https://svmitsolution.com/logo.png"],
+  },
+
+  // ✅ Social Profiles
+  icons: {
+    instagram: "https://www.instagram.com/svmitsolution/",
+    linkedin: "https://www.linkedin.com/in/svm-it-solution/",
+    x: "https://x.com/svmitsolution",
+  },
+
+  // ✅ JSON-LD Schema Markup
+  metadataBase: new URL("https://svmitsolution.com/"),
+  schema: {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "SVM It Solution",
+    url: "https://svmitsolution.com/digital-marketing",
+    logo: "https://svmitsolution.com/logo.png",
+    sameAs: [
+      "https://www.instagram.com/svmitsolution/",
+      "https://www.linkedin.com/in/svm-it-solution/",
+      "https://x.com/svmitsolution",
+    ],
+    description:
+      "Hire the best digital marketing freelancer in Hyderabad. Expert in SEO, social media, PPC & content marketing for measurable growth.",
   },
 };
 
-export default function Page(){
-  return(<DigitalMarketingPage/>)
+export default function Page() {
+  return <DigitalMarketingPage />;
 }

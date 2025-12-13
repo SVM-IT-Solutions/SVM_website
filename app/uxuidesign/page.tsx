@@ -1,20 +1,21 @@
 import UIUXDesignPage from "@/components/uxuidesign";
+
 // ✅ SEO metadata (works on server)
 export const metadata = {
-  title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+  title: "Best Freelance UI/UX Designer in Delhi, Noida & Varanasi | Svmitsolution",
   description:
-    "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
+    "Hire the top freelance UI/UX designer in Delhi, Noida, and Varanasi. Create stunning, user-friendly interfaces that boost engagement and conversions. Get a free consultation today!",
   keywords: [
-    "No.1 Freelance SEO Specialist in India",
-    "Freelance SEO Specialist in India",
-    "Professional SEO Expert India",
-    "Best SEO Freelancer India",
+    "Freelance UI UX Designer Delhi",
+    "Freelance UI UX Designer Noida",
+    "Freelance UI UX Designer Varanasi",
+    "Best UI UX Designer India",
   ],
-  authors: [{ name: "svm it solution", url: "https://svmitsolution.com" }],
+  authors: [{ name: "SVM IT Solution", url: "https://svmitsolution.com" }],
 
   // ✅ Canonical Tag
   alternates: {
-    canonical: "https://svmitsolution.com/",
+    canonical: "https://svmitsolution.com/uxuidesign",
   },
 
   // ✅ Google Search Console Verification
@@ -22,29 +23,52 @@ export const metadata = {
     "google-site-verification": "IRrlp0CHw9VeX4Hm-gEgs19Ho75fSJaT4L4Cu4dGM0U",
   },
 
+  // ✅ Open Graph
   openGraph: {
-    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+    title: "Best Freelance UI/UX Designer in Delhi, Noida & Varanasi | Svmitsolution",
     description:
-      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
-    url: "https://svmitsolution.com/",
+      "Hire the top freelance UI/UX designer in Delhi, Noida, and Varanasi. Stunning, user-friendly interfaces to boost engagement & conversions.",
+    url: "https://svmitsolution.com/uxuidesign",
     images: [
       {
         url: "https://svmitsolution.com/logo.png",
         width: 1200,
         height: 630,
-        alt: "SVM It Solution",
+        alt: "SVM IT Solution",
       },
     ],
+    siteName: "SVM IT Solution",
   },
 
+  // ✅ Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+    title: "Best Freelance UI/UX Designer in Delhi, Noida & Varanasi | Svmitsolution",
     description:
-      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
+      "Hire the top freelance UI/UX designer in Delhi, Noida, and Varanasi. Stunning, user-friendly interfaces to boost engagement & conversions.",
     images: ["https://svmitsolution.com/logo.png"],
+    site: "@svmitsolution",
+    creator: "@svmitsolution",
   },
+
+  // ✅ JSON-LD Schema Markup
+  schema: [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "SVM IT Solution",
+      "url": "https://svmitsolution.com/uxuidesign",
+      "logo": "https://svmitsolution.com/logo.png",
+      "sameAs": [
+        "https://www.instagram.com/svmitsolution/",
+        "https://www.linkedin.com/in/svm-it-solution/",
+        "https://x.com/svmitsolution"
+      ],
+      "description": "Top freelance UI/UX designer in Delhi, Noida, and Varanasi. Professional UI/UX services to boost engagement and conversions."
+    }
+  ]
 };
-export default function Page(){
-  return(<UIUXDesignPage/>)
+
+export default function Page() {
+  return <UIUXDesignPage />;
 }

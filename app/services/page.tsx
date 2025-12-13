@@ -1,51 +1,135 @@
 import ServicesPage from "@/components/services";
-// ✅ SEO metadata (works on server)
+
 export const metadata = {
-  title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+  title: "Digital Services by Mahesh Kumar | No.1 Freelance SEO Specialist in India",
   description:
-    "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
+    "Explore expert digital services by Mahesh Kumar (SVM IT Solution). We offer Web Development, App Development, and No.1 Freelance SEO services in India to boost your business growth.",
   keywords: [
     "No.1 Freelance SEO Specialist in India",
     "Freelance SEO Specialist in India",
+    "Web Development Services India",
+    "App Development Freelancer",
     "Professional SEO Expert India",
-    "Best SEO Freelancer India",
+    "Mahesh Kumar SEO",
+    "SVM IT Solution Services",
   ],
-  authors: [{ name: "svm it solution", url: "https://svmitsolution.com" }],
-
-  // ✅ Canonical Tag
-  alternates: {
-    canonical: "https://svmitsolution.com/",
+  authors: [
+    { name: "Mahesh Kumar", url: "https://svmitsolution.com" },
+    { name: "SVM IT Solution", url: "https://svmitsolution.com" }
+  ],
+  creator: "Mahesh Kumar",
+  publisher: "SVM IT Solution",
+  
+  // ✅ Explicitly telling robots to index this page
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 
-  // ✅ Google Search Console Verification
+  alternates: {
+    canonical: "https://svmitsolution.com/services",
+  },
+
   other: {
     "google-site-verification": "IRrlp0CHw9VeX4Hm-gEgs19Ho75fSJaT4L4Cu4dGM0U",
   },
 
   openGraph: {
-    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+    type: "website",
+    title: "Digital Services by Mahesh Kumar | No.1 Freelance SEO Specialist in India",
     description:
-      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
-    url: "https://svmitsolution.com/",
+      "Hire Mahesh Kumar for top-tier Web Development, App Creation, and SEO Optimization. Trusted Freelance SEO Specialist delivering real results.",
+    url: "https://svmitsolution.com/services",
+    siteName: "SVM IT Solution",
     images: [
       {
         url: "https://svmitsolution.com/logo.png",
         width: 1200,
         height: 630,
-        alt: "SVM It Solution",
+        alt: "SVM IT Solution - Digital Services",
       },
     ],
+    locale: "en_IN",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+    site: "@svmitsolution", 
+    creator: "@svmitsolution",
+    title: "Digital Services by Mahesh Kumar | No.1 Freelance SEO Specialist",
     description:
-      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
+      "Looking for the best digital services? Hire Mahesh Kumar, India's No.1 Freelance SEO Specialist for Web, App, and Marketing solutions.",
     images: ["https://svmitsolution.com/logo.png"],
   },
 };
 
-export default function Page(){
-  return <ServicesPage/>
+export default function Page() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      // 1. Organization/Service Schema
+      {
+        "@type": "ProfessionalService",
+        "name": "SVM IT Solution",
+        "image": "https://svmitsolution.com/logo.png",
+        "url": "https://svmitsolution.com/services",
+        "priceRange": "₹₹",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "IN"
+        },
+        // ✅ Added Area Served (India)
+        "areaServed": {
+          "@type": "Country",
+          "name": "India"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Mahesh Kumar",
+          "jobTitle": "Freelance SEO Specialist & Developer",
+          "url": "https://svmitsolution.com"
+        },
+        "sameAs": [
+          "https://www.instagram.com/svmitsolution/",
+          "https://www.linkedin.com/in/svm-it-solution/",
+          "https://x.com/svmitsolution"
+        ]
+      },
+      // 2. ✅ Added Breadcrumb Schema (Site Hierarchy)
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://svmitsolution.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://svmitsolution.com/services"
+          }
+        ]
+      }
+    ]
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ServicesPage />
+    </>
+  );
 }

@@ -1,52 +1,100 @@
 import EcommerceSolutionsPage from "@/components/ecommerce-solutions";
+import Script from "next/script";
 
 // ✅ SEO metadata (works on server)
 export const metadata = {
-  title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+  title: "Freelance eCommerce Website Developer in India | Svmitsolution",
   description:
-    "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
+    "Hire a freelance eCommerce website development specialist in India. Build fast, secure, mobile-friendly online stores that boost sales & UX.",
   keywords: [
-    "No.1 Freelance SEO Specialist in India",
-    "Freelance SEO Specialist in India",
-    "Professional SEO Expert India",
-    "Best SEO Freelancer India",
+    "Freelance eCommerce Website Developer in India",
+    "eCommerce Website Development India",
+    "Freelance Web Developer India",
+    "Online Store Development India",
   ],
-  authors: [{ name: "svm it solution", url: "https://svmitsolution.com" }],
+  authors: [{ name: "SVM IT Solution", url: "https://svmitsolution.com" }],
 
-  // ✅ Canonical Tag
   alternates: {
-    canonical: "https://svmitsolution.com/",
-  },
-
-  // ✅ Google Search Console Verification
-  other: {
-    "google-site-verification": "IRrlp0CHw9VeX4Hm-gEgs19Ho75fSJaT4L4Cu4dGM0U",
+    canonical: "https://svmitsolution.com/ecommerce-solutions",
   },
 
   openGraph: {
-    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+    title: "Freelance eCommerce Website Developer in India | Svmitsolution",
     description:
-      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
-    url: "https://svmitsolution.com/",
+      "Hire a freelance eCommerce website development specialist in India. Build fast, secure, mobile-friendly online stores that boost sales & UX.",
+    url: "https://svmitsolution.com/ecommerce-solutions",
     images: [
       {
-        url: "https://svmitsolution.com/logo.png",
+        url: "https://svmitsolution.com/logo-og.png",
         width: 1200,
         height: 630,
-        alt: "SVM It Solution",
+        alt: "SVM IT Solution - eCommerce Website Development",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+    title: "Freelance eCommerce Website Developer in India | Svmitsolution",
     description:
-      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
-    images: ["https://svmitsolution.com/logo.png"],
+      "Hire a freelance eCommerce website development specialist in India. Build fast, secure, mobile-friendly online stores that boost sales & UX.",
+    images: ["https://svmitsolution.com/logo-twitter.png"],
+  },
+
+  social: {
+    instagram: "https://www.instagram.com/svmitsolution/",
+    linkedin: "https://www.linkedin.com/in/svm-it-solution/",
+    twitter: "https://x.com/svmitsolution",
   },
 };
 
-export default function Page(){
-  return(<EcommerceSolutionsPage/>)
+export default function Page() {
+  return (
+    <>
+      <EcommerceSolutionsPage />
+
+      {/* ✅ JSON-LD Structured Data */}
+      <Script id="structured-data" type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "name": "SVM IT Solution",
+              "url": "https://svmitsolution.com",
+              "logo": "https://svmitsolution.com/logo.png",
+              "sameAs": [
+                "https://www.instagram.com/svmitsolution/",
+                "https://www.linkedin.com/in/svm-it-solution/",
+                "https://x.com/svmitsolution"
+              ]
+            },
+            {
+              "@type": "Service",
+              "serviceType": "Freelance eCommerce Website Development",
+              "provider": {
+                "@type": "Organization",
+                "name": "SVM IT Solution",
+                "url": "https://svmitsolution.com"
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "India"
+              },
+              "description": "Professional freelance eCommerce website development services in India. Build fast, secure, mobile-friendly online stores that boost sales & UX."
+            },
+            {
+              "@type": "WebPage",
+              "name": "Freelance eCommerce Website Developer in India",
+              "url": "https://svmitsolution.com/ecommerce-solutions",
+              "inLanguage": "en",
+              "description": "Hire a freelance eCommerce website development specialist in India. Build fast, secure, mobile-friendly online stores that boost sales & UX."
+            }
+          ]
+        }
+        `}
+      </Script>
+    </>
+  );
 }

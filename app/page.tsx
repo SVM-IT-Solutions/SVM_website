@@ -3,8 +3,7 @@ import Script from "next/script";
 
 // ✅ SEO metadata (works on server)
 export const metadata = {
-  title:
-    "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+  title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
   description:
     "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
   keywords: [
@@ -15,37 +14,36 @@ export const metadata = {
   ],
   authors: [{ name: "svm it solution", url: "https://svmitsolution.com" }],
 
+  // ✅ Canonical Tag
   alternates: {
     canonical: "https://svmitsolution.com/",
   },
 
+  // ✅ Google Search Console Verification
   other: {
-    "google-site-verification":
-      "IRrlp0CHw9VeX4Hm-gEgs19Ho75fSJaT4L4Cu4dGM0U",
+    "google-site-verification": "IRrlp0CHw9VeX4Hm-gEgs19Ho75fSJaT4L4Cu4dGM0U",
   },
 
   openGraph: {
-    title:
-      "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
     description:
-      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO.",
+      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
     url: "https://svmitsolution.com/",
     images: [
       {
         url: "https://svmitsolution.com/logo.png",
         width: 1200,
         height: 630,
-        alt: "SVM IT Solution",
+        alt: "SVM It Solution",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title:
-      "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
     description:
-      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO.",
+      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
     images: ["https://svmitsolution.com/logo.png"],
   },
 };
@@ -59,7 +57,7 @@ export default function Page() {
     url: "https://svmitsolution.com/",
     image: "https://svmitsolution.com/logo.png",
     description:
-      "No.1 Freelance SEO Specialist in India offering professional, result-driven SEO services.",
+      "No.1 Freelance SEO Specialist in India offering professional, result-driven SEO services. Boost organic visibility and rankings.",
     sameAs: [
       "https://www.instagram.com/svmitsolution/",
       "https://www.linkedin.com/in/svm-it-solution/",
@@ -69,21 +67,6 @@ export default function Page() {
 
   return (
     <>
-      {/* ✅ Google Analytics (GA4) */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-J49SNCGXMF"
-        strategy="afterInteractive"
-      />
-
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-J49SNCGXMF');
-        `}
-      </Script>
-
       <HomePage />
 
       {/* ✅ JSON-LD Schema Markup */}
