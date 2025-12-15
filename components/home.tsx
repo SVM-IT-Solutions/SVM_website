@@ -140,8 +140,8 @@ export default function HomePage() {
 
     try {
       const result = await emailjs.send(
-        "service_4mllidh", // e.g. 'service_xxxxx'
-        "template_jt5e1yd", // e.g. 'template_abcd123'
+        "service_cpimxvx", // e.g. 'service_xxxxx'
+        "template_1jx7d4f", // e.g. 'template_abcd123'
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -151,7 +151,7 @@ export default function HomePage() {
           budget: formData.budget,
           message: formData.message,
         },
-        "t8KkbygttOWHkTyld" // e.g. 'ABC123xyz456'
+        "p9vpnTJbkTsiHCJi5" // e.g. 'ABC123xyz456'
       );
 
       console.log("Email sent successfully:", result.text);
@@ -177,15 +177,26 @@ export default function HomePage() {
   };
 
   const heroSlides = [
-   
-    {
-      title: "No.1 Freelance SEO Specialist in India",
-      subtitle: "Boost Visibility. Increase Traffic. Grow Revenue.",
-      description:
-        "Boost your website traffic, rankings, and business growth with a top-rated Freelance SEO Specialist in India. Get tailored SEO strategies designed to deliver measurable results.",
-       image: "/home/web1.jpeg?height=600&width=800&text=Website+Development",
-    },
-  ];
+  {
+    title: "No.1 Freelance SEO Specialist in India",
+    subtitle: "Boost Visibility. Increase Traffic. Grow Revenue.",
+    description: (
+      <>
+        Boost your website traffic, rankings, and business growth with a top-rated{" "}
+        
+        <a
+          href="https://mahesh.svmitsolution.com/"
+          className="font-bold text-white relative underline-animation"
+        >
+          Freelance SEO Specialist in India
+        </a>
+
+        . Get tailored SEO strategies designed to deliver measurable results.
+      </>
+    ),
+    image: "/home/web1.jpeg?height=600&width=800&text=Website+Development",
+  },
+];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -1087,7 +1098,7 @@ const testimonials = [
           {/* Left SEO Illustration */}
           <div className="flex justify-center">
             <Image
-              src="https://www.freelancerforseo.in/assets/images/home/footerhomeIndia.webp" // replace with your image
+              src="frequently-asked-question.png" // replace with your image
               width={600}
               height={450}
               alt="SEO FAQ"

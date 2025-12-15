@@ -1,4 +1,6 @@
 import HomePage from "../components/home";
+import Script from "next/script";
+
 // ✅ SEO metadata (works on server)
 export const metadata = {
   title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
@@ -11,15 +13,16 @@ export const metadata = {
     "Best SEO Freelancer India",
   ],
   authors: [{ name: "svm it solution", url: "https://svmitsolution.com" }],
-  // ✅ Canonical Tag Added
+
+  // ✅ Canonical Tag
   alternates: {
     canonical: "https://svmitsolution.com/",
   },
-  
-  // ✅ Google Search Console Verification Added
-    other: {
-      "google-site-verification": "IRrlp0CHw9VeX4Hm-gEgs19Ho75fSJaT4L4Cu4dGM0U",
-    },
+
+  // ✅ Google Search Console Verification
+  other: {
+    "google-site-verification": "IRrlp0CHw9VeX4Hm-gEgs19Ho75fSJaT4L4Cu4dGM0U",
+  },
 
   openGraph: {
     title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
@@ -35,6 +38,7 @@ export const metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
@@ -45,5 +49,32 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <HomePage />;
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "SVM IT Solution",
+    jobTitle: "Freelance SEO Specialist In India",
+    url: "https://svmitsolution.com/",
+    image: "https://svmitsolution.com/logo.png",
+    description:
+      "No.1 Freelance SEO Specialist in India offering professional, result-driven SEO services. Boost organic visibility and rankings.",
+    sameAs: [
+      "https://www.instagram.com/svmitsolution/",
+      "https://www.linkedin.com/in/svm-it-solution/",
+      "https://x.com/svmitsolution",
+    ],
+  };
+
+  return (
+    <>
+      <HomePage />
+
+      {/* ✅ JSON-LD Schema Markup */}
+      <Script
+        id="schema-markup"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+    </>
+  );
 }
