@@ -207,14 +207,10 @@ export default function AboutPage() {
                 <Badge className="mb-4 bg-white/20 text-white hover:bg-white/30">
                   About SVM IT SOLUTIONS
                 </Badge>
-                <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                  Transforming Ideas Into Digital Reality
-                </h1>
+                <h1 className="text-4xl md:text-3xl font-bold mb-6 leading-tight">
+                      Expert Freelance SEO Specialist & Website Development Services in India                </h1>
                 <p className="text-xl mb-8 opacity-90">
-                  We are a passionate team of developers, designers, and digital
-                  strategists committed to helping businesses thrive in the
-                  digital age through innovative solutions and exceptional
-                  service.
+                 I help businesses grow with expert SEO and high-quality website development. As a Freelance SEO Specialist in India, I deliver better rankings, more traffic, and strong digital results. Serving clients across India, including Delhi, Noida, Mumbai & Bangalore.
                 </p>
                 <Link href="/contact">
                   <Button
@@ -273,14 +269,11 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Our Mission
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                  My Mission as a Freelance SEO Specialist & Website Development Expert
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  To empower businesses of all sizes with cutting-edge digital
-                  solutions that drive growth, enhance user experiences, and
-                  create lasting competitive advantages in an ever-evolving
-                  digital landscape.
+                  My mission is to help businesses of all sizes grow with powerful SEO strategies and high-performing website development solutions. As a Freelance SEO Specialist in India, we focus on improving search visibility, enhancing user experience, and delivering long-term digital growth in a constantly evolving online landscape.
                 </p>
                 <div className="space-y-4">
                   {[
