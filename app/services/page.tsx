@@ -37,10 +37,6 @@ export const metadata = {
     canonical: "https://svmitsolution.com/services",
   },
 
-  other: {
-    "google-site-verification": "IRrlp0CHw9VeX4Hm-gEgs19Ho75fSJaT4L4Cu4dGM0U",
-  },
-
   openGraph: {
     type: "website",
     title: "Digital Services by Mahesh Kumar | No.1 Freelance SEO Specialist in India",
