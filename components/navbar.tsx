@@ -69,7 +69,9 @@ export default function Navbar() {
           {/* ================= Desktop Navigation ================= */}
           <nav
             className={`hidden lg:flex items-center space-x-8 ${
-              scrolled ? "" : "bg-black/20 backdrop-blur-md rounded-md px-4 py-2"
+              scrolled
+                ? ""
+                : "bg-black/20 backdrop-blur-md rounded-md px-4 py-2"
             }`}
           >
             {navItems.slice(0, 2).map((item) => (
@@ -140,9 +142,15 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden lg:block">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button className="bg-green-600 hover:bg-green-700 text-white">
               <Phone className="h-4 w-4 mr-2" />
-              <Link href="/contact">Get Quote</Link>
+              <a
+                href="https://wa.me/17095061925?text=Hello%20SVM%20IT%20Solution,%20I%20would%20like%20to%20get%20a%20quote%20for%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Quote
+              </a>
             </Button>
           </div>
 
@@ -156,8 +164,12 @@ export default function Navbar() {
 
             <SheetContent side="right" className="w-80">
               <nav className="flex flex-col space-y-4 mt-6">
-                <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
-                <Link href="/about" onClick={() => setIsOpen(false)}>About</Link>
+                <Link href="/" onClick={() => setIsOpen(false)}>
+                  Home
+                </Link>
+                <Link href="/about" onClick={() => setIsOpen(false)}>
+                  About
+                </Link>
 
                 {/* Mobile Services */}
                 <div>
@@ -197,9 +209,15 @@ export default function Navbar() {
                   )}
                 </div>
 
-                <Link href="/portfolio" onClick={() => setIsOpen(false)}>Portfolio</Link>
-                <Link href="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
-                <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
+                <Link href="/portfolio" onClick={() => setIsOpen(false)}>
+                  Portfolio
+                </Link>
+                <Link href="/blog" onClick={() => setIsOpen(false)}>
+                  Blog
+                </Link>
+                <Link href="/contact" onClick={() => setIsOpen(false)}>
+                  Contact
+                </Link>
 
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white mt-6">
                   <Phone className="h-4 w-4 mr-2" />

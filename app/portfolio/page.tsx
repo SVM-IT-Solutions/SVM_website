@@ -347,8 +347,19 @@ export default function PortfolioPage() {
               size="lg"
               className="bg-white text-blue-600 hover:bg-gray-100"
             >
-              <Link href="/contact">Start Your Project</Link>
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <a
+                href="https://wa.me/17095061925?text=Hello%20SVM%20IT%20Solution,%20I%20would%20like%20to%20get%20a%20quote%20for%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="lg"
+                  className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3"
+                >
+                  Start Your Project
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
             </Button>
           </motion.div>
         </div>

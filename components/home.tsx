@@ -20,7 +20,7 @@ import {
   Star,
   Play,
   Send,
-    BarChart2,
+  BarChart2,
   FileText,
   Share2,
   Cpu,
@@ -40,8 +40,12 @@ import Footer from "@/components/footer";
 import { EmailJSResponseStatus } from "@emailjs/browser";
 import Ratings from "@/components/Ratings";
 import TechStack from "@/components/TechStack";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -58,22 +62,29 @@ const staggerContainer = {
 };
 
 const formservices = [
-   "SEO Services",
+  "SEO Services",
   "Web Development",
   "Mobile App Development",
   "UI/UX Design",
   "Digital Marketing",
-  "WordPress Development"
+  "WordPress Development",
 ] as const;
 
 // Create a mapping of services to their budget ranges
 const serviceBudgets = {
   "SEO Services": ["$260", "$320", "$280", "$500", "$800", "$1000"],
   "Web Development": ["$160", "$520", "$5600", "$5800", "$800", "$990"],
-  "Mobile App Development": ["$1000", "$2000", "$3000", "$4000", "$5000", "$6000"],
+  "Mobile App Development": [
+    "$1000",
+    "$2000",
+    "$3000",
+    "$4000",
+    "$5000",
+    "$6000",
+  ],
   "UI/UX Design": ["$300", "$400", "$500", "$600", "$700", "$800"],
   "Digital Marketing": ["$200", "$300", "$400", "$500", "$600", "$700"],
-  "WordPress Development": ["$150", "$250", "$350", "$450", "$550", "$650"]
+  "WordPress Development": ["$150", "$250", "$350", "$450", "$550", "$650"],
 };
 
 type FormData = {
@@ -111,27 +122,31 @@ export default function HomePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    
-    if (name === 'service') {
+
+    if (name === "service") {
       // When service changes, reset budget and update service
-      setFormData(prev => ({ 
-        ...prev, 
+      setFormData((prev) => ({
+        ...prev,
         service: value,
-        budget: "" // Reset budget when service changes
+        budget: "", // Reset budget when service changes
       }));
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
 
-    // Get budget ranges based on selected service
+  // Get budget ranges based on selected service
   const getBudgetRanges = () => {
     if (!formData.service) {
       return []; // Return empty array if no service selected
     }
-    return serviceBudgets[formData.service as keyof typeof serviceBudgets] || [];
+    return (
+      serviceBudgets[formData.service as keyof typeof serviceBudgets] || []
+    );
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -177,26 +192,25 @@ export default function HomePage() {
   };
 
   const heroSlides = [
-  {
-    title: "No.1 Freelance SEO Specialist in India",
-    subtitle: "Boost Visibility. Increase Traffic. Grow Revenue.",
-    description: (
-      <>
-        Boost your website traffic, rankings, and business growth with a top-rated{" "}
-        
-        <a
-          href="https://mahesh.svmitsolution.com/"
-          className="font-bold text-white relative underline-animation"
-        >
-          Freelance SEO Specialist in India
-        </a>
-
-        . Get tailored SEO strategies designed to deliver measurable results.
-      </>
-    ),
-    image: "/home/web1.jpeg?height=600&width=800&text=Website+Development",
-  },
-];
+    {
+      title: "No.1 Freelance SEO Specialist in India",
+      subtitle: "Boost Visibility. Increase Traffic. Grow Revenue.",
+      description: (
+        <>
+          Boost your website traffic, rankings, and business growth with a
+          top-rated{" "}
+          <a
+            href="https://mahesh.svmitsolution.com/"
+            className="font-bold text-white relative underline-animation"
+          >
+            Freelance SEO Specialist in India
+          </a>
+          . Get tailored SEO strategies designed to deliver measurable results.
+        </>
+      ),
+      image: "/home/web1.jpeg?height=600&width=800&text=Website+Development",
+    },
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -281,8 +295,7 @@ export default function HomePage() {
     {
       icon: <LinkIcon className="h-8 w-8" />,
       title: "Link Building",
-      description:
-        "We build high-quality backlinks to boost search rankings.",
+      description: "We build high-quality backlinks to boost search rankings.",
       features: [
         "Social Media Marketing",
         "Google Ads",
@@ -293,25 +306,25 @@ export default function HomePage() {
   ];
 
   const hiringModels = [
-  {
-    icon: <Briefcase className="h-10 w-10" />,
-    title: "Project Basis",
-    description:
-      "SEO specialists are assigned well-defined projects with a fixed scope, deadline, and predetermined pricing.",
-  },
-  {
-    icon: <Globe className="h-10 w-10" />,
-    title: "Remote Basis",
-    description:
-      "Businesses hire SEO experts remotely under flexible working conditions while ensuring high-quality performance.",
-  },
-  {
-    icon: <Clock className="h-10 w-10" />,
-    title: "Hourly Basis",
-    description:
-      "SEO experts work and bill based on hourly engagement, offering flexibility and transparent cost control.",
-  },
-]
+    {
+      icon: <Briefcase className="h-10 w-10" />,
+      title: "Project Basis",
+      description:
+        "SEO specialists are assigned well-defined projects with a fixed scope, deadline, and predetermined pricing.",
+    },
+    {
+      icon: <Globe className="h-10 w-10" />,
+      title: "Remote Basis",
+      description:
+        "Businesses hire SEO experts remotely under flexible working conditions while ensuring high-quality performance.",
+    },
+    {
+      icon: <Clock className="h-10 w-10" />,
+      title: "Hourly Basis",
+      description:
+        "SEO experts work and bill based on hourly engagement, offering flexibility and transparent cost control.",
+    },
+  ];
 
   const stats = [
     {
@@ -337,33 +350,33 @@ export default function HomePage() {
   ];
 
   const seoBenefits = [
-  {
-    icon: <SearchCheck className="h-10 w-10" />,
-    title: "SEO Expert",
-    description:
-      "Boost your rankings with skilled SEO freelancers experienced in WordPress, Shopify, React, and custom websites.",
-  },
-  {
-    icon: <ShieldCheck className="h-10 w-10" />,
-    title: "Secure and Flexible",
-    description:
-      "We focus on scalability, fast loading performance, and secure payment workflows for a seamless working experience.",
-  },
-  {
-    icon: <Workflow className="h-10 w-10" />,
-    title: "End-to-End Support",
-    description:
-      "SEO freelancers manage the complete process—from strategy and planning to execution and reporting.",
-  },
-  {
-    icon: <Medal className="h-10 w-10" />,
-    title: "Proven Experience",
-    description:
-      "Hire diverse SEO experts with years of experience and a strong track record of delivering measurable results.",
-  },
+    {
+      icon: <SearchCheck className="h-10 w-10" />,
+      title: "SEO Expert",
+      description:
+        "Boost your rankings with skilled SEO freelancers experienced in WordPress, Shopify, React, and custom websites.",
+    },
+    {
+      icon: <ShieldCheck className="h-10 w-10" />,
+      title: "Secure and Flexible",
+      description:
+        "We focus on scalability, fast loading performance, and secure payment workflows for a seamless working experience.",
+    },
+    {
+      icon: <Workflow className="h-10 w-10" />,
+      title: "End-to-End Support",
+      description:
+        "SEO freelancers manage the complete process—from strategy and planning to execution and reporting.",
+    },
+    {
+      icon: <Medal className="h-10 w-10" />,
+      title: "Proven Experience",
+      description:
+        "Hire diverse SEO experts with years of experience and a strong track record of delivering measurable results.",
+    },
   ];
-  
-    const hireSteps = [
+
+  const hireSteps = [
     "Create an account to access our SEO freelancing.",
     "Detail your SEO freelancing needs and requirements.",
     "Evaluate proposals from skilled SEO freelancers.",
@@ -379,42 +392,41 @@ export default function HomePage() {
     "Get paid for your work through our secure system.",
   ];
 
-const testimonials = [
-  {
-    name: "Mahesh Kumar",
-    role: "SEO Expert",
-    availability: "Available Full Time",
-    location: "India",
-    rate: "$8/hr",
-    portfolio: "https://mahesh.svmitsolution.com/",
-    rating: 5,
-    image: "maheshkumar.png",
-    linkedin: "https://www.linkedin.com/in/maheshkumar63/",
-  },
-  {
-    name: "Shubham Singh",
-    role: "Software Developer",
-    availability: "Available Part Time",
-    location: "Noida, India",
-    rate: "$10/hr",
-    rating: 5,
-    portfolio: "https://shubhtech.vercel.app/",
-    image: "/portfolio/photo.jpeg",
-    linkedin: "https://www.linkedin.com/in/shubhsingh1515/",
-  },
-  {
-    name: "Vishal Patel",
-    role: "Full Stack Developer",
-    availability: "Available Part Time",
-    location: "Delhi, India",
-    rate: "$10/hr",
-    portfolio: "https://vishaltech.vercel.app/",
-    rating: 5,
-    image: "https://vishaltech.vercel.app/office1.jpg",
-    linkedin: "https://www.linkedin.com/in/vishal-patel05/",
-  },
-];
-
+  const testimonials = [
+    {
+      name: "Mahesh Kumar",
+      role: "SEO Expert",
+      availability: "Available Full Time",
+      location: "India",
+      rate: "$8/hr",
+      portfolio: "https://mahesh.svmitsolution.com/",
+      rating: 5,
+      image: "maheshkumar.png",
+      linkedin: "https://www.linkedin.com/in/maheshkumar63/",
+    },
+    {
+      name: "Shubham Singh",
+      role: "Software Developer",
+      availability: "Available Part Time",
+      location: "Noida, India",
+      rate: "$10/hr",
+      rating: 5,
+      portfolio: "https://shubhtech.vercel.app/",
+      image: "/portfolio/photo.jpeg",
+      linkedin: "https://www.linkedin.com/in/shubhsingh1515/",
+    },
+    {
+      name: "Vishal Patel",
+      role: "Full Stack Developer",
+      availability: "Available Part Time",
+      location: "Delhi, India",
+      rate: "$10/hr",
+      portfolio: "https://vishaltech.vercel.app/",
+      rating: 5,
+      image: "https://vishaltech.vercel.app/office1.jpg",
+      linkedin: "https://www.linkedin.com/in/vishal-patel05/",
+    },
+  ];
 
   const portfolio = [
     // {
@@ -687,11 +699,15 @@ const testimonials = [
                             <option value="" className="text-gray-900">
                               Select budget
                             </option>
-                        {getBudgetRanges().map((range) => (
-                          <option className="text-gray-900" key={range} value={range}>
-                            {range}
-                          </option>
-                        ))}
+                            {getBudgetRanges().map((range) => (
+                              <option
+                                className="text-gray-900"
+                                key={range}
+                                value={range}
+                              >
+                                {range}
+                              </option>
+                            ))}
                           </select>
                         </div>
                       </div>
@@ -804,7 +820,11 @@ const testimonials = [
               Professional Freelance SEO Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Boost your website’s rankings, traffic, and brand visibility with Professional Freelance SEO Services. Our expert SEO freelancers perform in-depth analysis and create tailored strategies to help your site achieve top Google positions, improved engagement, and higher conversions for long-term business growth. 
+              Boost your website’s rankings, traffic, and brand visibility with
+              Professional Freelance SEO Services. Our expert SEO freelancers
+              perform in-depth analysis and create tailored strategies to help
+              your site achieve top Google positions, improved engagement, and
+              higher conversions for long-term business growth.
             </p>
           </motion.div>
 
@@ -819,9 +839,11 @@ const testimonials = [
               <motion.div key={index} variants={fadeInUp}>
                 <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                   <CardContent className="p-8">
-                    <div className="mx-auto mb-6 flex items-center justify-center 
+                    <div
+                      className="mx-auto mb-6 flex items-center justify-center 
                         h-20 w-20 rounded-full bg-blue-100 text-blue-600 
-                        group-hover:bg-blue-200 transition-all duration-300">
+                        group-hover:bg-blue-200 transition-all duration-300"
+                    >
                       <div className="group-hover:scale-110 transition-transform">
                         {service.icon}
                       </div>
@@ -829,8 +851,9 @@ const testimonials = [
                     <h3 className="text-xl text-center font-bold text-gray-900 mb-4">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 mb-6 text-center">{service.description}</p>
-                    
+                    <p className="text-gray-600 mb-6 text-center">
+                      {service.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -850,51 +873,49 @@ const testimonials = [
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-             Hire Freelance SEO Expert in three ways
+              Hire Freelance SEO Expert in three ways
             </h2>
           </motion.div>
 
           <motion.div
-  variants={staggerContainer}
-  initial="initial"
-  whileInView="animate"
-  viewport={{ once: true }}
-  className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
->
-  {hiringModels.map((model, index) => (
-    <motion.div key={index} variants={fadeInUp}>
-      <Card 
-        className="h-full transition-all duration-300 hover:-translate-y-2 
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
+          >
+            {hiringModels.map((model, index) => (
+              <motion.div key={index} variants={fadeInUp}>
+                <Card
+                  className="h-full transition-all duration-300 hover:-translate-y-2 
         hover:bg-blue-50 hover:shadow-xl group"
-      >
-        <CardContent className="p-8">
-
-          {/* Icon Circle */}
-          <div className="mx-auto mb-6 flex items-center justify-center 
+                >
+                  <CardContent className="p-8">
+                    {/* Icon Circle */}
+                    <div
+                      className="mx-auto mb-6 flex items-center justify-center 
               h-20 w-20 rounded-full bg-blue-100 text-blue-600 
-              group-hover:bg-blue-200 transition-all duration-300">
-            <div className="group-hover:scale-110 transition-transform">
-              {model.icon}
-            </div>
-          </div>
+              group-hover:bg-blue-200 transition-all duration-300"
+                    >
+                      <div className="group-hover:scale-110 transition-transform">
+                        {model.icon}
+                      </div>
+                    </div>
 
-          <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">
-            {model.title}
-          </h3>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">
+                      {model.title}
+                    </h3>
 
-          <p className="text-gray-600 text-center">
-            {model.description}
-          </p>
-
-        </CardContent>
-      </Card>
-    </motion.div>
-  ))}
-</motion.div>
-
+                    <p className="text-gray-600 text-center">
+                      {model.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
-
 
       <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4">
@@ -905,12 +926,14 @@ const testimonials = [
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-             Get Best SEO Experts At Your Fingertips
+              Get Best SEO Experts At Your Fingertips
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get the best SEO experts at your fingertips and focus on what you do best. Our freelance SEO specialists handle everything—from strategy to execution—ensuring your website grows, ranks higher, and succeeds online with measurable results.
+              Get the best SEO experts at your fingertips and focus on what you
+              do best. Our freelance SEO specialists handle everything—from
+              strategy to execution—ensuring your website grows, ranks higher,
+              and succeeds online with measurable results.
             </p>
           </motion.div>
 
@@ -928,8 +951,9 @@ const testimonials = [
                     <h3 className="text-xl text-primary text-center pt-18 font-bold text-gray-900 mb-4">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 mb-6 text-center">{service.description}</p>
-                    
+                    <p className="text-gray-600 mb-6 text-center">
+                      {service.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -948,12 +972,14 @@ const testimonials = [
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Hire Freelance SEO Experts
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Hire Freelance SEO Experts effortlessly and with complete transparency. Find top-rated SEO professionals who deliver strategic, result-driven solutions to boost your rankings, traffic, and overall online growth.
+              Hire Freelance SEO Experts effortlessly and with complete
+              transparency. Find top-rated SEO professionals who deliver
+              strategic, result-driven solutions to boost your rankings,
+              traffic, and overall online growth.
             </p>
           </motion.div>
 
@@ -965,220 +991,229 @@ const testimonials = [
             className="grid md:grid-cols-3 gap-8"
           >
             {testimonials.map((testimonial, index) => (
-          <motion.div key={index} variants={fadeInUp}>
-            <Card className="relative h-full rounded-2xl hover:shadow-xl transition-all p-6 text-center">
+              <motion.div key={index} variants={fadeInUp}>
+                <Card className="relative h-full rounded-2xl hover:shadow-xl transition-all p-6 text-center">
+                  {/* Top Right Price Badge */}
+                  <div className="absolute top-4 right-4 bg-primary text-white text-sm px-3 py-1 rounded-full">
+                    {testimonial.rate}
+                  </div>
 
-              {/* Top Right Price Badge */}
-              <div className="absolute top-4 right-4 bg-primary text-white text-sm px-3 py-1 rounded-full">
-                {testimonial.rate}
-              </div>
+                  {/* Profile Image */}
+                  <div className="flex justify-center mb-4">
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      width={100}
+                      height={100}
+                      className="w-24 h-24 rounded-full object-cover border"
+                    />
+                  </div>
 
-              {/* Profile Image */}
-              <div className="flex justify-center mb-4">
-                <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  width={100}
-                  height={100}
-                   className="w-24 h-24 rounded-full object-cover border"
-                />
-              </div>
+                  {/* Name */}
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {testimonial.name}
+                  </h3>
 
-              {/* Name */}
-              <h3 className="text-xl font-semibold text-gray-900">{testimonial.name}</h3>
+                  {/* Role */}
+                  <p className="text-gray-600 mb-1">{testimonial.role}</p>
 
-              {/* Role */}
-              <p className="text-gray-600 mb-1">{testimonial.role}</p>
+                  {/* Availability */}
+                  <p className="text-primary font-medium mb-2">
+                    {testimonial.availability}
+                  </p>
 
-              {/* Availability */}
-              <p className="text-primary font-medium mb-2">{testimonial.availability}</p>
+                  {/* Location */}
+                  <div className="flex justify-center items-center gap-1 text-gray-500 mb-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 11a3 3 0 100-6 3 3 0 000 6zm0 0c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z"
+                      />
+                    </svg>
+                    {testimonial.location}
+                  </div>
 
-              {/* Location */}
-              <div className="flex justify-center items-center gap-1 text-gray-500 mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 11a3 3 0 100-6 3 3 0 000 6zm0 0c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z"
-                  />
-                </svg>
-                {testimonial.location}
-              </div>
+                  {/* Rating */}
+                  <div className="flex justify-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-5 w-5 text-orange-500 fill-current"
+                      />
+                    ))}
+                  </div>
 
-              {/* Rating */}
-              <div className="flex justify-center mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-orange-500 fill-current" />
-                ))}
-              </div>
-
-              {/* Buttons */}
-              <div className="flex justify-center gap-4 mt-4">
-                <a href={testimonial.portfolio} target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-primary text-white rounded-full hover:bg-orange-700 transition">
-                  View Profile
-                </a>
-                <a href={testimonial.linkedin} target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-primary text-white rounded-full hover:bg-orange-700 transition">
-                  Hire Me
-                </a>
-              </div>
-
-            </Card>
-          </motion.div>
-          ))}
+                  {/* Buttons */}
+                  <div className="flex justify-center gap-4 mt-4">
+                    <a
+                      href={testimonial.portfolio}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2 bg-primary text-white rounded-full hover:bg-orange-700 transition"
+                    >
+                      View Profile
+                    </a>
+                    <a
+                      href={testimonial.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2 bg-primary text-white rounded-full hover:bg-orange-700 transition"
+                    >
+                      Hire Me
+                    </a>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
-
-
       <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* LEFT BOX */}
+            <Card className="rounded-3xl shadow-sm">
+              <CardContent className="p-10">
+                <h2 className="text-2xl font-bold text-primary mb-6">
+                  Hire SEO Freelancer For Your Projects
+                </h2>
 
-          {/* LEFT BOX */}
-          <Card className="rounded-3xl shadow-sm">
-            <CardContent className="p-10">
-              <h2 className="text-2xl font-bold text-primary mb-6">
-                Hire SEO Freelancer For Your Projects
-              </h2>
+                <div className="space-y-6">
+                  {hireSteps.map((step, index) => (
+                    <div key={index} className="flex gap-4 items-start">
+                      <span className="text-primary font-semibold text-xl">
+                        {index + 1}.
+                      </span>
+                      <p className="text-gray-700 text-lg">{step}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
 
-              <div className="space-y-6">
-                {hireSteps.map((step, index) => (
-                  <div key={index} className="flex gap-4 items-start">
-                    <span className="text-primary font-semibold text-xl">
-                      {index + 1}.
-                    </span>
-                    <p className="text-gray-700 text-lg">{step}</p>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+            {/* RIGHT BOX */}
+            <Card className="rounded-3xl shadow-sm">
+              <CardContent className="p-10">
+                <h2 className="text-2xl font-bold text-primary  mb-6">
+                  Find Freelance SEO Jobs
+                </h2>
 
-          {/* RIGHT BOX */}
-          <Card className="rounded-3xl shadow-sm">
-            <CardContent className="p-10">
-              <h2 className="text-2xl font-bold text-primary  mb-6">
-                Find Freelance SEO Jobs
-              </h2>
-
-              <div className="space-y-6">
-                {jobSteps.map((step, index) => (
-                  <div key={index} className="flex gap-4 items-start">
-                    <span className="text-primary font-semibold text-xl">
-                      {index + 1}.
-                    </span>
-                    <p className="text-gray-700 text-lg">{step}</p>
-                  </div>
-                ))}
-              </div>
-
-            </CardContent>
-          </Card>
-
-        </div>
-      </div>
-    </section>
-
-    <section className="bg-gradient-to-br py-20">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-          Frequently Asked Question
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-
-          {/* Left SEO Illustration */}
-          <div className="flex justify-center">
-            <Image
-              src="frequently-asked-question.png" // replace with your image
-              width={600}
-              height={450}
-              alt="SEO FAQ"
-              className="rounded-xl"
-            />
+                <div className="space-y-6">
+                  {jobSteps.map((step, index) => (
+                    <div key={index} className="flex gap-4 items-start">
+                      <span className="text-primary font-semibold text-xl">
+                        {index + 1}.
+                      </span>
+                      <p className="text-gray-700 text-lg">{step}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
-
-          {/* Right Accordion */}
-          <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
-
-            <Accordion type="single" collapsible className="w-full">
-
-              <AccordionItem value="item-1" className="border-b">
-                <AccordionTrigger className=" data-[state=open]:text-primary font-semibold text-lg">
-                  How does this platform help us connect with top SEO freelancers?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600 leading-relaxed">
-                  Freelancerforseo connects you with top SEO experts who help improve
-                  organic traffic and online visibility through link-building,
-                  on-page SEO, content strategy, keyword research, and more.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-2" className="border-b">
-                <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
-                  How can I hire a freelance SEO expert?
-                </AccordionTrigger>
-                <AccordionContent className=" data-[state=open]:text-primary text-gray-600">
-                  You can register, create project requirements, receive proposals,
-                  compare experts and select the best SEO freelancer for your needs.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-3" className="border-b">
-                <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
-                  Will the freelancer provide SEO progress reports?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600">
-                  Yes, freelancers provide regular reports including ranking,
-                  optimization updates, and performance metrics.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-4" className="border-b">
-                <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
-                  Can a hired SEO freelancer increase my brand visibility?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600">
-                  Absolutely, they use content optimization, keyword planning and
-                  link-building strategies to improve brand reach.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-5" className="border-b">
-                <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
-                  What results can I expect after hiring a freelancer?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600">
-                  Results vary, but you will see improvements in ranking, traffic
-                  and SEO health depending on your niche and competition.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-6">
-                <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
-                  After hiring an SEO freelancer, how long until I see results?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600">
-                  SEO is long-term. You may notice improvements in 4–12 weeks
-                  depending on website condition and competition.
-                </AccordionContent>
-              </AccordionItem>
-
-            </Accordion>
-
-          </div>
-
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="bg-gradient-to-br py-20">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+            Frequently Asked Question
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left SEO Illustration */}
+            <div className="flex justify-center">
+              <Image
+                src="frequently-asked-question.png" // replace with your image
+                width={600}
+                height={450}
+                alt="SEO FAQ"
+                className="rounded-xl"
+              />
+            </div>
+
+            {/* Right Accordion */}
+            <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1" className="border-b">
+                  <AccordionTrigger className=" data-[state=open]:text-primary font-semibold text-lg">
+                    How does this platform help us connect with top SEO
+                    freelancers?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed">
+                    Freelancerforseo connects you with top SEO experts who help
+                    improve organic traffic and online visibility through
+                    link-building, on-page SEO, content strategy, keyword
+                    research, and more.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="border-b">
+                  <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
+                    How can I hire a freelance SEO expert?
+                  </AccordionTrigger>
+                  <AccordionContent className=" data-[state=open]:text-primary text-gray-600">
+                    You can register, create project requirements, receive
+                    proposals, compare experts and select the best SEO
+                    freelancer for your needs.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="border-b">
+                  <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
+                    Will the freelancer provide SEO progress reports?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600">
+                    Yes, freelancers provide regular reports including ranking,
+                    optimization updates, and performance metrics.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className="border-b">
+                  <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
+                    Can a hired SEO freelancer increase my brand visibility?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600">
+                    Absolutely, they use content optimization, keyword planning
+                    and link-building strategies to improve brand reach.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-5" className="border-b">
+                  <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
+                    What results can I expect after hiring a freelancer?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600">
+                    Results vary, but you will see improvements in ranking,
+                    traffic and SEO health depending on your niche and
+                    competition.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-6">
+                  <AccordionTrigger className=" data-[state=open]:text-primary text-gray-900 text-lg">
+                    After hiring an SEO freelancer, how long until I see
+                    results?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600">
+                    SEO is long-term. You may notice improvements in 4–12 weeks
+                    depending on website condition and competition.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="container mx-auto px-4 text-center">
@@ -1196,7 +1231,11 @@ const testimonials = [
               Get a free consultation today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <a
+                href="https://wa.me/17095061925?text=Hello%20SVM%20IT%20Solution,%20I%20would%20like%20to%20get%20a%20quote%20for%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   size="lg"
                   className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3"
@@ -1204,7 +1243,8 @@ const testimonials = [
                   Start Your Project
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-              </Link>
+              </a>
+
               <Link href="/contact">
                 <Button
                   size="lg"
