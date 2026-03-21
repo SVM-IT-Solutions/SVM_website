@@ -101,18 +101,30 @@ export default function BlogPage() {
       title: "JSON vs TOON: The New Battle of Data Formats in the AI Era",
       excerpt:
         "Explore the emerging competition between JSON and TOON data formats, and how TOON is optimized for AI applications with enhanced efficiency and performance.",
-      image:
-        "/blog/toon.png?height=300&width=400&text=UI+UX+Design+Principles",
+      image: "/blog/toon.png?height=300&width=400&text=UI+UX+Design+Principles",
       author: "Shubham Singh",
       date: "November 16, 2025",
       readTime: "4 min read",
       category: "Development",
-      link:"https://shubh1515.medium.com/json-vs-toon-the-new-battle-of-data-formats-in-the-ai-era-bf072655adfe",
+      link: "https://shubh1515.medium.com/json-vs-toon-the-new-battle-of-data-formats-in-the-ai-era-bf072655adfe",
+      featured: false,
+    },
+    {
+      id: 7,
+      title: "Why You Should Learn Next.js in 2026",
+      excerpt:
+        "Discover why Next.js is becoming the go-to framework for modern web development in 2026, with its powerful features like server-side rendering, performance optimization, and scalability.",
+      image: "/blog/nextjs.webp?height=300&width=400&text=Next.js+2026",
+      author: "Shubham Singh",
+      date: "January 24 2026",
+      readTime: "4 min read",
+      category: "Web Development",
+      link: "https://shubh1515.medium.com/why-you-should-learn-next-js-in-2026-a18228cb2d31",
       featured: false,
     },
   ];
 
-   blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const categories = ["All", "Web Development", "SEO", "Design", "Development"];
   const featuredPosts = blogPosts.filter((post) => post.featured);

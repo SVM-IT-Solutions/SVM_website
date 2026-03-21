@@ -39,59 +39,65 @@ export default function PortfolioPage() {
   ];
 
   const projects = [
-     {
-    id: 1,
-    title: "Branding GSAP Website",
-    category: "Web Development",
-    description:
-      "A smooth and interactive GSAP-powered branding website featuring scroll animations, section transitions, and a modern UI built with React and Tailwind.",
-    image: "/portfolio/branding.png?height=400&width=600&text=Branding+GSAP",
-    technologies: ["Next.js", "TypeScript", "GSAP", "Tailwind CSS"],
-    liveUrl: "https://branding-gsap.vercel.app/",
-    githubUrl: "",
-    results: [
-      "Smooth GSAP scroll animations",
-      "High-performance UI",
-      "Responsive & modern layout",
-    ],
-    featured: true,
-  },
+    {
+      id: 1,
+      title: "Branding GSAP Website",
+      category: "Web Development",
+      description:
+        "A smooth and interactive GSAP-powered branding website featuring scroll animations, section transitions, and a modern UI built with React and Tailwind.",
+      image: "/portfolio/branding.png?height=400&width=600&text=Branding+GSAP",
+      technologies: ["Next.js", "TypeScript", "GSAP", "Tailwind CSS"],
+      liveUrl: "https://branding-gsap.vercel.app/",
+      githubUrl: "",
+      results: [
+        "Smooth GSAP scroll animations",
+        "High-performance UI",
+        "Responsive & modern layout",
+      ],
+      featured: true,
+    },
 
-  {
-    id: 2,
-    title: "Dreelio Website",
-    category: "Web Development",
-    description:
-      "A creative and responsive multi-section website built with modern animations, optimized loading, and a clean professional layout.",
-    image: "/portfolio/dreelio.png?height=400&width=600&text=Dreelio",
-    technologies: ["Next.js", "GSAP", "Tailwind CSS"," Framer Motion"],
-    liveUrl: "https://dreelio-gamma.vercel.app/",
-    githubUrl: "",
-    results: [
-      "Responsive multi-section design",
-      "Professional UI/UX animations",
-      "Optimized for performance",
-    ],
-    featured: true,
-  },
+    {
+      id: 2,
+      title: "Dreelio Website",
+      category: "Web Development",
+      description:
+        "A creative and responsive multi-section website built with modern animations, optimized loading, and a clean professional layout.",
+      image: "/portfolio/dreelio.png?height=400&width=600&text=Dreelio",
+      technologies: ["Next.js", "GSAP", "Tailwind CSS", " Framer Motion"],
+      liveUrl: "https://dreelio-gamma.vercel.app/",
+      githubUrl: "",
+      results: [
+        "Responsive multi-section design",
+        "Professional UI/UX animations",
+        "Optimized for performance",
+      ],
+      featured: true,
+    },
 
-  {
-    id: 3,
-    title: "Ardent Leap Website",
-    category: "Web Development",
-    description:
-      "A visually appealing and minimalistic website built with React, featuring smooth transitions, responsive design, and clean branding elements.",
-    image: "/portfolio/ardent.png?height=400&width=600&text=Ardent+Leap",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "GSAP", "Framer Motion"],
-    liveUrl: "https://ardent-leap.vercel.app/",
-    githubUrl: "",
-    results: [
-      "Clean and minimalistic UI",
-      "Smooth GSAP animations",
-      "Fully responsive across all screens",
-    ],
-    featured: true,
-  },  
+    {
+      id: 3,
+      title: "Ardent Leap Website",
+      category: "Web Development",
+      description:
+        "A visually appealing and minimalistic website built with React, featuring smooth transitions, responsive design, and clean branding elements.",
+      image: "/portfolio/ardent.png?height=400&width=600&text=Ardent+Leap",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "GSAP",
+        "Framer Motion",
+      ],
+      liveUrl: "https://www.ardentandleap.com/",
+      githubUrl: "",
+      results: [
+        "Clean and minimalistic UI",
+        "Smooth GSAP animations",
+        "Fully responsive across all screens",
+      ],
+      featured: true,
+    },
     {
       id: 1,
       title: "BuildingPlanner",
@@ -107,23 +113,23 @@ export default function PortfolioPage() {
       featured: true,
     },
 
-    {
-      id: 2,
-      title: "Job Application Portal",
-      category: "Web Development",
-      description:
-        "A scalable job app allowing users to apply for jobs, upload resumes, and receive notifications.",
-      image: "/home/job.avif?height=400&width=600&text=Job+Application+Portal",
-      technologies: ["React Native", "Tailwind CSS", "MongoDB", "Firebase"],
-      liveUrl: "#",
-      githubUrl: "#",
-      results: [
-        "Real-time notifications",
-        "Resume upload",
-        "Mobile responsive",
-      ],
-      featured: true,
-    },
+    // {
+    //   id: 2,
+    //   title: "Job Application Portal",
+    //   category: "Web Development",
+    //   description:
+    //     "A scalable job app allowing users to apply for jobs, upload resumes, and receive notifications.",
+    //   image: "/home/job.avif?height=400&width=600&text=Job+Application+Portal",
+    //   technologies: ["React Native", "Tailwind CSS", "MongoDB", "Firebase"],
+    //   liveUrl: "#",
+    //   githubUrl: "#",
+    //   results: [
+    //     "Real-time notifications",
+    //     "Resume upload",
+    //     "Mobile responsive",
+    //   ],
+    //   featured: true,
+    // },
     {
       id: 3,
       title: "Chai Cloud India Website",
@@ -213,94 +219,97 @@ export default function PortfolioPage() {
       ],
       featured: false,
     },
+    {
+      id: 10,
+      title: "DryDash Website",
+      category: "Web Development",
+      description:
+        "An on-demand laundry and dry cleaning service platform with a modern UI, seamless booking experience, and optimized performance.",
+      image: "/portfolio/drydash.png?height=400&width=600&text=DryDash",
+      technologies: ["React", "Tailwind CSS", "JavaScript"],
+      liveUrl: "https://drydash.in/",
+      githubUrl: "",
+      results: [
+        "Smooth booking experience",
+        "Responsive design",
+        "Optimized performance",
+      ],
+      featured: true,
+    },
 
     {
-      id: 8,
-      title: "FitTracker Mobile App",
-      category: "Mobile Apps",
+      id: 11,
+      title: "Washrz Website",
+      category: "Web Development",
       description:
-        "Cross-platform fitness tracking app with real-time analytics and social features for health enthusiasts.",
-      image: "/placeholder.svg?height=400&width=600&text=FitTracker+Mobile+App",
-      technologies: ["React Native", "Firebase", "Redux", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#",
-      results: ["50K+ downloads", "4.8 star rating", "85% user retention"],
+        "A professional laundry service platform providing user-friendly navigation, service listings, and a clean modern interface.",
+      image: "/portfolio/washrz.png?height=400&width=600&text=Washrz",
+      technologies: ["React", "Tailwind CSS", "JavaScript"],
+      liveUrl: "https://washrz.com/",
+      githubUrl: "",
+      results: [
+        "Clean UI/UX",
+        "Service-based architecture",
+        "Mobile responsive",
+      ],
+      featured: true,
+    },
+
+    {
+      id: 12,
+      title: "Ram Consultant Website",
+      category: "Web Development",
+      description:
+        "A corporate consulting website showcasing services, client trust, and professional branding with a responsive layout.",
+      image:
+        "/portfolio/ramconsultant.png?height=400&width=600&text=Ram+Consultant",
+      technologies: ["WordPress", "Elementor", "PHP"],
+      liveUrl: "https://ramconsultant.net/",
+      githubUrl: "",
+      results: [
+        "Professional business presence",
+        "Improved client engagement",
+        "Responsive design",
+      ],
       featured: false,
     },
+
     {
-      id: 9,
-      title: "GreenMarket E-commerce",
+      id: 13,
+      title: "Armed Forces Entertainment",
+      category: "Web Development",
+      description:
+        "An entertainment platform designed for armed forces, featuring engaging content, modern UI, and optimized accessibility.",
+      image:
+        "/portfolio/armedforces.png?height=400&width=600&text=Armed+Forces",
+      technologies: ["React", "Tailwind CSS", "JavaScript"],
+      liveUrl: "https://armedforcesentertainment.com/",
+      githubUrl: "",
+      results: [
+        "Engaging user experience",
+        "Optimized performance",
+        "Accessible interface",
+      ],
+      featured: false,
+    },
+
+    {
+      id: 14,
+      title: "Big Jim’s Woodshop",
       category: "E-commerce",
       description:
-        "Sustainable products marketplace with advanced filtering, payment integration, and vendor management.",
-      image:
-        "/placeholder.svg?height=400&width=600&text=GreenMarket+E-commerce",
-      technologies: ["Next.js", "Shopify", "Tailwind CSS", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#",
-      results: ["$2M+ in sales", "150% conversion increase", "100+ vendors"],
+        "A woodworking business website showcasing handcrafted products, custom builds, and an online storefront experience.",
+      image: "/portfolio/bigjims.png?height=400&width=600&text=Woodshop",
+      technologies: ["Shopify", "HTML", "CSS", "JavaScript"],
+      liveUrl: "https://www.bigjimswoodshop.com/",
+      githubUrl: "",
+      results: [
+        "Product showcase",
+        "Custom woodworking orders",
+        "E-commerce functionality",
+      ],
       featured: false,
     },
-    // {
-    //   id: 7,
-    //   title: "LegalFirm SEO Campaign",
-    //   category: "SEO",
-    //   description: "Complete SEO overhaul for a law firm resulting in first-page rankings for competitive keywords.",
-    //   image: "/placeholder.svg?height=400&width=600&text=LegalFirm+SEO+Campaign",
-    //   technologies: ["SEO", "Content Marketing", "Google Analytics", "SEMrush"],
-    //   liveUrl: "#",
-    //   githubUrl: "#",
-    //   results: ["400% organic traffic increase", "Top 3 rankings", "250% lead generation"],
-    //   featured: false,
-    // },
-    // {
-    //   id: 8,
-    //   title: "FinanceApp Dashboard",
-    //   category: "UI/UX Design",
-    //   description: "Modern financial dashboard design with intuitive data visualization and user-friendly interface.",
-    //   image: "/placeholder.svg?height=400&width=600&text=FinanceApp+Dashboard",
-    //   technologies: ["Figma", "Adobe XD", "Principle", "InVision"],
-    //   liveUrl: "#",
-    //   githubUrl: "#",
-    //   results: ["40% better user engagement", "25% task completion increase", "95% user satisfaction"],
-    //   featured: false,
-    // },
-    // {
-    //   id: 9,
-    //   title: "RestaurantPOS System",
-    //   category: "Web Development",
-    //   description: "Complete point-of-sale system for restaurants with inventory management and analytics.",
-    //   image: "/placeholder.svg?height=400&width=600&text=RestaurantPOS+System",
-    //   technologies: ["Vue.js", "Express.js", "MongoDB", "Socket.io"],
-    //   liveUrl: "#",
-    //   githubUrl: "#",
-    //   results: ["60% faster order processing", "30% cost reduction", "200+ restaurants"],
-    //   featured: false,
-    // },
-    // {
-    //   id: 10,
-    //   title: "TravelBuddy Mobile App",
-    //   category: "Mobile Apps",
-    //   description: "Travel planning and booking app with AI recommendations and social sharing features.",
-    //   image: "/placeholder.svg?height=400&width=600&text=TravelBuddy+Mobile+App",
-    //   technologies: ["Flutter", "Firebase", "Google Maps API", "AI/ML"],
-    //   liveUrl: "#",
-    //   githubUrl: "#",
-    //   results: ["100K+ downloads", "4.7 star rating", "70% booking conversion"],
-    //   featured: false,
-    // },
-    // {
-    //   id: 11,
-    //   title: "FashionBrand E-store",
-    //   category: "E-commerce",
-    //   description: "Luxury fashion e-commerce platform with AR try-on features and personalized recommendations.",
-    //   image: "/placeholder.svg?height=400&width=600&text=FashionBrand+E-store",
-    //   technologies: ["Shopify Plus", "AR.js", "React", "Klaviyo"],
-    //   liveUrl: "#",
-    //   githubUrl: "#",
-    //   results: ["300% sales increase", "45% cart abandonment reduction", "Premium brand positioning"],
-    //   featured: false,
-    // },
   ];
 
   const filteredProjects =
@@ -344,124 +353,6 @@ export default function PortfolioPage() {
           </motion.div>
         </div>
       </section>
-
-      {/* Featured Projects */}
-      {/* <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <Badge className="mb-4 bg-blue-100 text-blue-800">
-              Featured Work
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Our Most Impactful Projects
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              These standout projects demonstrate our ability to deliver
-              exceptional results and drive business growth.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid lg:grid-cols-2 gap-12"
-          >
-            {featuredProjects.map((project, index) => (
-              <motion.div key={project.id} variants={fadeInUp}>
-                <Card className="h-full hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden">
-                  <CardContent className="p-0">
-                    <div className="relative h-64 overflow-hidden">
-                      <Image
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                      <div className="absolute top-4 right-4">
-                        <Badge className="bg-yellow-500 text-white">
-                          Featured
-                        </Badge>
-                      </div>
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <Badge className="bg-blue-600 text-white mb-2">
-                          {project.category}
-                        </Badge>
-                        <h3 className="text-xl font-bold text-white">
-                          {project.title}
-                        </h3>
-                      </div>
-                    </div>
-
-                    <div className="p-8">
-                      <p className="text-gray-600 mb-6">
-                        {project.description}
-                      </p>
-
-                      <div className="mb-6">
-                        <h4 className="font-semibold text-gray-900 mb-3">
-                          Key Results:
-                        </h4>
-                        <ul className="space-y-2">
-                          {project.results.map((result, idx) => (
-                            <li
-                              key={idx}
-                              className="flex items-center text-sm text-gray-600"
-                            >
-                              <div className="w-2 h-2 bg-green-500 rounded-full mr-3" />
-                              {result}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="mb-6">
-                        <h4 className="font-semibold text-gray-900 mb-3">
-                          Technologies:
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {project.technologies.map((tech, idx) => (
-                            <Badge
-                              key={idx}
-                              variant="secondary"
-                              className="text-xs"
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="flex gap-4">
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Button className="flex-1 bg-blue-600 hover:bg-blue-700">
-                            <ExternalLink className="mr-2 h-4 w-4" />
-                            Live Demo
-                          </Button>
-                        </a>
-
-                     
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section> */}
 
       {/* All Projects */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
