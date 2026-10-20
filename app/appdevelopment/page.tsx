@@ -44,7 +44,7 @@ export const metadata = {
 };
 
 // ✅ JSON-LD Schema markup for structured data
-export const schemaMarkup = {
+const schemaMarkup = {
   __html: JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [

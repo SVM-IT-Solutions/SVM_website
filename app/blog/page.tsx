@@ -124,7 +124,7 @@ export default function BlogPage() {
     },
   ];
 
-  blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const categories = ["All", "Web Development", "SEO", "Design", "Development"];
   const featuredPosts = blogPosts.filter((post) => post.featured);

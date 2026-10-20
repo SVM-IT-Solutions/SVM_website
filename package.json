@@ -6,9 +6,10 @@
     "prebuild": "rimraf .next",
     "build": "next build",
     "dev": "next dev",
-    "export": "next export",
+    "export": "next build",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "test": "node --test"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
