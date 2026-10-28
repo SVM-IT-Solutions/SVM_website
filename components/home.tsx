@@ -411,7 +411,7 @@ export default function HomePage() {
       location: "Noida, India",
       rate: "$10/hr",
       rating: 5,
-      portfolio: "https://shubhtech.vercel.app/",
+      portfolio: "https://shubhtech.online/",
       image: "/portfolio/photo.jpeg",
       linkedin: "https://www.linkedin.com/in/shubhsingh1515/",
     },
