@@ -3,4 +3,4 @@ User-agent: *
 Disallow: /cgi-bin/
 Disallow: /api/
 
-Sitemap: https://svmitsolution.com/sitemap.xml
+Sitemap: https://www.svmitsolution.com/sitemap.xml

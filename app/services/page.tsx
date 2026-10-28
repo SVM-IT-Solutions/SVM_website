@@ -14,8 +14,8 @@ export const metadata = {
     "SVM IT Solution Services",
   ],
   authors: [
-    { name: "Mahesh Kumar", url: "https://svmitsolution.com" },
-    { name: "SVM IT Solution", url: "https://svmitsolution.com" }
+    { name: "Mahesh Kumar", url: "https://www.svmitsolution.com" },
+    { name: "SVM IT Solution", url: "https://www.svmitsolution.com" }
   ],
   creator: "Mahesh Kumar",
   publisher: "SVM IT Solution",
@@ -34,7 +34,7 @@ export const metadata = {
   },
 
   alternates: {
-    canonical: "https://svmitsolution.com/services",
+    canonical: "https://www.svmitsolution.com/services",
   },
 
   openGraph: {
@@ -42,11 +42,11 @@ export const metadata = {
     title: "Digital Services by Mahesh Kumar | No.1 Freelance SEO Specialist in India",
     description:
       "Hire Mahesh Kumar for top-tier Web Development, App Creation, and SEO Optimization. Trusted Freelance SEO Specialist delivering real results.",
-    url: "https://svmitsolution.com/services",
+    url: "https://www.svmitsolution.com/services",
     siteName: "SVM IT Solution",
     images: [
       {
-        url: "https://svmitsolution.com/logo.png",
+        url: "https://www.svmitsolution.com/logo.png",
         width: 1200,
         height: 630,
         alt: "SVM IT Solution - Digital Services",
@@ -62,7 +62,7 @@ export const metadata = {
     title: "Digital Services by Mahesh Kumar | No.1 Freelance SEO Specialist",
     description:
       "Looking for the best digital services? Hire Mahesh Kumar, India's No.1 Freelance SEO Specialist for Web, App, and Marketing solutions.",
-    images: ["https://svmitsolution.com/logo.png"],
+    images: ["https://www.svmitsolution.com/logo.png"],
   },
 };
 
@@ -74,8 +74,8 @@ export default function Page() {
       {
         "@type": "ProfessionalService",
         "name": "SVM IT Solution",
-        "image": "https://svmitsolution.com/logo.png",
-        "url": "https://svmitsolution.com/services",
+        "image": "https://www.svmitsolution.com/logo.png",
+        "url": "https://www.svmitsolution.com/services",
         "priceRange": "₹₹",
         "address": {
           "@type": "PostalAddress",
@@ -90,7 +90,7 @@ export default function Page() {
           "@type": "Person",
           "name": "Mahesh Kumar",
           "jobTitle": "Freelance SEO Specialist & Developer",
-          "url": "https://svmitsolution.com"
+          "url": "https://www.svmitsolution.com"
         },
         "sameAs": [
           "https://www.instagram.com/svmitsolution/",
@@ -106,13 +106,13 @@ export default function Page() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://svmitsolution.com/"
+            "item": "https://www.svmitsolution.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Services",
-            "item": "https://svmitsolution.com/services"
+            "item": "https://www.svmitsolution.com/services"
           }
         ]
       }

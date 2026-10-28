@@ -11,21 +11,21 @@ export const metadata = {
     "Freelance Digital Marketer Hyderabad",
     "Top Marketing Expert Hyderabad",
   ],
-  authors: [{ name: "svm it solution", url: "https://svmitsolution.com" }],
+  authors: [{ name: "svm it solution", url: "https://www.svmitsolution.com" }],
 
   // ✅ Canonical Tag
   alternates: {
-    canonical: "https://svmitsolution.com/digital-marketing",
+    canonical: "https://www.svmitsolution.com/digital-marketing",
   },
 
   openGraph: {
     title: "Top Digital Marketing Freelancer in India | Svmitsolution",
     description:
       "Hire the best digital marketing freelancer in Hyderabad for SEO, social media, PPC & content marketing to grow your business fast.",
-    url: "https://svmitsolution.com/digital-marketing",
+    url: "https://www.svmitsolution.com/digital-marketing",
     images: [
       {
-        url: "https://svmitsolution.com/logo.png",
+        url: "https://www.svmitsolution.com/logo.png",
         width: 1200,
         height: 630,
         alt: "SVM It Solution",
@@ -38,7 +38,7 @@ export const metadata = {
     title: "Top Digital Marketing Freelancer in Hyderabad | Svmitsolution",
     description:
       "Hire the best digital marketing freelancer in Hyderabad for SEO, social media, PPC & content marketing to grow your business fast.",
-    images: ["https://svmitsolution.com/logo.png"],
+    images: ["https://www.svmitsolution.com/logo.png"],
   },
 
   // ✅ Social Profiles
@@ -49,13 +49,13 @@ export const metadata = {
   },
 
   // ✅ JSON-LD Schema Markup
-  metadataBase: new URL("https://svmitsolution.com/"),
+  metadataBase: new URL("https://www.svmitsolution.com/"),
   schema: {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "SVM It Solution",
-    url: "https://svmitsolution.com/digital-marketing",
-    logo: "https://svmitsolution.com/logo.png",
+    url: "https://www.svmitsolution.com/digital-marketing",
+    logo: "https://www.svmitsolution.com/logo.png",
     sameAs: [
       "https://www.instagram.com/svmitsolution/",
       "https://www.linkedin.com/in/svm-it-solution/",

@@ -12,11 +12,11 @@ export const metadata = {
     "Professional SEO Expert India",
     "Best SEO Freelancer India",
   ],
-  authors: [{ name: "svm it solution", url: "https://svmitsolution.com" }],
+  authors: [{ name: "svm it solution", url: "https://www.svmitsolution.com" }],
 
   // ✅ Canonical Tag
   alternates: {
-    canonical: "https://svmitsolution.com/",
+    canonical: "https://www.svmitsolution.com/",
   },
 
   // ✅ Google Search Console Verification
@@ -28,10 +28,10 @@ export const metadata = {
     title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
     description:
       "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
-    url: "https://svmitsolution.com/",
+    url: "https://www.svmitsolution.com/",
     images: [
       {
-        url: "https://svmitsolution.com/logo.png",
+        url: "https://www.svmitsolution.com/logo.png",
         width: 1200,
         height: 630,
         alt: "SVM It Solution",
@@ -44,7 +44,7 @@ export const metadata = {
     title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
     description:
       "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
-    images: ["https://svmitsolution.com/logo.png"],
+    images: ["https://www.svmitsolution.com/logo.png"],
   },
 };
 
@@ -54,8 +54,8 @@ export default function Page() {
     "@type": "Person",
     name: "SVM IT Solution",
     jobTitle: "Freelance SEO Specialist In India",
-    url: "https://svmitsolution.com/",
-    image: "https://svmitsolution.com/logo.png",
+    url: "https://www.svmitsolution.com/",
+    image: "https://www.svmitsolution.com/logo.png",
     description:
       "No.1 Freelance SEO Specialist in India offering professional, result-driven SEO services. Boost organic visibility and rankings.",
     sameAs: [
