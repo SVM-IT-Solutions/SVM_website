@@ -221,8 +221,13 @@ export default function Navbar() {
 
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white mt-6">
                   <Phone className="h-4 w-4 mr-2" />
-                  Get Quote
-                </Button>
+<a
+                href="https://wa.me/6388744723?text=Hello%20SVM%20IT%20Solution,%20I%20would%20like%20to%20get%20a%20quote%20for%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Quote
+              </a>                </Button>
               </nav>
             </SheetContent>
           </Sheet>
