@@ -145,7 +145,7 @@ export default function Navbar() {
             <Button className="bg-green-600 hover:bg-green-700 text-white">
               <Phone className="h-4 w-4 mr-2" />
               <a
-                href="https://wa.me/17095061925?text=Hello%20SVM%20IT%20Solution,%20I%20would%20like%20to%20get%20a%20quote%20for%20your%20services."
+                href="https://wa.me/6388744723?text=Hello%20SVM%20IT%20Solution,%20I%20would%20like%20to%20get%20a%20quote%20for%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
               >
