@@ -113,7 +113,7 @@ export default function ContactPage() {
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us",
-      details: ["+1 709 506 1935 ", ""],
+      details: ["+91 6388744723", ""],
       // description: "Mon-Sat from 7pm to 3pm",
     },
     {

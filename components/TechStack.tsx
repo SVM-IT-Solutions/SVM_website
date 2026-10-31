@@ -80,7 +80,7 @@ const TechStack: React.FC = () => {
           className="h-16 mx-8"
         />
         <img
-          src="/techStack/wordpress.svg"
+          src="/techStack/wordPress.svg"
           alt="techStack 3"
           className="h-16 mx-8"
         />

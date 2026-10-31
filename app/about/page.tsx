@@ -10,8 +10,8 @@ export async function generateMetadata() {
     "jobTitle": "SEO Specialist & Web Developer",
     "description":
       "Mahesh Kumar is a Freelance SEO Specialist in India helping businesses grow with advanced SEO strategies and high-performing website development.",
-    "url": "https://svmitsolution.com/about",
-    "image": "https://svmitsolution.com/logo.png",
+    "url": "https://www.svmitsolution.com/about",
+    "image": "https://www.svmitsolution.com/logo.png",
     "sameAs": [
       "https://www.linkedin.com/in/svm-it-solution/",
       "https://www.instagram.com/svmitsolution/",
@@ -30,7 +30,7 @@ export async function generateMetadata() {
     "worksFor": {
       "@type": "Organization",
       "name": "SVM IT Solution",
-      "url": "https://svmitsolution.com"
+      "url": "https://www.svmitsolution.com"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -77,10 +77,10 @@ export async function generateMetadata() {
         "Freelance SEO Specialist & Website Development in India | svmitsolution",
       description:
         "Freelance SEO Specialist & Website Development in India delivering smart SEO strategies, fast websites, and better online growth for businesses.",
-      url: "https://svmitsolution.com/about",
+      url: "https://www.svmitsolution.com/about",
       images: [
         {
-          url: "https://svmitsolution.com/logo.png",
+          url: "https://www.svmitsolution.com/logo.png",
           width: 1200,
           height: 630,
           alt: "svm it solution"
@@ -94,7 +94,7 @@ export async function generateMetadata() {
         "Freelance SEO Specialist & Website Development in India | svmitsolution",
       description:
         "Freelance SEO Specialist & Website Development in India delivering smart SEO strategies, fast websites, and better online growth for businesses.",
-      images: ["https://svmitsolution.com/logo.png"]
+      images: ["https://www.svmitsolution.com/logo.png"]
     },
 
     other: {

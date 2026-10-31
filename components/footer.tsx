@@ -1,4 +1,4 @@
-"use client"
+  "use client"
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
@@ -108,7 +108,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Phone className="h-5 w-5 text-blue-600" />
-                <span>+1 709 506 1935</span>
+                <span>+91 6388744723</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <MapPin className="h-5 w-5 text-blue-600" />

@@ -12,20 +12,20 @@ export const metadata = {
     "Freelance Web Developer India",
     "Online Store Development India",
   ],
-  authors: [{ name: "SVM IT Solution", url: "https://svmitsolution.com" }],
+  authors: [{ name: "SVM IT Solution", url: "https://www.svmitsolution.com" }],
 
   alternates: {
-    canonical: "https://svmitsolution.com/ecommerce-solutions",
+    canonical: "https://www.svmitsolution.com/ecommerce-solutions",
   },
 
   openGraph: {
     title: "Freelance eCommerce Website Developer in India | Svmitsolution",
     description:
       "Hire a freelance eCommerce website development specialist in India. Build fast, secure, mobile-friendly online stores that boost sales & UX.",
-    url: "https://svmitsolution.com/ecommerce-solutions",
+    url: "https://www.svmitsolution.com/ecommerce-solutions",
     images: [
       {
-        url: "https://svmitsolution.com/logo-og.png",
+        url: "https://www.svmitsolution.com/logo-og.png",
         width: 1200,
         height: 630,
         alt: "SVM IT Solution - eCommerce Website Development",
@@ -38,7 +38,7 @@ export const metadata = {
     title: "Freelance eCommerce Website Developer in India | Svmitsolution",
     description:
       "Hire a freelance eCommerce website development specialist in India. Build fast, secure, mobile-friendly online stores that boost sales & UX.",
-    images: ["https://svmitsolution.com/logo-twitter.png"],
+    images: ["https://www.svmitsolution.com/logo-twitter.png"],
   },
 
   social: {
@@ -62,8 +62,8 @@ export default function Page() {
             {
               "@type": "Organization",
               "name": "SVM IT Solution",
-              "url": "https://svmitsolution.com",
-              "logo": "https://svmitsolution.com/logo.png",
+              "url": "https://www.svmitsolution.com",
+              "logo": "https://www.svmitsolution.com/logo.png",
               "sameAs": [
                 "https://www.instagram.com/svmitsolution/",
                 "https://www.linkedin.com/in/svm-it-solution/",
@@ -76,7 +76,7 @@ export default function Page() {
               "provider": {
                 "@type": "Organization",
                 "name": "SVM IT Solution",
-                "url": "https://svmitsolution.com"
+                "url": "https://www.svmitsolution.com"
               },
               "areaServed": {
                 "@type": "Country",
@@ -87,7 +87,7 @@ export default function Page() {
             {
               "@type": "WebPage",
               "name": "Freelance eCommerce Website Developer in India",
-              "url": "https://svmitsolution.com/ecommerce-solutions",
+              "url": "https://www.svmitsolution.com/ecommerce-solutions",
               "inLanguage": "en",
               "description": "Hire a freelance eCommerce website development specialist in India. Build fast, secure, mobile-friendly online stores that boost sales & UX."
             }

@@ -11,11 +11,11 @@ export const metadata = {
     "Freelance Web Designers in Mumbai India",
     "Hire Web Developer in Delhi",
   ],
-  authors: [{ name: "svm it solution", url: "https://svmitsolution.com/webdevelopment" }],
+  authors: [{ name: "svm it solution", url: "https://www.svmitsolution.com/webdevelopment" }],
 
   // ✅ Canonical Tag
   alternates: {
-    canonical: "https://svmitsolution.com/webdevelopment",
+    canonical: "https://www.svmitsolution.com/webdevelopment",
   },
 
 
@@ -23,10 +23,10 @@ export const metadata = {
     title: "Freelance Web Developers & Designers in Mumbai, India | Svmitsolution",
     description:
       "Hire expert freelance website developers & web designers in Mumbai, India. Get fast, SEO-friendly, mobile-ready websites that generate quality leads.",
-    url: "https://svmitsolution.com/webdevelopment",
+    url: "https://www.svmitsolution.com/webdevelopment",
     images: [
       {
-        url: "https://svmitsolution.com/logo.png",
+        url: "https://www.svmitsolution.com/logo.png",
         width: 1200,
         height: 630,
         alt: "SVM IT Solution",
@@ -39,7 +39,7 @@ export const metadata = {
     title: "Hire Freelance Web Developers & Designers in Mumbai | Svmitsolution",
     description:
       "Looking for reliable freelance web developers & designers in Mumbai, India? Get high-performance websites that convert visitors into leads.",
-    images: ["https://svmitsolution.com/logo.png"],
+    images: ["https://www.svmitsolution.com/logo.png"],
   },
 };
 
@@ -57,8 +57,8 @@ export default function Page() {
             "@type": "Person",
             name: "SVM IT Solution",
             jobTitle: "Freelance Web Developers & Web Designers in Mumbai, India",
-            url: "https://svmitsolution.com/webdevelopment",
-            image: "https://svmitsolution.com/logo.png",
+            url: "https://www.svmitsolution.com/webdevelopment",
+            image: "https://www.svmitsolution.com/logo.png",
             description:
               "Expert freelance website developers and web designers in Mumbai, India offering fast, SEO-friendly, and high-converting websites.",
             address: {

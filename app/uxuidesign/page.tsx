@@ -11,11 +11,11 @@ export const metadata = {
     "Freelance UI UX Designer Varanasi",
     "Best UI UX Designer India",
   ],
-  authors: [{ name: "SVM IT Solution", url: "https://svmitsolution.com" }],
+  authors: [{ name: "SVM IT Solution", url: "https://www.svmitsolution.com" }],
 
   // ✅ Canonical Tag
   alternates: {
-    canonical: "https://svmitsolution.com/uxuidesign",
+    canonical: "https://www.svmitsolution.com/uxuidesign",
   },
 
   // ✅ Google Search Console Verification
@@ -28,10 +28,10 @@ export const metadata = {
     title: "Best Freelance UI/UX Designer in Delhi, Noida & Varanasi | Svmitsolution",
     description:
       "Hire the top freelance UI/UX designer in Delhi, Noida, and Varanasi. Stunning, user-friendly interfaces to boost engagement & conversions.",
-    url: "https://svmitsolution.com/uxuidesign",
+    url: "https://www.svmitsolution.com/uxuidesign",
     images: [
       {
-        url: "https://svmitsolution.com/logo.png",
+        url: "https://www.svmitsolution.com/logo.png",
         width: 1200,
         height: 630,
         alt: "SVM IT Solution",
@@ -46,7 +46,7 @@ export const metadata = {
     title: "Best Freelance UI/UX Designer in Delhi, Noida & Varanasi | Svmitsolution",
     description:
       "Hire the top freelance UI/UX designer in Delhi, Noida, and Varanasi. Stunning, user-friendly interfaces to boost engagement & conversions.",
-    images: ["https://svmitsolution.com/logo.png"],
+    images: ["https://www.svmitsolution.com/logo.png"],
     site: "@svmitsolution",
     creator: "@svmitsolution",
   },
@@ -57,8 +57,8 @@ export const metadata = {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "SVM IT Solution",
-      "url": "https://svmitsolution.com/uxuidesign",
-      "logo": "https://svmitsolution.com/logo.png",
+      "url": "https://www.svmitsolution.com/uxuidesign",
+      "logo": "https://www.svmitsolution.com/logo.png",
       "sameAs": [
         "https://www.instagram.com/svmitsolution/",
         "https://www.linkedin.com/in/svm-it-solution/",
