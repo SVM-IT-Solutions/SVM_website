@@ -5,6 +5,7 @@ import "./globals.css";
 import AutoModal from "@/components/AutoModals";
 import { useAutoModal } from "@/hooks/useAutoModal";
 import ModalProvider from "@/components/ModalProvider";
+import Chatbot from "@/components/Chatbot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -73,6 +74,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ModalProvider>{children}</ModalProvider>
+        <Chatbot />
       </body>
     </html>
   );
