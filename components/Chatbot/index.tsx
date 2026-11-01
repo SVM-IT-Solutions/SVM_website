@@ -115,8 +115,8 @@ export default function Chatbot() {
                   .then(() => {
                     hasSpokenWelcomeRef.current = true;
                   })
-                  .catch(() => {});
-              } catch {}
+                  .catch(() => { });
+              } catch { }
             };
 
             window.addEventListener("pointerdown", onFirstGesture, { once: true, capture: true });
@@ -140,6 +140,7 @@ export default function Chatbot() {
 
     return () => clearTimeout(timer);
   }, []);
+
 
   // Voice playback instantly whenever opened
   useEffect(() => {
@@ -472,11 +473,10 @@ export default function Chatbot() {
                       )}
 
                       <div
-                        className={`rounded-2xl px-4 py-2.5 text-[13.5px] leading-relaxed shadow-sm ${
-                          isUser
-                            ? "bg-blue-600 text-white rounded-br-xs"
-                            : "bg-white dark:bg-zinc-800 text-gray-800 dark:text-gray-100 border border-gray-100 dark:border-zinc-700/60 rounded-bl-xs"
-                        }`}
+                        className={`rounded-2xl px-4 py-2.5 text-[13.5px] leading-relaxed shadow-sm ${isUser
+                          ? "bg-blue-600 text-white rounded-br-xs"
+                          : "bg-white dark:bg-zinc-800 text-gray-800 dark:text-gray-100 border border-gray-100 dark:border-zinc-700/60 rounded-bl-xs"
+                          }`}
                       >
                         {msg.leadSaved && (
                           <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium mb-1">
