@@ -1,5 +1,6 @@
 import type React from "react";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import AutoModal from "@/components/AutoModals";
@@ -73,6 +74,21 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ModalProvider>{children}</ModalProvider>
+{/* Google Analytics */}
+<Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-9CX27VWJWQ"
+  strategy="afterInteractive"
+/>
+
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9CX27VWJWQ');
+  `}
+</Script>
+        
       </body>
     </html>
   );

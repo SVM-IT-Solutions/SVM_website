@@ -3,9 +3,9 @@ import Script from "next/script";
 
 // ✅ SEO metadata (works on server)
 export const metadata = {
-  title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+  title: "Freelance SEO Expert India | Hire Best Specialist Services",
   description:
-    "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
+    "Get Best Expert freelance SEO services in India to boost organic rankings, web traffic & business leads. Hire our expert specialist for advanced AEO, GEO optimization.",
   keywords: [
     "No.1 Freelance SEO Specialist in India",
     "Freelance SEO Specialist in India",
@@ -25,9 +25,9 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+    title: "Freelance SEO Expert India | Hire Best Specialist Services",
     description:
-      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
+      "Get Best Expert freelance SEO services in India to boost organic rankings, web traffic & business leads. Hire our expert specialist for advanced AEO, GEO optimization.",
     url: "https://www.svmitsolution.com/",
     images: [
       {
@@ -41,9 +41,9 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "No.1 Freelance SEO Specialist in India | Professional SEO Expert in India | Svmitsolution",
+    title: "Freelance SEO Expert India | Hire Best Specialist Services | Svmitsolution",
     description:
-      "Hire the No.1 Freelance SEO Specialist in India for professional, result-driven SEO. Boost rankings, traffic, and organic growth with a trusted SEO expert.",
+      "Get Best Expert freelance SEO services in India to boost organic rankings, web traffic & business leads. Hire our expert specialist for advanced AEO, GEO optimization.",
     images: ["https://www.svmitsolution.com/logo.png"],
   },
 };
@@ -53,11 +53,11 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "SVM IT Solution",
-    jobTitle: "Freelance SEO Specialist In India",
+    jobTitle: "Freelance SEO Expert India | Hire Best Specialist Services",
     url: "https://www.svmitsolution.com/",
     image: "https://www.svmitsolution.com/logo.png",
     description:
-      "No.1 Freelance SEO Specialist in India offering professional, result-driven SEO services. Boost organic visibility and rankings.",
+      "Get Best Expert freelance SEO services in India to boost organic rankings, web traffic & business leads. Hire our expert specialist for advanced AEO, GEO optimization.",
     sameAs: [
       "https://www.instagram.com/svmitsolution/",
       "https://www.linkedin.com/in/svm-it-solution/",
