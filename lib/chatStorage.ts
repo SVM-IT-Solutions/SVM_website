@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import os from "os";
 
 export interface ChatMessageRecord {
   id: string;
@@ -18,7 +19,9 @@ export interface ChatSessionRecord {
   messages: ChatMessageRecord[];
 }
 
-const DATA_DIR = path.join(process.cwd(), "data");
+const DATA_DIR = process.env.VERCEL
+  ? path.join(os.tmpdir(), "svm-data")
+  : path.join(process.cwd(), "data");
 const CHAT_FILE = path.join(DATA_DIR, "chats.json");
 
 // Ensure data folder and file exist

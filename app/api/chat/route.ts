@@ -14,6 +14,16 @@ const rateLimitMap = new Map<string, RateLimitEntry>();
 
 function isRateLimited(ip: string, limit = 15, windowMs = 60 * 1000): boolean {
   const now = Date.now();
+
+  // Periodically clean up expired entries safely on serverless
+  if (rateLimitMap.size > 200) {
+    for (const [key, entry] of rateLimitMap.entries()) {
+      if (now > entry.resetTime) {
+        rateLimitMap.delete(key);
+      }
+    }
+  }
+
   const entry = rateLimitMap.get(ip);
 
   if (!entry || now > entry.resetTime) {
@@ -28,16 +38,6 @@ function isRateLimited(ip: string, limit = 15, windowMs = 60 * 1000): boolean {
   entry.count += 1;
   return false;
 }
-
-// Clean up expired entries every 5 minutes
-setInterval(() => {
-  const now = Date.now();
-  for (const [ip, entry] of rateLimitMap.entries()) {
-    if (now > entry.resetTime) {
-      rateLimitMap.delete(ip);
-    }
-  }
-}, 5 * 60 * 1000).unref?.();
 
 // --- Validation Helpers ---
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
